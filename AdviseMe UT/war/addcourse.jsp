@@ -89,7 +89,7 @@
 	  <br>
 	  
 	  <label>Textbooks</label>  
-	  	<textarea name="textbooks" rows="3" cols="30" placeholder="Enter Textbooks..."></textarea>  
+	  	<textarea name="prereqs" rows="3" cols="30" placeholder="Enter Textbooks..."></textarea>  
 	  	<span class="help-inline">Comma separated list (Ex. Title Author ISBN,etc...)</span>   
 	  <br>
 	  
