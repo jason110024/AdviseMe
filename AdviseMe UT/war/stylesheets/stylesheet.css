@@ -1,0 +1,38 @@
+body {
+	background-color: #C7C2D1;
+	font-family: Verdana;
+}
+
+h1 {
+	font-family: Verdana;
+	font-size: 2em;
+	font-weight: bold;
+	color: #30396A;
+	margin: 40px 0px 70px;
+	text-align: center;
+	font-size: 2em;
+}
+
+.buttonheader {
+	text-align: center;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.buttonheader ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.buttonheader a {
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
