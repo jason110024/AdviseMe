@@ -173,23 +173,29 @@
     </div><!--/breadcrumbs-->
     <!--=== End Breadcrumbs ===-->
 
-    <!--=== Content Part ===-->
+   <!--=== Content Part ===-->
     <div class="container content">		
     	<div class="row margin-bottom-40">
         	<div class="col-md-6 md-margin-bottom-40">
-                <p>Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone. Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit. Unify is an incredibly beautiful responsive Bootstrap Template for It works on all major web.</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida</li>
-                    <li><i class="fa fa-check color-green"></i> Corporate and Creative</li>
-                    <li><i class="fa fa-check color-green"></i> Responsive Bootstrap Template</li>
-                    <li><i class="fa fa-check color-green"></i> Elit non mi porta gravida</li>
-                    <li><i class="fa fa-check color-green"></i> Award winning digital agency</li>
+					<b>AdviseMe</b> was created in the hopes of making registration for
+					students at The University of Texas at Austin less stressful. Most
+					of the time, class descriptions are vague and students aren't aware
+					of what they're getting into. Often times, students will take
+					multiple time-consuming classes together, buy books they never end
+					up using, or get catch unawares on the type of material being
+					taught in a certain course. <b>AdviseMe</b> is here to resolve all
+					those problems and make it easier to plan out their schedules.                <ul class="list-unstyled">
+                    <li><i class="fa fa-check color-green"></i> Easy to Use!</li>
+                    <li><i class="fa fa-check color-green"></i> Works!</li>
+                    <li><i class="fa fa-check color-green"></i> Responds!</li>
+                    <li><i class="fa fa-check color-green"></i> Facebook!</li>
+                    <li><i class="fa fa-check color-green"></i> 5th Item!</li>
                 </ul><br />
 
                 <!-- Blockquotes -->
                 <blockquote class="hero-unify">
-                    <p>Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why.</p>
-                    <small>CEO Jack Bour</small>
+                    <p>I use this website almost every year!</p>
+                    <small>Jason Anthraper</small>
                 </blockquote>
             </div>
 
