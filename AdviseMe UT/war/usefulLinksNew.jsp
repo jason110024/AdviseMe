@@ -186,7 +186,7 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <img class="img-responsive" src="assets/img/new/img5.jpg" alt="">
+                                        <img class="img-responsive" src="assets/img/main/12.jpg" alt="">
                                     </div>
                                     <div class="col-md-8">
                                         The Course Schedule is published before advising and registration begin for 
@@ -419,21 +419,21 @@
                     <div class="posts">
                         <div class="headline"><h2>Recent Blog Entries</h2></div>
                         <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                            <dt><a href="#"><img src="assets/img/main/8.jpg" alt="" /></a></dt>
                             <dd>
                                 <p><a href="#">Today, we finished with testing and now we're editing the 
                                 layout of all our pages with the theme we got! It's...</a></p> 
                             </dd>
                         </dl>
                         <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
+                        <dt><a href="#"><img src="assets/img/main/4.jpg" alt="" /></a></dt>
                             <dd>
                                 <p><a href="#">Team J.A.A.R.D. met today to discuss our testing plan for AdviseMe. 
                                 We solidified our plans in a Google Doc to...</a></p> 
                             </dd>
                         </dl>
                         <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
+                        <dt><a href="#"><img src="assets/img/main/5.jpg" alt="" /></a></dt>
                             <dd>
                                 <p><a href="#">Another day, another meeting! We have successfully implemented 
                                 a security auto-log out feature...</a></p> 
