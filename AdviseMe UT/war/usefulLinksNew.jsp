@@ -7,7 +7,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>AdviseMe | Help/FAQs</title>
+    <title>AdviseMe | FAQs/Useful Links</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -45,7 +45,7 @@
                 <ul class="loginbar pull-right">
                     <li><a href="javascript:void(0);">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="login.html">Login</a></li>   
+                    <li><a href="login.jsp">Login</a></li>   
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -71,7 +71,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="home.html" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -79,11 +79,11 @@
 
                         <!-- About -->                        
                         <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="about.jsp" class="dropdown-toggle" data-toggle="dropdown">
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="about.jsp">About Us</a></li>
                                 <li><a href="javascript:void(0);">Useful Links</a></li>
 
                             </ul>
@@ -92,7 +92,7 @@
 
                         <!-- Courses -->
                         <li>
-                            <a href="courses.html">
+                            <a href="courses.jsp">
                                 Courses
                             </a>
                         </li>
@@ -113,7 +113,7 @@
 
                         <!-- Contacts -->
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="contact.jsp">
                                 Contact Us
                             </a>
                         </li>                    
@@ -143,7 +143,7 @@
     <!--=== Breadcrumbs ===-->
     <div class="breadcrumbs">
         <div class="container">
-            <h1 class="pull-left">Help/FAQs</h1>
+            <h1 class="pull-left">Useful Links/FAQs</h1>
         </div>
     </div><!--/breadcrumbs-->
     <!--=== End Breadcrumbs ===-->
@@ -170,135 +170,8 @@
     <div class="container content">		
     	<div class="row">            
             <div class="col-md-9">
-    			<!-- General Questions -->
-                <div class="headline"><h2>General Questions</h2></div>
-                <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    1. Put a bird on it squid single-origin coffee nulla?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    2. Oliva pariatur cliche reprehenderit high life accusamus?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-                                    <li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
-                                    <li><i class="fa fa-check color-green"></i> Food truck quinoa nesciunt laborum eiusmod runch..</li>
-                                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                    3. Enim eiusmod high life accusamus terry richardson?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-                                    <li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
-                                </ul>                            
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                    4. Livil anim keffiyeh helvetica craft beer labore wesde brunch?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Olif moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                    5. Leggings occaecat craft beer farmto tableraw denim?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <p>Keffiyeh anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-                                    <li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
-                                    <li><i class="fa fa-check color-green"></i> Food truck quinoa nesciunt laborum eiusmod runch..</li>
-                                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-                                    <li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
-                                    <li><i class="fa fa-check color-green"></i> Food truck quinoa nesciunt laborum eiusmod runch..</li>
-                                </ul>                            
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                                    6. Keffiyeh anim keffiyeh helvetica craft beer labore wesse?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Brunch sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
-                                    7. Helvetica craft beer labore wes anderson cred nesciu ntlife richardson?
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseSeven" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/acc-v1-->
-                <!-- End General Questions -->
-
-    			<!-- Useful Links -->
+            
+                <!-- Useful Links -->
                 <div class="headline"><h2>Useful Links</h2></div>
                 <div class="panel-group acc-v1" id="accordion-1">
                     <div class="panel panel-default">
@@ -380,9 +253,96 @@
                             </div>
                         </div>
                     </div>
-
                 </div><!--/acc-v1-->
-                <!-- End Other Questions -->
+                
+    			<!-- General Questions -->
+                <div class="headline"><h2>General Questions</h2></div>
+                <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    1. Do I need to create an account to use AdviseMe?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                No! But to subscribe to a certain course, you have to have an account. 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    2. Why do I want to subscribe to a course?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>By subscribing to a course, you will get updates when changes happen on a course page.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    3. If the course description is too vague or unhelpful, can I make changes to it?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>Of course! There is a button beneath each course description that allows 
+                                you to submit changes for the course description. The administrators have to approve of
+                                your changes before they are published.</p>
+                                <ul class="list-unstyled">
+                                </ul>                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                    4. What else can I do on a course page?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            	<ul class="list-unstyled">
+	                                <li><i class="fa fa-check color-green"></i> Rate the course</li>
+	                                <li><i class="fa fa-check color-green"></i> Comment on the course</li>
+                           		</ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                    5. Why isn't there ratings on the professors?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>myEdu used to have professor ratings, but due to legal issues, they had to take that aspect down.
+                                We didn't want to run into the same issues, so we have left out professor ratings.</p>                           
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/acc-v1-->
+                <!-- End General Questions -->
+
     		</div><!--/col-md-9-->
             
     		<div class="col-md-3">
@@ -461,19 +421,22 @@
                         <dl class="dl-horizontal">
                             <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
                             <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                                <p><a href="#">Today, we finished with testing and now we're editing the 
+                                layout of all our pages with the theme we got! It's...</a></p> 
                             </dd>
                         </dl>
                         <dl class="dl-horizontal">
                         <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
                             <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                                <p><a href="#">Team J.A.A.R.D. met today to discuss our testing plan for AdviseMe. 
+                                We solidified our plans in a Google Doc to...</a></p> 
                             </dd>
                         </dl>
                         <dl class="dl-horizontal">
                         <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
                             <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                                <p><a href="#">Another day, another meeting! We have successfully implemented 
+                                a security auto-log out feature...</a></p> 
                             </dd>
                         </dl>
                     </div>
