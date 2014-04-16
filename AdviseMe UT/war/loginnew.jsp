@@ -232,7 +232,7 @@
                     <div class="reg-header">            
                         <h2>Login to your account</h2>
                     </div>
-                    <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="false"></div>
+						<h3 id="test"></h3>
 					<div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="false"></div>
                     <hr>
                 </form>            
