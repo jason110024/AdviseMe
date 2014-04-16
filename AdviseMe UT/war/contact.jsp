@@ -147,13 +147,13 @@
     </div>
     <!--=== End Header ===-->   
 
-    <!--=== Breadcrumbs ===-->
-    <div class="breadcrumbs">
+    <!--=== Breadcrumbs v3 ===-->
+    <div class="breadcrumbs-v3">
         <div class="container">
             <h1 class="pull-left">Contact Us</h1>
         </div>
-    </div><!--/breadcrumbs-->
-    <!--=== End Breadcrumbs ===-->
+    </div>
+    <!--=== End Breadcrumbs v3 ===-->
 
     <!-- Google Map -->
     <div id="map" class="map">

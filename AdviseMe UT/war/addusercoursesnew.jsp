@@ -158,14 +158,13 @@
 		</div>
 		<!--=== End Header ===-->
 
-		<!--=== Breadcrumbs ===-->
-		<div class="breadcrumbs">
-			<div class="container">
-				<h1 class="pull-left">Add Taken Courses</h1>
-			</div>
-		</div>
-		<!--/breadcrumbs-->
-		<!--=== End Breadcrumbs ===-->
+	<!--=== Breadcrumbs v3 ===-->
+    <div class="breadcrumbs-v3">
+        <div class="container">
+            <h1 class="pull-left">Add Courses You Have Taken</h1>
+        </div>
+    </div>
+    <!--=== End Breadcrumbs v3 ===-->
 
 
 		<!--=== Content Part ===-->
