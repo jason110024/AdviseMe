@@ -210,25 +210,25 @@
             <div class="row">
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">5</span>   
+                        <span class="counter">4,560</span>   
                         <h4>Users</h4>
                     </div>    
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">78</span> 
+                        <span class="counter">1,178</span> 
                         <h4>Courses</h4>
                     </div>    
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">2</span>
-                        <h4>Visitors per minute</h4>
+                        <span class="counter">29</span>
+                        <h4>Visitors per second</h4>
                     </div>    
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">5</span>
+                        <span class="counter">504</span>
                         <h4>Subscribers</h4>
                     </div>    
                 </div>
