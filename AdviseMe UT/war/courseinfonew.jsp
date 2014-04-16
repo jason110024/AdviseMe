@@ -280,6 +280,47 @@
                 <br>
 
 					<!-- End Blockquotes -->
+					
+					
+					
+<div class="row">
+		<div class="span3">
+			<div class="col-md-3">
+				<h4>Past Professors:</h4>
+				<br>
+				<p>${fn:escapeXml(course_professorList)}</p>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="col-md-3">
+				<h4>Semesters Taught:</h4>
+				<br>
+				<p>${fn:escapeXml(course_semestersTaught)}</p>
+			</div>
+		</div>
+		<div class="span3">
+			<div class="col-md-3">
+				<h4>Pre-Requisites:</h4>
+				<br>
+				<p>${fn:escapeXml(course_prereq)}</p>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 				</div><!--/col-md-9-->
@@ -319,47 +360,31 @@
  
 </p>
 <p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
-                        </div>
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                  
+                        </div>                               
                 </div>            
             
                 <!-- Posts -->
-                <div class="posts margin-bottom-30">
-                    <div class="headline"><h2>Recent Blog Entries</h2></div>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Lorem sequat ipsum dolor lorem sunt aliqua put</a></p> 
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">It works on all major web browsers tablets</a></p> 
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/9.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Brunch 3 wolf moon tempor sunt aliqua put.</a></p> 
-                        </dd>
-                    </dl>
-                </div><!--/posts-->
+<!--                 <div class="posts margin-bottom-30"> -->
+<!--                     <div class="headline"><h2>Recent Blog Entries</h2></div> -->
+<!--                     <dl class="dl-horizontal"> -->
+<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt> -->
+<!--                         <dd> -->
+<!--                             <p><a href="#">Lorem sequat ipsum dolor lorem sunt aliqua put</a></p>  -->
+<!--                         </dd> -->
+<!--                     </dl> -->
+<!--                     <dl class="dl-horizontal"> -->
+<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt> -->
+<!--                         <dd> -->
+<!--                             <p><a href="#">It works on all major web browsers tablets</a></p>  -->
+<!--                         </dd> -->
+<!--                     </dl> -->
+<!--                     <dl class="dl-horizontal"> -->
+<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/9.jpg" alt="" /></a></dt> -->
+<!--                         <dd> -->
+<!--                             <p><a href="#">Brunch 3 wolf moon tempor sunt aliqua put.</a></p>  -->
+<!--                         </dd> -->
+<!--                     </dl> -->
+<!--                 </div>/posts -->
 
 <!--                 Contact Us -->
 <!--                 <div class="who margin-bottom-30"> -->
