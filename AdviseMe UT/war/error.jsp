@@ -49,14 +49,21 @@
         <!-- End Error Block -->
 
         <!-- Begin Service Block V2 -->
-
+        <div class="row servive-block-v2">
             <div class="col-md-4">
                 <div class="servive-block-in service-or">
                     <div class="service-bg"></div>
                     <i class="icon-directions"></i>
+                    <h4>Go Back to Home?</h4>                       
+                    <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="home.jsp"> Go back to Home Page</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="servive-block-in service-or">
+                    <div class="service-bg"></div>
+                    <i class="icon-bulb"></i>
                     <h4>The cause of the problem</h4>
                     <p><%=exception.getMessage() %></p>
-                    <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="home.jsp"> Go back to Home Page</a>
                 </div>
             </div>  
             
@@ -65,7 +72,6 @@
                     <div class="service-bg"></div>
                     <i class="icon-users"></i>
                     <h4>Contact us</h4>
-                    <p>If you have a problem with the website, please contact us, our support team will help you to solve the problem.</p>
                     <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="#"> Contact Us</a>
                 </div>
             </div>
@@ -77,7 +83,7 @@
     <!--=== Sticky Footer ===-->
     <div class="container sticky-footer">
         <p class="copyright-space">
-            2014 &copy; Unify Template. ALL Rights Reserved. 
+            2014 &copy; AdviseMe. ALL Rights Reserved.  
         </p>  
     </div>
     <!--=== End Sticky-Footer ===-->
