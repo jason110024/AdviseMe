@@ -233,6 +233,7 @@
                         <h2>Login to your account</h2>
                     </div>
                     <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="false"></div>
+					<div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="false"></div>
                     <hr>
                 </form>            
             </div>
