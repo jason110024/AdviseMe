@@ -8,14 +8,14 @@ var ContactPage = function () {
 			$(document).ready(function(){
 			  map = new GMaps({
 				div: '#map',
-				lat: 40.748866,
-				lng: -73.988366
+				lat: 30.288222,
+				lng: -97.736904
 			  });
 			  
 			  var marker = map.addMarker({
-				lat: 40.748866,
-				lng: -73.988366,
-	            title: 'Company, Inc.'
+				lat: 30.288222,
+				lng: -97.736904,
+	            title: 'AdviseMe'
 		       });
 			});
         },
@@ -26,8 +26,8 @@ var ContactPage = function () {
 		    $(document).ready(function(){
 		      panorama = GMaps.createPanorama({
 		        el: '#panorama',
-		        lat : 40.748866,
-		        lng : -73.988366
+		        lat : 30.288222,
+		        lng : -97.736904
 		      });
 		    });
 		}        
