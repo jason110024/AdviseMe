@@ -158,7 +158,7 @@
     	<div class="row margin-bottom-30">
     		<div class="col-md-9 mb-margin-bottom-30">
                 <div class="headline"><h2>Contact Form</h2></div>
-                <p>Have any suggestions or concerns? Just want to say hi to the AdviseMe creators? 
+                <p>Have any suggestions or concerns? Just want to say hi to the AdviseMe creators?<br> 
                 Fill out the survey below and we will get back to you as soon as possible!</p><br />
     			<form>
                     <label>Name</label>
