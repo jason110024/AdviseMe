@@ -284,7 +284,7 @@ while (low.hasNext()){
                 %>
 
                 <div class="inner-results">
-                <h3><a href="#">${fn:escapeXml(course_name)} - ${fn:escapeXml(course_title)}</a></h3>
+                <h3><a onclick="window.location.href='courseinfo.jsp?courseName=${fn:escapeXml(course_name)}'">${fn:escapeXml(course_name)} - ${fn:escapeXml(course_title)}</a></h3>
                 <p>${fn:escapeXml(course_description)}</p>
                 </div>
                 <hr>

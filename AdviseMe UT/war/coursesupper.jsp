@@ -244,22 +244,22 @@
 ObjectifyService.register(Course.class);
 List<Course> schools = ObjectifyService.ofy().load().type(Course.class).list();
 Collections.sort(schools);
-int numLower = 0;
-Iterator<Course> low = schools.iterator();
-while (low.hasNext()){
-	Course currentCourse = low.next(); 
+int numUpper = 0;
+Iterator<Course> up = schools.iterator();
+while (up.hasNext()){
+	Course currentCourse = up.next(); 
 	Boolean upperDiv=currentCourse.getUpperDivision();
-	if( upperDiv == false){
-	numLower++;
+	if( upperDiv == true){
+	numUpper++;
 	}
 }
-	 pageContext.setAttribute("num_lower",numLower);
+	 pageContext.setAttribute("num_upper",numUpper);
 
 	 
 
 %>
             <div class="col-md-10">
-                <span class="results-number">${fn:escapeXml(num_lower)} results</span>
+                <span class="results-number">${fn:escapeXml(num_upper)} results</span>
                 <%
                 
                 if (schools.isEmpty()) {
@@ -268,11 +268,11 @@ while (low.hasNext()){
                 } else {
                 	%>
                 	<%
-                	Iterator<Course> lowerIterator = schools.iterator();
-                	while (lowerIterator.hasNext()){
-                		Course currentCourse = lowerIterator.next(); 
+                	Iterator<Course> upperIterator = schools.iterator();
+                	while (upperIterator.hasNext()){
+                		Course currentCourse = upperIterator.next(); 
                 		Boolean upperDiv=currentCourse.getUpperDivision();
-                		if( upperDiv == false){
+                		if( upperDiv == true){
                       	 pageContext.setAttribute("course_name",currentCourse.getCourseName());
                       	pageContext.setAttribute("course_description",currentCourse.getDescription());
                        pageContext.setAttribute("course_title",currentCourse.getTitle());
@@ -284,7 +284,7 @@ while (low.hasNext()){
                 %>
 
                 <div class="inner-results">
-                <h3><a href="#">${fn:escapeXml(course_name)} - ${fn:escapeXml(course_title)}</a></h3>
+                <h3><a onclick="window.location.href='courseinfo.jsp?courseName=${fn:escapeXml(course_name)}'">${fn:escapeXml(course_name)} - ${fn:escapeXml(course_title)}</a></h3>
                 <p>${fn:escapeXml(course_description)}</p>
                 </div>
                 <hr>
