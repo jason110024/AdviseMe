@@ -166,7 +166,7 @@
     <!--=== End Header ===-->  
 
     <!--=== Breadcrumbs ===-->
-    <div class="breadcrumbs">
+    <div class="breadcrumbs-v3">
     	<div class="container">
             <h1 class="pull-left">About Us</h1>
         </div><!--/container-->
@@ -196,6 +196,10 @@
                 <blockquote class="hero-unify">
                     <p>I use this website almost every year!</p>
                     <small>Jason Anthraper</small>
+                </blockquote>
+                 <blockquote class="hero-unify">
+                    <p>What's AdviseMe? Sounds pretty lame. Oh wait, no it doesn't!</p>
+                    <small>David Sandler</small>
                 </blockquote>
             </div>
 
@@ -260,115 +264,115 @@
         </div><!--/team-->
     	<!-- End Meer Our Team -->
 
-        <!-- Our Clients -->
-        <div id="clients-flexslider" class="flexslider home clients">
-            <div class="headline"><h2>Our Clients</h2></div>    
-            <ul class="slides">
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/hp_grey.png" alt="" /> 
-                        <img src="assets/img/clients/hp.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/igneus_grey.png" alt="" /> 
-                        <img src="assets/img/clients/igneus.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/vadafone_grey.png" alt="" /> 
-                        <img src="assets/img/clients/vadafone.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/walmart_grey.png" alt="" /> 
-                        <img src="assets/img/clients/walmart.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
-                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
-                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/aztec_grey.png" alt="" /> 
-                        <img src="assets/img/clients/aztec.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
-                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/cisco_grey.png" alt="" /> 
-                        <img src="assets/img/clients/cisco.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
-                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/cocacola_grey.png" alt="" /> 
-                        <img src="assets/img/clients/cocacola.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
-                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
-                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
-                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
-                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
-                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
-                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                    </a>
-                </li>
-            </ul>
-        </div><!--/flexslider-->
-        <!-- //End Our Clients -->
+<!--         Our Clients -->
+<!--         <div id="clients-flexslider" class="flexslider home clients"> -->
+<!--             <div class="headline"><h2>Our Clients</h2></div>     -->
+<!--             <ul class="slides"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/hp_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/hp.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/igneus_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/igneus.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/vadafone_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/vadafone.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/walmart_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/walmart.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/shell_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/shell.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/natural_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/natural.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/aztec_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/aztec.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/gamescast_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/gamescast.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/cisco_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/cisco.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/everyday_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/everyday.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/cocacola_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/cocacola.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/spinworkx_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/shell_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/shell.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/natural_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/natural.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/gamescast_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/gamescast.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/everyday_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/everyday.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="assets/img/clients/spinworkx_grey.png" alt="" />  -->
+<!--                         <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" /> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </div>/flexslider -->
+<!--         //End Our Clients -->
     </div><!--/container-->		
     <!--=== End Content Part ===-->
 

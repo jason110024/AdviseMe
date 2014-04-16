@@ -216,13 +216,6 @@
     </div>
     <!--=== End Header ===-->     
 
-<!--     === Breadcrumbs === -->
-<!--     <div class="breadcrumbs"> -->
-<!--         <div class="container"> -->
-<!--             <h1 class="pull-left">Course Information</h1> -->
-<!--         </div> -->
-<!--     </div>/breadcrumbs -->
-<!--     === End Breadcrumbs === -->
 <%
 		//retrieve courses
 		ObjectifyService.register(Course.class);
@@ -249,12 +242,32 @@
 			}
 		}
 	%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--     === Breadcrumbs === -->
+    <div class="breadcrumbs-v3">
+        <div class="container">
+            <h1 class="pull-left">${fn:escapeXml(course_title)}</h1>
+        </div>
+     </div>
+<!--     === End Breadcrumbs === -->
+
     <!--=== Content Part ===-->
     <div class="container content">     
         <div class="row">
             <div class="col-md-9">
                 <!-- Our Services -->
-                <div class="headline"><h2>${fn:escapeXml(course_title)}</h2></div>
                 <div class="row margin-bottom-20">
                     
 <!--                     <div class="col-md-4"> -->
