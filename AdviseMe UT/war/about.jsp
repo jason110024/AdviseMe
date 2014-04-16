@@ -1,19 +1,43 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<html>
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-<link type="text/css" rel="stylesheet" href="stylesheets/bootstrap.css">
-<script src="http://code.jquery.com/jquery.js"></script>
-<title>AdviseMe-About</title>
-</head>
-<body>
-	<%
+    <title>AdviseMe | About Us</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
+
+    <!-- CSS Theme -->    
+    <link rel="stylesheet" href="assets/css/themes/orange.css" id="style_color">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+		<%
 	String id = null;
 	String picurl = null;
 	String first = null;
 	String last = null;
 	String isLoggedIn = null;
 	HttpSession mysession = request.getSession(false);
+	System.out.println("Home page: " + mysession.getAttribute("id"));
 	if(mysession.getAttribute("id")!=null){
 		id = (String) mysession.getAttribute("userid");
 		picurl = (String) mysession.getAttribute("pic");
@@ -30,41 +54,129 @@
 		pageContext.setAttribute("guest", "true");
 	}
 	%>
-	<img id="banner" src="Header.png" alt="Banner Image" height="84" width="263"/>
-	<div class="”container”"> 
-			<div class="navbar">
-            	<div class="navbar-inner">
-                	<div class="container">
-                  		<ul class="nav">
-                    		<li><a href="home.jsp">Home</a></li>
-                    		<li class="active"><a href="about.jsp">About</a></li>
-                    		<li><a href="courses.jsp">Courses</a></li>
-                    		<li><a href="schedule.jsp">Schedule Thing</a></li> <!--  Tentative Title  -->
-                    		<li><a href="usefulLinks.jsp">Useful Links</a></li>
-                    		
-                    		</ul>
-                    		<ul class="nav pull-right">
-                    		<ul class="nav">
-                    		<li><a href="home.jsp" id=name></a></li>
-                    			<li><a class="brand" id=pict href="home.jsp"><img id="profilepic"></a></li>
-                    			<li><button type="button" class="btn btn-default" id="loginbuttonref" onclick="window.location.href='login.jsp'">Login</button></li>
-                  			</ul>
-                  			</ul>
-                	</div>
-              	</div>
-        	</div>
-		</div>
-	<div class="container">
-		<div class="row-fluid">
-			<div class="span4">
-				<div class="col-md-4">
-					<img
-						src="http://img.photobucket.com/albums/v89/mhking/blog/cat-gun.jpg"
-						alt="about_pic">
-				</div>
-			</div>
-			<div class="span8">
-				<div class="col-md-8">
+</head> 
+
+<body>    
+
+<div class="wrapper">
+    <!--=== Header ===-->    
+    <div class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <!-- Topbar Navigation -->
+                <ul class="loginbar pull-right">
+                    <li><a href="help.html">FAQs</a></li>  
+                    <li class="topbar-devider"></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.html">Login</a></li>
+                </ul>
+                <!-- End Topbar Navigation -->
+            </div>
+        </div>
+        <!-- End Topbar -->
+    
+        <!-- Navbar -->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Home -->
+                        <li>
+                            <a href="home.jsp" >
+                                Home
+                            </a>
+                        </li>
+                        <!-- End Home -->
+
+                        <!-- About -->                        
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0);">About Us</a></li>
+                                <li><a href="help.html">Useful Links</a></li>
+
+                            </ul>
+                        </li>
+                        <!-- End About -->
+
+                        <!-- Courses -->
+                        <li>
+                            <a href="courses.html">
+                                Courses
+                            </a>
+                        </li>
+                        <!-- End Courses -->
+
+                        <!-- Portfolio -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                Schedules
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0);">Something</a></li>
+                                <li><a href="javascript:void(0);">Something</a></li>
+                            </ul>
+                        </li>
+                        <!-- End Portfolio -->
+
+
+                        <!-- Contacts -->
+                        <li>
+                            <a href="contact.html">
+                                Contact Us
+                            </a>
+                        </li>                    
+                        <!-- End Contacts -->
+
+                        <!-- Search Block -->
+                        <li>
+                            <i class="search fa fa-search search-btn"></i>
+                            <div class="search-open">
+                                <div class="input-group animated fadeInDown">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button class="btn-u" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>    
+                        </li>
+                        <!-- End Search Block -->
+                    </ul>
+                </div><!--/navbar-collapse-->
+            </div>    
+        </div>            
+        <!-- End Navbar -->
+    </div>
+    <!--=== End Header ===-->  
+
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+    	<div class="container">
+            <h1 class="pull-left">About Us</h1>
+        </div><!--/container-->
+    </div><!--/breadcrumbs-->
+    <!--=== End Breadcrumbs ===-->
+
+   <!--=== Content Part ===-->
+    <div class="container content">		
+    	<div class="row margin-bottom-40">
+        	<div class="col-md-6 md-margin-bottom-40">
 					<b>AdviseMe</b> was created in the hopes of making registration for
 					students at The University of Texas at Austin less stressful. Most
 					of the time, class descriptions are vague and students aren't aware
@@ -72,92 +184,325 @@
 					multiple time-consuming classes together, buy books they never end
 					up using, or get catch unawares on the type of material being
 					taught in a certain course. <b>AdviseMe</b> is here to resolve all
-					those problems and make it easier to plan out their schedules.
-				</div>
-			</div>
-		</div>
-		<br>
+					those problems and make it easier to plan out their schedules.                <ul class="list-unstyled">
+                    <li><i class="fa fa-check color-green"></i> Easy to Use!</li>
+                    <li><i class="fa fa-check color-green"></i> Works!</li>
+                    <li><i class="fa fa-check color-green"></i> Responds!</li>
+                    <li><i class="fa fa-check color-green"></i> Facebook!</li>
+                    <li><i class="fa fa-check color-green"></i> 5th Item!</li>
+                </ul><br />
 
-		<div class="row-fluid">
-			<div class="span4">
-				<div class="col-md-4">
-					<h2>Meet the Team</h2>
-				</div>
-			</div>
-			<div class="span8">
-				<div class="col-md-8"></div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span4">
-				<div class="col-md-4">
-					<ul style="list-style: none;">
-						<li><img class="lazy"
-							src="http://images.ak.instagram.com/profiles/profile_7074641_75sq_1389547051.jpg"
-							data-original="//a.disquscdn.com/dotcom/d-309f716/img/about/headshots/Daniel_Ha.jpg"
-							style="display: inline;"></li>
-						<li><img class="lazy"
-							src="https://scontent-a-dfw.xx.fbcdn.net/hphotos-frc1/t1.0-9/423432_3502781686376_49776637_n.jpg"
-							data-original="//a.disquscdn.com/dotcom/d-309f716/img/about/headshots/Daniel_Ha.jpg"
-							style="display: inline;"></li>
+                <!-- Blockquotes -->
+                <blockquote class="hero-unify">
+                    <p>I use this website almost every year!</p>
+                    <small>Jason Anthraper</small>
+                </blockquote>
+            </div>
 
-						<li><img class="lazy"
-							src="https://scontent-b-dfw.xx.fbcdn.net/hphotos-ash4/t1.0-9/1625728_10152158044867808_59820564_n.jpg"
-							data-original="//a.disquscdn.com/dotcom/d-309f716/img/about/headshots/Daniel_Ha.jpg"
-							style="display: inline;"></li>
-						<li><img class="lazy"
-							src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-prn1/t1.0-9/1527789_10201790003090555_1626646900_n.jpg"
-							data-original="//a.disquscdn.com/dotcom/d-309f716/img/about/headshots/Daniel_Ha.jpg"
-							style="display: inline;"></li>
-						<li><img class="lazy"
-							src="https://scontent-b-dfw.xx.fbcdn.net/hphotos-ash3/t1.0-9/549587_10201490828445920_1223410407_n.jpg"
-							data-original="//a.disquscdn.com/dotcom/d-309f716/img/about/headshots/Daniel_Ha.jpg"
-							style="display: inline;"></li>
-					</ul>
+        	<div class="col-md-6 md-margin-bottom-40">
+                <div class="responsive-video">
+                    <iframe src="http://www.youtube.com/embed/itO9IXiH4Nk" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+                </div>
+            </div>
+        </div><!--/row-->
 
-				</div>
-			</div>
-			<div class="span8">
-				<div class="col-md-8">
-				     <ul style="list-style: none;">
-				        <li>Alex Stolzberg</li>
-				        <li>David Sandler</li>
-				        <li>Ross McGarity</li>
-				        <li>Jason Anthraper</li>
-				        <li>Alex Wishlinski</li>
-				     </ul></div>
-			</div>
-		</div>
-	</div>
-		<script>
+    	<!-- Meer Our Team -->
+    	<div class="headline"><h2>Meet Our Team</h2></div>
+        <div class="row team">
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/1.jpg" alt="" />
+                    <h3><a>Jack Bour</a> <small>Chief Executive Officer</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/3.jpg" alt="" />
+                    <h3><a>Kate Metus</a> <small>Project Manager</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/2.jpg" alt="" />
+                    <h3><a>Porta Gravida</a> <small>VP of Operations</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/4.jpg" alt="" />
+                    <h3><a>Donec Elit</a> <small>Director, R &amp; D Talent</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--/team-->
+    	<!-- End Meer Our Team -->
+
+        <!-- Our Clients -->
+        <div id="clients-flexslider" class="flexslider home clients">
+            <div class="headline"><h2>Our Clients</h2></div>    
+            <ul class="slides">
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/hp_grey.png" alt="" /> 
+                        <img src="assets/img/clients/hp.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/igneus_grey.png" alt="" /> 
+                        <img src="assets/img/clients/igneus.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/vadafone_grey.png" alt="" /> 
+                        <img src="assets/img/clients/vadafone.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/walmart_grey.png" alt="" /> 
+                        <img src="assets/img/clients/walmart.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
+                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
+                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/aztec_grey.png" alt="" /> 
+                        <img src="assets/img/clients/aztec.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
+                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/cisco_grey.png" alt="" /> 
+                        <img src="assets/img/clients/cisco.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
+                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/cocacola_grey.png" alt="" /> 
+                        <img src="assets/img/clients/cocacola.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
+                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
+                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
+                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
+                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
+                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
+                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
+                    </a>
+                </li>
+            </ul>
+        </div><!--/flexslider-->
+        <!-- //End Our Clients -->
+    </div><!--/container-->		
+    <!--=== End Content Part ===-->
+
+    <!--=== Footer ===-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 md-margin-bottom-40">
+                    <!-- About -->
+                    <div class="headline" href="about.html"><h2>About</h2></div>  
+                    <p class="margin-bottom-25 md-margin-bottom-40">Helping students help students in order to help students by helping!</p>    
+                    <!-- End About -->
+
+                    <!-- Update Newsletter -->
+                    <div class="headline"><h2>Update Newsletter</h2></div> 
+                    <p>Subscribe to AdviseMe and stay up to date with the latest news!</p>
+                    <form class="footer-subscribe">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Email Address">                            
+                            <span class="input-group-btn">
+                                <button class="btn-u" type="button">Subscribe</button>
+                            </span>
+                        </div>                  
+                    </form>                         
+                    <!-- End Update Newsletter -->
+                </div><!--/col-md-4-->  
+                
+                <div class="col-md-4 md-margin-bottom-40">
+                    <!-- Recent Blogs -->
+                    <div class="posts">
+                        <div class="headline"><h2>Recent Blog Entries</h2></div>
+                        <dl class="dl-horizontal">
+                            <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                            <dd>
+                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                            </dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
+                            <dd>
+                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                            </dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
+                            <dd>
+                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- End Recent Blogs -->                    
+                </div><!--/col-md-4-->
+
+					<div class="col-md-4">
+						<!-- Contact Us -->
+						<div class="headline"><h2>Contact Us</h2></div> 
+						<address class="md-margin-bottom-40">
+							Somewhere, Street <br />
+							Texas, US <br />
+							Phone: 000 123 3456 <br />
+							Fax: 000 123 3456 <br />
+							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
+						</address>
+						<!-- End Contact Us -->
+
+						<!-- Social Links -->
+						<div class="headline"><h2>Stay Connected</h2></div> 
+						<ul class="social-icons">
+							<li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
+							<li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+							<li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
+						</ul>
+						<!-- End Social Links -->
+					</div><!--/col-md-4-->
+            </div>
+        </div> 
+    </div>    
+    <!--=== End Footer ===-->
+
+    <!--=== Copyright ===-->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">                      
+                    <p class="copyright-space">
+                        2014 &copy; AdviseMe. ALL Rights Reserved. 
+                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <!--=== End Copyright ===-->
+</div><!--/wrapper-->
+
+<!-- JS Global Compulsory -->           
+<script type="text/javascript" src="assets/plugins/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+<!-- JS Implementing Plugins -->           
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+<!-- JS Page Level -->           
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initSliders();        
+    });
+</script>
+<script>
 	if ("${fn:escapeXml(guest)}" == "false") {
 		console.log('1');
 		if("${fn:escapeXml(isLoggedIn)}" == "true"){
 			console.log('2');
-			document.getElementById("name").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
-			document.getElementById("name").href = "manageaccount.jsp";
-			document.getElementById("pict").href = "manageaccount.jsp";
-			document.getElementById("profilepic").src = "${fn:escapeXml(pic)}";
-			document.getElementById("loginbuttonref").setAttribute("onClick","window.location.href='logout.jsp'");
-			document.getElementById("loginbuttonref").innerHTML = "Logout";
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.html";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
 		}else{
 			console.log('3');
-			document.getElementById("name").innerHTML = "Welcome, Guest";
-			document.getElementById("name").href = "home.jsp";
-			document.getElementById("pict").href = "home.jsp";
-			document.getElementById("profilepic").src = "";
-			document.getElementById("loginbuttonref").setAttribute("onClick","window.location.href='login.jsp'");
-			document.getElementById("loginbuttonref").innerHTML = "Login";
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.html";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
 		}
 	} else {
 		console.log('4');
-		document.getElementById("name").innerHTML = "Welcome, Guest";
-		document.getElementById("name").href = "home.jsp";
-		document.getElementById("pict").href = "home.jsp";
-		document.getElementById("profilepic").src = "";
-		document.getElementById("loginbuttonref").setAttribute("onClick","window.location.href='login.jsp'");
-		document.getElementById("loginbuttonref").innerHTML = "Login";
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.html";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
 	}
 	</script>
+<!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+<![endif]-->
+
 </body>
-</html>
+</html> 
