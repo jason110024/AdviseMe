@@ -164,8 +164,58 @@
         </div>
     </div>
     <!--=== End Breadcrumbs v3 ===-->
-<br><br><br>
-<button class="btn-u btn-u-lg rounded btn-u-red" type="button">Large button</button>
+      <br><br><br>
+      <a href="home.jsp">   
+      <div class="col-md-4">
+            <div class="service">
+                    <i class="icon-home service-icon"></i>
+               <div class="desc">
+                  <h4>Go Back to Home Page</h4>
+                        <p>Click this button to go back to the home page.</p>
+               </div>
+            </div>   
+         </div>
+         </a>
+         <a href="addusercoursesnew.jsp">
+         <div class="col-md-4">
+            <div class="service">
+                    <i class="icon-wrench service-icon"></i>
+               <div class="desc">
+                  <h4>Manage Courses</h4>
+                        <p>Click this button to manage the courses you have taken.</p>
+               </div>
+            </div>            
+         </div>
+         </a>
+        
+
+		<form action="/removefacebookuser?id=${fn:escapeXml(id)}" method="get"
+			onSubmit="return confirm('Are you sure you want to delete your account')">
+
+			<div class="col-md-4">
+
+				<div class="service">
+					<i class="icon-close service-icon"></i>
+					<div class="desc">
+
+						<h4>Delete Account</h4>
+						<p>
+							Click this button to delete your account.<br>We are sorry to see you go.
+						</p>
+					</div>
+				</div>
+			</div>
+		</form>
+
+
+		
+
+         <div class="hero-unit">
+            <div><textarea name="id" id="id" rows="1" cols="30" style="display:none;" ></textarea></div>
+            <div><input type="submit" value="Delete Account" /></div>
+       
+      </div>
+         
 <br><br><br><br><br><br><br><br><br><br><br>
 
     <!--=== Footer ===-->
