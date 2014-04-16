@@ -72,7 +72,7 @@
                     <div class="service-bg"></div>
                     <i class="icon-users"></i>
                     <h4>Contact us</h4>
-                    <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="#"> Contact Us</a>
+                    <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="contact.jsp"> Contact Us</a>
                 </div>
             </div>
         </div>    

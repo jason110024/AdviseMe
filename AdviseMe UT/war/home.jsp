@@ -104,7 +104,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="javascript:void(0);" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -139,14 +139,14 @@
                         <!-- End courses -->
 
                         <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
+<!--                             <ul class="dropdown-menu"> -->
+<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
+<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
+<!--                             </ul> -->
                         </li>
                         <!-- End Portfolio -->
 
