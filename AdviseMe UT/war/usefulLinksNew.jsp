@@ -329,7 +329,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                    5. Why isn't there ratings on the professors?
+                                    5. Why aren't there ratings on the professors?
                                 </a>
                             </h4>
                         </div>
