@@ -74,8 +74,8 @@
 	  <br>
 	  
 	  <label>Upper/Lower Division</label> 
-	  	<input type="radio" name="division" value="upper">Upper
-	  	<input type="radio" name="division" value="lower">Lower
+	  	<input type="radio" id="up" name="division" value="upper">Upper
+	  	<input type="radio" id="low" name="division" value="lower">Lower
 	  <br><br>
 	  
 	  <label>Professors</label>  
@@ -93,7 +93,7 @@
 	  	<span class="help-inline">Comma separated list (Ex. Title Author ISBN,etc...)</span>   
 	  <br>
 	  
-	  <button type="submit" class="btn" >Add Course</button>  
+	  <button type="submit" name="submitButton" class="btn" >Add Course</button>  
 	</form>
 	<script>
 	if ("${fn:escapeXml(guest)}" == "false") {

@@ -34,12 +34,45 @@
     <link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">           
     <link rel="stylesheet" href="assets/plugins/bxslider/jquery.bxslider.css">
     <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
-
+	<link type="text/css" rel="stylesheet" href="rateit.css">
     <!-- CSS Theme -->    
     <link rel="stylesheet" href="assets/css/themes/orange.css" id="style_color">
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+	<script type="text/javascript" src="jquery.rateit.js"></script>
+	<script>
+		function GetURLParameter(sParam){
+			var sPageURL = window.location.search.substring(1);
+			var sURLVariables = sPageURL.split('&');
+			for(var i=0;i<sURLVariables.length;i++){
+				var sParameterName = sURLVariables[i].split('=');
+				if(sParameterName[0]==sParam){
+					return sParameterName[1];
+				}
+			}
+		}
+	
+		function subscribe() {
+			var email = prompt("Please enter your email","Name@Domain.com");
+			var courseName = GetURLParameter('courseName');
+			$.ajax({
+				type : 'GET',
+				url : "addcoursesubscriber?email=" + email + "&course=" + courseName,
+				cache : false,
+				success : function(response) {
+					if(response=="true"){
+					}
+				}
+			}); 	
+		}
+	</script>
+	
+	
+	
+	
 </head> 
 
 <body>
@@ -190,7 +223,41 @@
                 <!-- Our Services -->
                 <div class="headline"><h2>${fn:escapeXml(course_title)}</h2></div>
                 <div class="row margin-bottom-20">
-                    <div class="col-md-4">
+                    
+<!--                     <div class="col-md-4"> -->
+<!--                         <div class="servive-block servive-block-red"> -->
+<!--                             <i class="icon-custom icon-color-light rounded-x icon-line icon-fire"></i> -->
+<!--                             <h2 class="heading-md">Red Box</h2> -->
+<!--                             <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="col-md-4"> -->
+<!--                         <div class="servive-block servive-block-sea">             -->
+<!--                             <i class="icon-custom icon-color-light rounded-x icon-line icon-support"></i> -->
+<!--                             <h2 class="heading-md">Turquoise Box</h2> -->
+<!--                             <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p> -->
+<!--                         </div> -->
+<!--                     </div> -->
+                </div><!--/welcome-block-->
+                <!-- End Our Services -->
+
+                <!-- Blockquotes -->
+                <div class="headline"><h3>Course Description</h3></div>
+                <p>${fn:escapeXml(course_description)}</p>
+                <br>
+
+					<!-- End Blockquotes -->
+
+
+				</div><!--/col-md-9-->
+
+            <div class="col-md-3">
+                <!-- About Us -->
+                <div class="margin-bottom-30">
+                    
+
+
+
                         <div class="servive-block servive-block-blue">
                             <i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
                             <h2 class="heading-md">Course Difficulty: </h2>
@@ -220,122 +287,22 @@
 </p>
 <p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="servive-block servive-block-red">
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-fire"></i>
-                            <h2 class="heading-md">Red Box</h2>
-                            <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="servive-block servive-block-sea">            
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-support"></i>
-                            <h2 class="heading-md">Turquoise Box</h2>
-                            <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p>
-                        </div>
-                    </div>
-                </div><!--/welcome-block-->
-                <!-- End Our Services -->
+                    
 
-                <!-- Blockquotes -->
-                <p>${fn:escapeXml(course_description)}</p>
-                <br>
-                
-                <!-- End Blockquotes -->
 
-                <!-- Recent Works -->
-                <div class="headline"><h2>Recent Works</h2></div>
-                <div class="margin-bottom-40">
-                    <ul id="list" class="bxslider1 recent-work margin-bottom-40">
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/2.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Happy New Year</strong>
-                                    <i>Anim pariatur cliche reprehenderit</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Award Winning Agency</strong>
-                                    <i>Responsive Bootstrap Template</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/4.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Wolf Moon Officia</strong>
-                                    <i>Pariatur prehe cliche reprehrit</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/5.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Food Truck Quinoa Nesciunt</strong>
-                                    <i>Craft labore wes anderson cred</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/6.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Happy New Year</strong>
-                                    <i>Anim pariatur cliche reprehenderit</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/7.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Award Winning Agency</strong>
-                                    <i>Responsive Bootstrap Template</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/8.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Wolf Moon Officia</strong>
-                                    <i>Pariatur prehe cliche reprehrit</i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <em class="overflow-hidden"><img src="assets/img/main/9.jpg" alt="" /></em>
-                                <span>
-                                    <strong>Food Truck Quinoa Nesciunt</strong>
-                                    <i>Craft labore wes anderson cred</i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>        
-                </div><!--/row-->
-                <!-- End Recent Works -->
-            </div><!--/col-md-9-->
 
-            <div class="col-md-3">
-                <!-- About Us -->
-                <div class="margin-bottom-30">
-                    <div class="headline"><h2>About Us</h2></div>
-                    <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, conse cteturse adipiscing elit magna.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-check color-green"></i> Consectetur adipiscing elit</li>
-                        <li><i class="fa fa-check color-green"></i> Ipsum dolor sit amet</li>
-                        <li><i class="fa fa-check color-green"></i> Personal and effective approach</li>
-                        <li><i class="fa fa-check color-green"></i> Ut non libero magna sedot</li>
-                    </ul>                                    
+
+
+
+
+
+
+
+
+
+
+
+                                  
                 </div>            
             
                 <!-- Posts -->
@@ -361,131 +328,71 @@
                     </dl>
                 </div><!--/posts-->
 
-                <!-- Contact Us -->
-                <div class="who margin-bottom-30">
-                    <div class="headline"><h2>Contact Us</h2></div>
-                    <p>Vero facilis est etenim a feugiat cupiditate non quos etrerum facilis.</p>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><i class="fa fa-home"></i>5B amus ED554, New York, US</a></li>
-                        <li><a href="#"><i class="fa fa-envelope"></i>infp@example.com</a></li>
-                        <li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li>
-                        <li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
-                    </ul>
-                </div>
+<!--                 Contact Us -->
+<!--                 <div class="who margin-bottom-30"> -->
+<!--                     <div class="headline"><h2>Contact Us</h2></div> -->
+<!--                     <p>Vero facilis est etenim a feugiat cupiditate non quos etrerum facilis.</p> -->
+<!--                     <ul class="list-unstyled"> -->
+<!--                         <li><a href="#"><i class="fa fa-home"></i>5B amus ED554, New York, US</a></li> -->
+<!--                         <li><a href="#"><i class="fa fa-envelope"></i>infp@example.com</a></li> -->
+<!--                         <li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li> -->
+<!--                         <li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li> -->
+<!--                     </ul> -->
+<!--                 </div> -->
             </div><!--/col-md-3-->
         </div><!--/row-->        
 
-        <!-- Our Clients -->
-        <div id="clients-flexslider" class="flexslider home clients">
-            <div class="headline"><h3>Our Clients</h3></div>    
-            <ul class="slides">
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/hp_grey.png" alt="" /> 
-                        <img src="assets/img/clients/hp.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/igneus_grey.png" alt="" /> 
-                        <img src="assets/img/clients/igneus.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/vadafone_grey.png" alt="" /> 
-                        <img src="assets/img/clients/vadafone.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/walmart_grey.png" alt="" /> 
-                        <img src="assets/img/clients/walmart.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
-                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
-                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/aztec_grey.png" alt="" /> 
-                        <img src="assets/img/clients/aztec.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
-                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/cisco_grey.png" alt="" /> 
-                        <img src="assets/img/clients/cisco.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
-                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/cocacola_grey.png" alt="" /> 
-                        <img src="assets/img/clients/cocacola.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
-                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
-                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
-                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
-                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
-                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
-                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                    </a>
-                </li>
-            </ul>
-        </div><!--/flexslider-->
-        <!-- //End Our Clients -->
     </div><!--/container-->     
     <!--=== End Content Part ===-->
+
+
+
+
+
+
+
+
+<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		var disqus_shortname = 'adviseme'; // required: replace example with your forum shortname
+
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function() {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document
+					.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	<noscript>
+		Please enable JavaScript to view the <a
+			href="http://disqus.com/?ref_noscript">comments powered by
+			Disqus.</a>
+	</noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by
+		<span class="logo-disqus">Disqus</span>
+	</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!--=== Footer ===-->
     <div class="footer">
@@ -590,8 +497,7 @@
 <script type="text/javascript" src="assets/plugins/bxslider/jquery.bxslider.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="jquery.rateit.js"></script>
+
 <script type="text/javascript">
 
     jQuery(document).ready(function() {

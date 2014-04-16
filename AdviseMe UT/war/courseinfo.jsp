@@ -94,6 +94,7 @@
 		pageContext.setAttribute("course_eval_link", course.getEvalLink());
 		pageContext.setAttribute("course_num_users_rating", course.getNumRating());
 		pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
+		pageContext.setAttribute("course_testing", course.getAvg());
 		break;
 			}
 		}
@@ -172,7 +173,7 @@
 	<button type="button" class="btn btn-default" onclick="window.location='${fn:escapeXml(course_eval_link)}'">UT Course Evaluations</button>
 	<br>
 	<br>
-	<button type="button" class="btn btn-default" onclick="window.location='${fn:escapeXml(course_syllabus_link)}'">UT Past Syllabi</button>
+	<button type="button" class="btn btn-default" id=syllabi onclick="window.location='${fn:escapeXml(course_syllabus_link)}'">UT Past Syllabi</button>
 	<br>
 	<br>
 	<div class="row">
