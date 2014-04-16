@@ -71,7 +71,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="home.html" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -92,7 +92,7 @@
 
                         <!-- Courses -->
                         <li>
-                            <a href="courses.html">
+                            <a href="coursesnew.jsp">
                                 Courses
                             </a>
                         </li>
