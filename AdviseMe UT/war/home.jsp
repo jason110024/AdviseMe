@@ -116,8 +116,8 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="help.html">Useful Links</a></li>
+                                <li><a href="about1.jsp">About Us</a></li>
+                                <li><a href="usefulLinksNew.jsp">Useful Links</a></li>
 
                             </ul>
                         </li>
@@ -125,7 +125,7 @@
 
                         <!-- Courses -->
                         <li>
-                            <a href="courses.html">
+                            <a href="coursesnew.jsp">
                                 Courses
                             </a>
                         </li>
@@ -146,7 +146,7 @@
 
                         <!-- Contacts -->
                         <li>
-                            <a href="contact.html">
+                            <a href="contact.jsp">
                                 Contact Us
                             </a>
                         </li>                    

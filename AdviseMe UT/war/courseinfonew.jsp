@@ -147,7 +147,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="home.html" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -159,7 +159,7 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="about1.jsp">About Us</a></li>
                                 <li><a href="help.html">Useful Links</a></li>
 
                             </ul>
@@ -168,7 +168,7 @@
 
                         <!-- Courses -->
                         <li>
-                            <a href="courses.html">
+                            <a href="courses.jsp">
                                 Courses
                             </a>
                         </li>
@@ -189,7 +189,7 @@
 
                         <!-- Contacts -->
                         <li>
-                            <a href="contact.html">
+                            <a href="contact.jsp">
                                 Contact Us
                             </a>
                         </li>                    
@@ -216,13 +216,13 @@
     </div>
     <!--=== End Header ===-->     
 
-    <!--=== Breadcrumbs ===-->
-    <div class="breadcrumbs">
-        <div class="container">
-            <h1 class="pull-left">Course Information</h1>
-        </div>
-    </div><!--/breadcrumbs-->
-    <!--=== End Breadcrumbs ===-->
+<!--     === Breadcrumbs === -->
+<!--     <div class="breadcrumbs"> -->
+<!--         <div class="container"> -->
+<!--             <h1 class="pull-left">Course Information</h1> -->
+<!--         </div> -->
+<!--     </div>/breadcrumbs -->
+<!--     === End Breadcrumbs === -->
 <%
 		//retrieve courses
 		ObjectifyService.register(Course.class);
@@ -305,8 +305,35 @@
 				<p>${fn:escapeXml(course_prereq)}</p>
 			</div>
 		</div>
-	</div>
-
+</div>
+<br>
+<br>
+<div class="span3">
+			<div class="col-md-3">
+			<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" onclick="subscribe()">Subscribe
+		To This Course</button>
+			</div>
+</div>
+<div class="span3">
+			<div class="col-md-3">
+				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
+	<script>
+	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
+			document.getElementById("editbutton").style.visibility='hidden';			
+	}
+	</script>
+			</div>
+</div>
+<div class="span3">
+			<div class="col-md-3">
+			<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" onclick="window.location='${fn:escapeXml(course_eval_link)}'">UT Course Evaluations</button>			
+			</div>
+</div>
+<div class="span3">
+			<div class="col-md-3">
+					<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id=syllabi onclick="window.location='${fn:escapeXml(course_syllabus_link)}'">UT Past Syllabi</button>		
+			</div>
+</div>
 
 
 
@@ -360,7 +387,8 @@
  
 </p>
 <p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
-                        </div>                               
+                        </div>
+                            
                 </div>            
             
                 <!-- Posts -->
