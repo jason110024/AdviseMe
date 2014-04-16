@@ -200,7 +200,7 @@
                 <form class="reg-page" action="/addfacebookuser" method="post">
                     <div class="reg-header">
                         <h2>Register a new account</h2>
-                        <p>Already Signed Up? Click <a href="page_login.html" class="color-green">Sign In</a> to login your account.</p>                    
+                        <p>Already Signed Up? Click <a href="login.jsp" class="color-green">Sign In</a> to login your account.</p>                    
                     </div>
 
                     <label>First Name</label>
