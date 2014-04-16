@@ -73,10 +73,10 @@
 					var last=response.last_name;
 					var id=response.id;
 					var email=response.email;
-		    		document.getElementById("first").innerHTML=first;
-		    		document.getElementById("last").innerHTML=last;
-		    		document.getElementById("id").innerHTML=id;
-		    		document.getElementById("email").innerHTML=email;
+		    		document.getElementById("first").value=first;
+		    		document.getElementById("last").value=last;
+		    		document.getElementById("id").value=id;
+		    		document.getElementById("email").value=email;
 				});
 			}
 		</script> 
