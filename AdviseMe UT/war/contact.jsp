@@ -90,13 +90,20 @@
                         </li>
                         <!-- End About -->
 
-                        <!-- Courses -->
-                        <li>
-                            <a href="coursesnew.jsp">
-                                Courses
-                            </a>
-                        </li>
-                        <!-- End Courses -->
+                       <!-- courses -->
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="courseslower.jsp">Lower Division</a></li>
+                            <li><a href="coursesupper.jsp">Upper Division</a></li>
+                            <li><a href="coursesall.jsp">All Courses</a></li>
+
+                            
+                        </ul>
+                    </li>
+                        <!-- End courses -->
 
                         <!-- Portfolio -->
                         <li class="dropdown">
