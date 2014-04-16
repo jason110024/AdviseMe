@@ -100,7 +100,7 @@
                         </li>
                         <!-- End About -->
 
-                          <!-- courses -->
+                           <!-- courses -->
                         <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             Courses
@@ -160,7 +160,7 @@
     <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3">
         <div class="container">
-            <h1 class="pull-left">Upper Division Courses</h1>
+            <h1 class="pull-left">Courses</h1>
         </div>
     </div>
     <!--=== End Breadcrumbs v3 ===-->
@@ -190,8 +190,8 @@
                         <h3>Quick Links</h3>
                         <ul class="list-unstyled">
                             <li><a href="courseslower.jsp">Lower Division</a></li>     
-                            <li><a href="coursesall.jsp">All Courses</a></li>
-                        </ul> 
+                            <li><a href="coursesupper.jsp">Upper Division</a></li>
+                        </ul>
                         </ul>
                         <hr>
                     </div>    
@@ -245,48 +245,38 @@
 ObjectifyService.register(Course.class);
 List<Course> schools = ObjectifyService.ofy().load().type(Course.class).list();
 Collections.sort(schools);
-int numUpper = 0;
-Iterator<Course> up = schools.iterator();
-while (up.hasNext()){
-	Course currentCourse = up.next(); 
-	Boolean upperDiv=currentCourse.getUpperDivision();
-	if( upperDiv == true){
-	numUpper++;
-	}
+int numCourses = 0;
+Iterator<Course> it = schools.iterator();
+while (it.hasNext()){
+   Course currentCourse = it.next(); 
+   numCourses++;
 }
-	 pageContext.setAttribute("num_upper",numUpper);
-	 
-	 int numPages = numUpper/10;
-	 if (numUpper%10 !=0)
-		 numPages++;
-	 
-	 pageContext.setAttribute("num_pages",numPages);
-	
-	 %>
-	 
+    pageContext.setAttribute("num_courses",numCourses);
+  
+    %>
+    
             <div class="col-md-10">
-                <span class="results-number">${fn:escapeXml(num_upper)} results</span>
+                <span class="results-number">${fn:escapeXml(num_courses)} results</span>
                 <%
                 
                 if (schools.isEmpty()) {
-                	%><h1>There are no courses entered.:(</h1>
+                  %><h1>There are no courses entered.:(</h1>
                 <%
                 } else {
-                	%>
-                	<%
-                	Iterator<Course> upperIterator = schools.iterator();
-                	while (upperIterator.hasNext()){
-                		   Course currentCourse = upperIterator.next(); 
-                		   Boolean upperDiv=currentCourse.getUpperDivision();
-                		   if( upperDiv == true){
-                			   pageContext.setAttribute("course_name",currentCourse.getCourseName());
-                			   pageContext.setAttribute("course_description",currentCourse.getDescription());
-                			   pageContext.setAttribute("course_title",currentCourse.getTitle());
-                			   String courseName=currentCourse.getCourseName();
+                  %>
+                  <%
+                  Iterator<Course> iter = schools.iterator();
+                  while (iter.hasNext()){
+                        Course currentCourse = iter.next(); 
+                        
+                           pageContext.setAttribute("course_name",currentCourse.getCourseName());
+                           pageContext.setAttribute("course_description",currentCourse.getDescription());
+                           pageContext.setAttribute("course_title",currentCourse.getTitle());
+                           String courseName=currentCourse.getCourseName();
                     %><script>
                    document.getElementById("<%=courseName%>");
-                	</script><%
-                	String url = "courseinfo.jsp?name=" + courseName;
+                  </script><%
+                  String url = "courseinfo.jsp?name=" + courseName;
                 %>
 
                 <div class="inner-results">
@@ -295,12 +285,12 @@ while (up.hasNext()){
                 </div>
                 <hr>
                 <%
-                		}
-                		
+                     
+                     
            
-                	}
+                  }
                 }
-                	%>
+                  %>
               
 
 
@@ -373,27 +363,27 @@ while (up.hasNext()){
                     <!-- End Recent Blogs -->                    
                 </div><!--/col-md-4-->
 
-					<div class="col-md-4">
-						<!-- Contact Us -->
-						<div class="headline"><h2>Contact Us</h2></div> 
-						<address class="md-margin-bottom-40">
-							Somewhere, Street <br />
-							Texas, US <br />
-							Phone: 000 123 3456 <br />
-							Fax: 000 123 3456 <br />
-							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
-						</address>
-						<!-- End Contact Us -->
+               <div class="col-md-4">
+                  <!-- Contact Us -->
+                  <div class="headline"><h2>Contact Us</h2></div> 
+                  <address class="md-margin-bottom-40">
+                     Somewhere, Street <br />
+                     Texas, US <br />
+                     Phone: 000 123 3456 <br />
+                     Fax: 000 123 3456 <br />
+                     Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
+                  </address>
+                  <!-- End Contact Us -->
 
-						<!-- Social Links -->
-						<div class="headline"><h2>Stay Connected</h2></div> 
-						<ul class="social-icons">
-							<li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-							<li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-							<li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
-						</ul>
-						<!-- End Social Links -->
-					</div><!--/col-md-4-->
+                  <!-- Social Links -->
+                  <div class="headline"><h2>Stay Connected</h2></div> 
+                  <ul class="social-icons">
+                     <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
+                     <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+                     <li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
+                  </ul>
+                  <!-- End Social Links -->
+               </div><!--/col-md-4-->
             </div>
         </div> 
     </div>    

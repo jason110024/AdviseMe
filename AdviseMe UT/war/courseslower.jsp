@@ -100,19 +100,20 @@
                         </li>
                         <!-- End About -->
 
-                        <!-- coursesnew -->
+                       <!-- courses -->
                         <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
                             Courses
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="courseslower.jsp">Lower Division</a></li>
                             <li><a href="coursesupper.jsp">Upper Division</a></li>
+                            <li><a href="coursesall.jsp">All Courses</a></li>
 
                             
                         </ul>
                     </li>
-                        <!-- End coursesnew -->
+                        <!-- End courses -->
 
                         <!-- Portfolio -->
                         <li class="dropdown">
@@ -159,7 +160,7 @@
     <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3">
         <div class="container">
-            <h1 class="pull-left">Courses</h1>
+            <h1 class="pull-left">Lower Division Courses</h1>
         </div>
     </div>
     <!--=== End Breadcrumbs v3 ===-->
@@ -186,11 +187,10 @@
             <div class="col-md-2 hidden-xs related-search">
                 <div class="row">
                     <div class="col-md-12 col-sm-4">
-                        <h3>Related searches</h3>
+                        <h3>Quick Links</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Web design company</a></li>     
-                            <li><a href="#">Web design tutorials</a></li>   
-                            <li><a href="#">Self designing</a></li>   
+                            <li><a href="coursesupper.jsp">Upper Division</a></li>     
+                            <li><a href="coursesall.jsp">All Courses</a></li>
                         </ul>
                         <hr>
                     </div>    
@@ -300,17 +300,17 @@ while (low.hasNext()){
 
                 <div class="margin-bottom-30"></div>
 
-                <div class="text-left">
-                    <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">157</a></li>
-                        <li><a href="#">158</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>                                                            
+<!--                 <div class="text-left"> -->
+<!--                     <ul class="pagination"> -->
+<!--                         <li><a href="#">«</a></li> -->
+<!--                         <li class="active"><a href="#">1</a></li> -->
+<!--                         <li><a href="#">2</a></li> -->
+<!--                         <li><a href="#">3</a></li> -->
+<!--                         <li><a href="#">...</a></li> -->
+<!--                         <li><a href="#">157</a></li> -->
+<!--                         <li><a href="#">158</a></li> -->
+<!--                         <li><a href="#">»</a></li> -->
+<!--                     </ul>                                                             -->
                 </div>
             </div><!--/col-md-10-->
         </div>        
