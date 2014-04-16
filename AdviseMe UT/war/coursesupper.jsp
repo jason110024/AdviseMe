@@ -168,9 +168,9 @@
     <div class="search-block">
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
-                <h2>Search again</h2>
+                <h2>Search for courses</h2>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search words with regular expressions ...">
+                    <input type="text" class="form-control" placeholder="Search for courses by abbreviation or title">
                     <span class="input-group-btn">
                         <button class="btn-u" type="button"><i class="fa fa-search"></i></button>
                     </span>
@@ -254,10 +254,15 @@ while (up.hasNext()){
 	}
 }
 	 pageContext.setAttribute("num_upper",numUpper);
-
 	 
-
-%>
+	 int numPages = numUpper/10;
+	 if (numUpper%10 !=0)
+		 numPages++;
+	 
+	 pageContext.setAttribute("num_pages",numPages);
+	
+	 %>
+	 
             <div class="col-md-10">
                 <span class="results-number">${fn:escapeXml(num_upper)} results</span>
                 <%
@@ -270,28 +275,28 @@ while (up.hasNext()){
                 	<%
                 	Iterator<Course> upperIterator = schools.iterator();
                 	while (upperIterator.hasNext()){
-                		Course currentCourse = upperIterator.next(); 
-                		Boolean upperDiv=currentCourse.getUpperDivision();
-                		if( upperDiv == true){
-                      	 pageContext.setAttribute("course_name",currentCourse.getCourseName());
-                      	pageContext.setAttribute("course_description",currentCourse.getDescription());
-                       pageContext.setAttribute("course_title",currentCourse.getTitle());
-                       String courseName=currentCourse.getCourseName();
-                       %><script>
-                		document.getElementById("<%=courseName%>");
-                		</script><%
-                		String url = "courseinfo.jsp?name=" + courseName;
+                		   Course currentCourse = upperIterator.next(); 
+                		   Boolean upperDiv=currentCourse.getUpperDivision();
+                		   if( upperDiv == true){
+                			   pageContext.setAttribute("course_name",currentCourse.getCourseName());
+                			   pageContext.setAttribute("course_description",currentCourse.getDescription());
+                			   pageContext.setAttribute("course_title",currentCourse.getTitle());
+                			   String courseName=currentCourse.getCourseName();
+                    %><script>
+                   document.getElementById("<%=courseName%>");
+                	</script><%
+                	String url = "courseinfo.jsp?name=" + courseName;
                 %>
 
                 <div class="inner-results">
-                <h3><a onclick="window.location.href='courseinfo.jsp?courseName=${fn:escapeXml(course_name)}'">${fn:escapeXml(course_name)} - ${fn:escapeXml(course_title)}</a></h3>
-                <p>${fn:escapeXml(course_description)}</p>
+                  <h3><a onclick="window.location.href='courseinfo.jsp?courseName=${fn:escapeXml(course_name)}'">${fn:escapeXml(course_name)} - ${fn:escapeXml(course_title)}</a></h3>
+                  <p>${fn:escapeXml(course_description)}</p>
                 </div>
                 <hr>
                 <%
                 		}
                 		
-                	
+           
                 	}
                 }
                 	%>
@@ -302,8 +307,8 @@ while (up.hasNext()){
 
                 <div class="text-left">
                     <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="coursesupper.jsp">«</a></li>
+                        <li class="active"><a href="coursesupper.jsp">1</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">...</a></li>

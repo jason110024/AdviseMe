@@ -164,13 +164,13 @@
     </div>
     <!--=== End Breadcrumbs v3 ===-->
     
-    <!--=== Search Block ===-->
+       <!--=== Search Block ===-->
     <div class="search-block">
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
-                <h2>Search again</h2>
+                <h2>Search for courses</h2>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search words with regular expressions ...">
+                    <input type="text" class="form-control" placeholder="Search for courses by abbreviation or title">
                     <span class="input-group-btn">
                         <button class="btn-u" type="button"><i class="fa fa-search"></i></button>
                     </span>
