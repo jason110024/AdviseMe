@@ -78,7 +78,7 @@
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
-                    <li><a id="adviseloginbutton" href="login.html">Login</a></li>
+                    <li><a id="adviseloginbutton" href="login.jsp">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -116,8 +116,8 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about1.jsp">About Us</a></li>
-                                <li><a href="usefulLinksNew.jsp">Useful Links</a></li>
+                                <li><a href="about.jsp">About Us</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
 
                             </ul>
                         </li>
@@ -348,18 +348,18 @@
 		if("${fn:escapeXml(isLoggedIn)}" == "true"){
 			console.log('2');
 			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
-			document.getElementById("adviseloginbutton").href = "logout.html";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
 			document.getElementById("adviseloginbutton").innerHTML = "Logout";
 		}else{
 			console.log('3');
 			document.getElementById("advisename").innerHTML = "Welcome, Guest";
-			document.getElementById("adviseloginbutton").href = "login.html";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
 			document.getElementById("adviseloginbutton").innerHTML = "Login";
 		}
 	} else {
 		console.log('4');
 		document.getElementById("advisename").innerHTML = "Welcome, Guest";
-		document.getElementById("adviseloginbutton").href = "login.html";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
 		document.getElementById("adviseloginbutton").innerHTML = "Login";
 	}
 	</script>

@@ -159,7 +159,7 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about1.jsp">About Us</a></li>
+                                <li><a href="about.jsp">About Us</a></li>
                                 <li><a href="help.html">Useful Links</a></li>
 
                             </ul>
