@@ -43,6 +43,37 @@
     
     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 	<script type="text/javascript" src="jquery.rateit.js"></script>
+	<%
+	String id = null;
+	String picurl = null;
+	String first = null;
+	String last = null;
+	String isLoggedIn = null;
+	HttpSession mysession = request.getSession(false);
+	if(mysession.getAttribute("id")!=null){
+		id = (String) mysession.getAttribute("userid");
+		picurl = (String) mysession.getAttribute("pic");
+		first = (String) mysession.getAttribute("first");
+		last = (String) mysession.getAttribute("last");
+		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+		pageContext.setAttribute("id", id);
+		pageContext.setAttribute("pic",picurl);
+		pageContext.setAttribute("first", first);
+		pageContext.setAttribute("last", last);
+		pageContext.setAttribute("isLoggedIn", isLoggedIn);
+		if(isLoggedIn.equalsIgnoreCase("true")){
+			pageContext.setAttribute("readonly", "false");
+
+		}else{
+			pageContext.setAttribute("readonly", "true");
+		}
+		pageContext.setAttribute("guest","false");
+	}else{
+		pageContext.setAttribute("guest", "true");
+		pageContext.setAttribute("readonly", "true");
+
+	}
+	%>
 	<script>
 		function GetURLParameter(sParam){
 			var sPageURL = window.location.search.substring(1);
@@ -88,7 +119,9 @@
                 <ul class="loginbar pull-right">
                     <li><a href="help.html">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="login.html">Login</a></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.html">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -507,6 +540,27 @@
         App.initBxSlider();
     });
 </script>
+		<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.html";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.html";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.html";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
