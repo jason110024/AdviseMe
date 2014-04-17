@@ -205,15 +205,9 @@
 					</div>
 				</div>
 			</div>
-		</form>
-
-
 		
-
-         <div class="hero-unit">
-            <div><textarea name="id" id="id" rows="1" cols="30" style="display:none;" ></textarea></div>
-            <div><input type="submit" value="Delete Account" /></div>
-       
+		           <div><input type="submit" value="Delete Account" /></div>
+       </form>
       </div>
          
 <br><br><br><br><br><br><br><br><br><br><br>

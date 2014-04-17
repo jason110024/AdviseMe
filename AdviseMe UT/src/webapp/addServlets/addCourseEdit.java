@@ -69,9 +69,7 @@ public class addCourseEdit extends HttpServlet{
 			String change = "Course Name: " +courseName + "\nCourse Title: "+courseTitle+"\nCourse Description: "
 					+ courseDescription + "\nUpper Division?: " + upperDivision + "\nProfessor List: " +
 					professorList + "\n Semesters Taught: " + semesterTaught + "\n Prereqs: " + prereqs;
-			System.out.println("hi");
-			System.out.println(change);
-			System.out.println("hi2");
+
 			CourseEdits course = new CourseEdits(courseName,courseTitle,courseDescription,upper);
 			//TODO: Need to parse the list correctly and add the professors correctly
 			course.getProfessorList().add(professorList);
@@ -88,7 +86,6 @@ public class addCourseEdit extends HttpServlet{
 					change+="\n\n Old Course Info: \n" +"Course Name: " +temp.getCourseName() + "\nCourse Title: "+temp.getTitle()+"\nCourse Description: "
 							+ temp.getDescription() + "\nUpper Division?: " + temp.getUpperDivision() + "\nProfessor List: " +
 							temp.getProfessorList() + "\n Semesters Taught: " + temp.getSemesterTaught() + "\n Prereqs: " + temp.getPrereq();
-					System.out.println(change);
 				}
 			}
 			//sending email to admin about change.
@@ -102,16 +99,13 @@ public class addCourseEdit extends HttpServlet{
 				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(address));
 				msg.setSubject("Edit for: "+courseName+" Requested");
 				msg.setText(change);
-				System.out.println("about to send email");
 				Transport.send(msg);
 			}catch(Exception e1){
 				System.out.println("Was not able to send change to admin");
-				resp.sendRedirect("thankyou12.jsp");
 			}
-			resp.sendRedirect("thankyou1.jsp");
+			resp.sendRedirect("thankyou.jsp");
 			
 		} catch (Exception e){
-			resp.sendRedirect("thankyou1234.jsp");
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);
 		}
