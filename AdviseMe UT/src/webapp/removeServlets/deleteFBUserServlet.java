@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import webapp.datastoreObjects.User;
 
@@ -19,6 +20,14 @@ public class deleteFBUserServlet extends HttpServlet{
 	static{ObjectifyService.register(User.class);}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String fbId = req.getParameter("id");
+		HttpSession session = req.getSession(false);
+		session.setAttribute("first", "");
+		session.setAttribute("last", "");
+		session.setAttribute("pic", "");
+		session.setAttribute("id", "");
+		session.setAttribute("isLoggedIn", "false");
+			
+		
 		try{
 			if(fbId==null||fbId.isEmpty()){
 				throw new Exception("Facebook not returning valid identification. Please relogin.");
