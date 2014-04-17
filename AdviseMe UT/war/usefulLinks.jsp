@@ -417,28 +417,14 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- Recent Blogs -->
                     <div class="posts">
-                        <div class="headline"><h2>Recent Blog Entries</h2></div>
+                        <div class="headline"><h2>See Our Progress</h2></div>
                         <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/main/8.jpg" alt="" /></a></dt>
+                            <dt><a href="http://jasona-ee461l-webappblog.appspot.com/"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
                             <dd>
-                                <p><a href="#">Today, we finished with testing and now we're editing the 
-                                layout of all our pages with the theme we got! It's...</a></p> 
+                                <p><a href="http://jasona-ee461l-webappblog.appspot.com/">Check out our development blog to keep track of new developments and features available on AdviseMe!</a></p> 
                             </dd>
                         </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/main/4.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#">Team J.A.A.R.D. met today to discuss our testing plan for AdviseMe. 
-                                We solidified our plans in a Google Doc to...</a></p> 
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/main/5.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#">Another day, another meeting! We have successfully implemented 
-                                a security auto-log out feature...</a></p> 
-                            </dd>
-                        </dl>
+                        
                     </div>
                     <!-- End Recent Blogs -->                    
                 </div><!--/col-md-4-->
@@ -460,6 +446,7 @@
 						<ul class="social-icons">
 							<li><a href="https://twitter.com/AdviseMeUT" data-original-title="Twitter" class="social_twitter"></a></li>
 							<li><a href="https://plus.google.com/115804048731357756426/about?hl=en" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="http://jasona-ee461l-webappblog.appspot.com/" data-original-title="Blogger" class="social_blogger"></a></li>
 						</ul>
 						<!-- End Social Links -->
 					</div><!--/col-md-4-->
