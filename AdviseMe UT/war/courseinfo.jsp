@@ -6,6 +6,7 @@
 <%@ page import="com.google.appengine.api.users.UserService"%>
 <%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!DOCTYPE html>
@@ -308,21 +309,33 @@
 			<div class="col-md-3">
 				<h4>Past Professors:</h4>
 				<br>
-				<p>${fn:escapeXml(course_professorList)}</p>
+				<p>
+				    <c:forEach var="professor" items="${fn:escapeXml(course_professorList)}">
+     				<c:out value="${professor}"></c:out> <br>
+   					</c:forEach>
+				</p>
 			</div>
 		</div>
 		<div class="span3">
 			<div class="col-md-3">
 				<h4>Semesters Taught:</h4>
 				<br>
-				<p>${fn:escapeXml(course_semestersTaught)}</p>
+				<p>
+					<c:forEach var="semester" items="${fn:escapeXml(course_semestersTaught)}">
+     				<c:out value="${semester}"></c:out> <br>
+   					</c:forEach>
+				</p>
 			</div>
 		</div>
 		<div class="span3">
 			<div class="col-md-3">
 				<h4>Pre-Requisites:</h4>
 				<br>
-				<p>${fn:escapeXml(course_prereq)}</p>
+				<p>
+					<c:forEach var="prereq" items="${fn:escapeXml(course_prereq)}">
+     				<c:out value="${prereq}"></c:out> <br>
+   					</c:forEach>
+				</p>
 			</div>
 		</div>
 </div>
