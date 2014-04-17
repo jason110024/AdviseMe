@@ -188,12 +188,8 @@
          </div>
          </a>
         
-
-		<form action="/removefacebookuser?id=${fn:escapeXml(id)}" method="get"
-			onSubmit="return confirm('Are you sure you want to delete your account')">
-
+	<a href="/removefacebookuser?id=${fn:escapeXml(id)}" onClick="return confirm('Are you sure you want to delete your account')">
 			<div class="col-md-4">
-
 				<div class="service">
 					<i class="icon-close service-icon"></i>
 					<div class="desc">
@@ -205,10 +201,7 @@
 					</div>
 				</div>
 			</div>
-		
-		           <div><input type="submit" value="Delete Account" /></div>
-       </form>
-      </div>
+      </a>
          
 <br><br><br><br><br><br><br><br><br><br><br>
 
