@@ -176,7 +176,7 @@
             </div>   
          </div>
          </a>
-         <a href="addusercoursesnew.jsp">
+         <a href="addusercoursesnew.jsp?id=${fn:escapeXml(id)}">
          <div class="col-md-4">
             <div class="service">
                     <i class="icon-wrench service-icon"></i>
