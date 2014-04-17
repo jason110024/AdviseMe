@@ -22,7 +22,7 @@
 		String isLoggedIn = null;
 		HttpSession mysession = request.getSession(false);
 		if(mysession.getAttribute("id")!=null){			
-			if(id=="1022031149" || id=="1032439494" || id=="508774773" || id=="520989352" || id=="603798784"){		
+			if(id.equalsIgnoreCase("1022031149") || id.equalsIgnoreCase("1032439494") || id.equalsIgnoreCase("508774773") || id.equalsIgnoreCase("520989352") || id.equalsIgnoreCase("603798784")){		
 				id = (String) mysession.getAttribute("userid");
 				picurl = (String) mysession.getAttribute("pic");
 				first = (String) mysession.getAttribute("first");
