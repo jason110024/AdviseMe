@@ -204,10 +204,10 @@
                     </div>
 
                     <label>First Name</label>
-                    <input id="first" type="text" class="form-control margin-bottom-20">
+                    <input id="firstname" type="text" class="form-control margin-bottom-20">
                    
                     <label>Last Name</label>
-                    <input id="last" type="text" class="form-control margin-bottom-20">
+                    <input id="lastname" type="text" class="form-control margin-bottom-20">
                    
                     <label>Email Address <span class="color-red">*</span></label>
                     <input id="email" type="text" class="form-control margin-bottom-20">
