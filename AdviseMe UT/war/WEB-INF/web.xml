@@ -13,6 +13,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/addschool</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>courseedit</servlet-name>
+		<servlet-class>webapp.addServlets.addCourseEdit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>courseedit</servlet-name>
+		<url-pattern>/changecourse</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>addCollege</servlet-name>
 		<servlet-class>webapp.addServlets.addCollegeServlet</servlet-class>
 	</servlet>
