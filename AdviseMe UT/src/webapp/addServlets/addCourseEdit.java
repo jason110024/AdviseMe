@@ -111,6 +111,7 @@ public class addCourseEdit extends HttpServlet{
 			resp.sendRedirect("thankyou1.jsp");
 			
 		} catch (Exception e){
+			resp.sendRedirect("thankyou1234.jsp");
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);
 		}
