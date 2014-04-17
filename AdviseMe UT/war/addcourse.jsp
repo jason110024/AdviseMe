@@ -34,12 +34,10 @@
 				pageContext.setAttribute("last", last);
 				pageContext.setAttribute("isLoggedIn", isLoggedIn);
 				pageContext.setAttribute("guest", "false");
-			}
-			else{
+			}else{
 				throw new Exception("You're not even an admin!!");
 			}
-		} else {
-			pageContext.setAttribute("guest", "true");
+		}else {
 			throw new Exception("Why you even not logged in though!!");
 		}
 	%>
