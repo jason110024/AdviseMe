@@ -15,27 +15,33 @@
 	</head>
 	<body>
 	<%
-	String id = null;
-	String picurl = null;
-	String first = null;
-	String last = null;
-	String isLoggedIn = null;
-	HttpSession mysession = request.getSession(false);
-	if(mysession.getAttribute("id")!=null){
-		id = (String) mysession.getAttribute("userid");
-		picurl = (String) mysession.getAttribute("pic");
-		first = (String) mysession.getAttribute("first");
-		last = (String) mysession.getAttribute("last");
-		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
-		pageContext.setAttribute("id", id);
-		pageContext.setAttribute("pic",picurl);
-		pageContext.setAttribute("first", first);
-		pageContext.setAttribute("last", last);
-		pageContext.setAttribute("isLoggedIn", isLoggedIn);
-		pageContext.setAttribute("guest","false");
-	}else{
-		pageContext.setAttribute("guest", "true");
-	}
+		String id = null;
+		String picurl = null;
+		String first = null;
+		String last = null;
+		String isLoggedIn = null;
+		HttpSession mysession = request.getSession(false);
+		if(mysession.getAttribute("id")!=null){			
+			if(id=="1022031149" || id=="1032439494" || id=="508774773" || id=="520989352" || id=="603798784"){		
+				id = (String) mysession.getAttribute("userid");
+				picurl = (String) mysession.getAttribute("pic");
+				first = (String) mysession.getAttribute("first");
+				last = (String) mysession.getAttribute("last");
+				isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+				pageContext.setAttribute("id", id);
+				pageContext.setAttribute("pic", picurl);
+				pageContext.setAttribute("first", first);
+				pageContext.setAttribute("last", last);
+				pageContext.setAttribute("isLoggedIn", isLoggedIn);
+				pageContext.setAttribute("guest", "false");
+			}
+			else{
+				throw new Exception("You're not even an admin!!");
+			}
+		} else {
+			pageContext.setAttribute("guest", "true");
+			throw new Exception("Why you even not logged in though!!");
+		}
 	%>
 		<img id="banner" src="Header.png" alt="Banner Image" height="84" width="263"/>
 		<div class="â€�containerâ€�"> 

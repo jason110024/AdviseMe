@@ -42,7 +42,30 @@
 </head> 
 
 <body>
-
+<%
+	String id = null;
+	String picurl = null;
+	String first = null;
+	String last = null;
+	String isLoggedIn = null;
+	HttpSession mysession = request.getSession(false);
+	if(mysession.getAttribute("id")!=null){
+		id = (String) mysession.getAttribute("userid");
+		picurl = (String) mysession.getAttribute("pic");
+		first = (String) mysession.getAttribute("first");
+		last = (String) mysession.getAttribute("last");
+		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+		pageContext.setAttribute("id", id);
+		pageContext.setAttribute("pic",picurl);
+		pageContext.setAttribute("first", first);
+		pageContext.setAttribute("last", last);
+		pageContext.setAttribute("isLoggedIn", isLoggedIn);
+		pageContext.setAttribute("guest","false");
+	}else{
+		pageContext.setAttribute("guest", "true");
+		throw new Exception("You gotta be logged in for that!");
+	}
+	%>
 
 <div class="wrapper">
         <!--=== Header ===-->    
