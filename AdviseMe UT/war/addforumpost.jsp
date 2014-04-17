@@ -1,19 +1,11 @@
-<%@ page import="java.util.*"%>
-<%@ page import="webapp.datastoreObjects.Course"%>
-<%@ page import="com.googlecode.objectify.Objectify"%>
-<%@ page import="com.googlecode.objectify.ObjectifyService"%>
-<%@ page import="com.google.appengine.api.users.User"%>
-<%@ page import="com.google.appengine.api.users.UserService"%>
-<%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>AdviseMe- Forum</title>
+    <title>AdviseMe | Create a Post</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -31,28 +23,28 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/sky-forms-ie8.css">
+    <![endif]-->
 
     <!-- CSS Page Style -->    
-    <link rel="stylesheet" href="assets/css/pages/blog.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search.css">
 
     <!-- CSS Theme -->    
     <link rel="stylesheet" href="assets/css/themes/orange.css" id="style_color">
 
- <!-- CSS Customization -->
+    <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    
-    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-
-</head>	
-
-<body>
-<%
+	
+	<%
 	String id = null;
 	String picurl = null;
 	String first = null;
 	String last = null;
 	String isLoggedIn = null;
 	HttpSession mysession = request.getSession(false);
+	System.out.println("Home page: " + mysession.getAttribute("id"));
 	if(mysession.getAttribute("id")!=null){
 		id = (String) mysession.getAttribute("userid");
 		picurl = (String) mysession.getAttribute("pic");
@@ -64,33 +56,15 @@
 		pageContext.setAttribute("first", first);
 		pageContext.setAttribute("last", last);
 		pageContext.setAttribute("isLoggedIn", isLoggedIn);
-		if(isLoggedIn.equalsIgnoreCase("true")){
-			pageContext.setAttribute("readonly", "false");
-
-		}else{
-			pageContext.setAttribute("readonly", "true");
-		}
 		pageContext.setAttribute("guest","false");
 	}else{
 		pageContext.setAttribute("guest", "true");
-		pageContext.setAttribute("readonly", "true");
-
 	}
 	%>
-	<script>
-		function GetURLParameter(sParam){
-			var sPageURL = window.location.search.substring(1);
-			var sURLVariables = sPageURL.split('&');
-			for(var i=0;i<sURLVariables.length;i++){
-				var sParameterName = sURLVariables[i].split('=');
-				if(sParameterName[0]==sParam){
-					return sParameterName[1];
-				}
-			}
-		}
-	</script>
 
+</head> 
 
+<body> 
 
 <div class="wrapper">
     <!--=== Header ===-->    
@@ -204,110 +178,33 @@
         </div>            
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->  
+    <!--=== End Header ===-->    
 
-<%
-//
-//
-//
-//      NEEEDS TO BE SWITCHED TO POST OBJECT 
-//
-//
-//
-//
-		//retrieve courses
-		ObjectifyService.register(Course.class);
-		List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
-		Collections.sort(courses);
-		String name = request.getParameter("courseName");
-		pageContext.setAttribute("courseName",name);
-		//Course current;
-		//System.out.println(name);
-		for(Course course : courses){
-			if(course.getCourseName().equals(name)){
-		//current = course;
-		pageContext.setAttribute("course_title", course.getTitle());
-		pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
-		pageContext.setAttribute("course_description", course.getDescription());
-		pageContext.setAttribute("course_professorList", course.getProfessorList());
-		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught());
-		pageContext.setAttribute("course_prereq", course.getPrereq());
-		pageContext.setAttribute("course_syllabus_link", course.getSyllabusLink());
-		pageContext.setAttribute("course_eval_link", course.getEvalLink());
-		pageContext.setAttribute("course_num_users_rating", course.getNumRating());
-		pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
-		break;
-			}
-		}
-	%>
+  <!-- Comment Form -->
+        <div class="post-comment">
+            <h3>Create a Post</h3>
+            <form>
 
-
-
-
-
-
-
-
-     <!--=== Breadcrumbs v3 ===-->
-    <div class="breadcrumbs-v3">
-        <div class="container">
-            <h1 class="pull-left">WHAT DO I PUT HERE</h1>
+                <label>Post Title<span class="color-red">*</span></label>
+                <div class="row margin-bottom-20">
+                    <div class="col-md-7 col-md-offset-0">
+                        <input type="text" class="form-control">
+                    </div>                
+                </div>
+                
+                <label>Content</label>
+                <div class="row margin-bottom-20">
+                    <div class="col-md-11 col-md-offset-0">
+                        <textarea class="form-control" rows="8"></textarea>
+                    </div>                
+                </div>
+                
+                <p><button class="btn-u" type="submit">Submit Message</button></p>
+            </form>
         </div>
-    </div>
-    <!--=== End Breadcrumbs v3 ===-->
+        <!-- End Comment Form -->
 
-    <!--=== Content Part ===-->
-    <div class="container content blog-page blog-item">		
-        <!--Blog Post-->        
-    	<div class="blog margin-bottom-40">
-           
-        	<h2><a href="blog_item_option1.html">Unify is an incredibly beautiful and fully responsive Bootstrap 3 Template</a></h2>
-            <div class="blog-post-tags">
-                <ul class="list-unstyled list-inline blog-info">
-                    <li><i class="fa fa-calendar"></i> February 02, 2013</li>
-                    <li><i class="fa fa-pencil"></i> Diana Anderson</li>
-<!--                     <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li> -->
-                    <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li>
-                </ul>                    
-            </div>
-            <p>At vero eos et accusag elit. ecing elit magna.</p><br>
-            
-        </div>
-        <!--End Blog Post-->        
- 
-        
-    </div><!--/container-->	
-    
-    
-    
-    <!--Start Disqus -->
-<div id="disqus_thread"></div>
-	<script type="text/javascript">
-		var disqus_shortname = 'adviseme'; // required: replace example with your forum shortname
-
-		/* * * DON'T EDIT BELOW THIS LINE * * */
-		(function() {
-			var dsq = document.createElement('script');
-			dsq.type = 'text/javascript';
-			dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document
-					.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-	</script>
-	<noscript>
-		Please enable JavaScript to view the <a
-			href="http://disqus.com/?ref_noscript">comments powered by
-			Disqus.</a>
-	</noscript>
-	<a href="http://disqus.com" class="dsq-brlink">comments powered by
-		<span class="logo-disqus">Disqus</span>
-	</a>
-<!--End Disqus -->
-    
-    
-    	
-    <!--=== End Content Part ===-->
+   
 
     <!--=== Footer ===-->
     <div class="footer">
@@ -399,7 +296,7 @@
         </div> 
     </div> 
     <!--=== End Copyright ===-->
-</div><!--/wrapper-->
+</div><!--/End Wrapepr-->
 
 <!-- JS Global Compulsory -->           
 <script type="text/javascript" src="assets/plugins/jquery-1.10.2.min.js"></script>
@@ -407,16 +304,42 @@
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
 <!-- JS Implementing Plugins -->
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
+<script type="text/javascript" src="assets/plugins/counter/waypoints.min.js"></script>
+<script type="text/javascript" src="assets/plugins/counter/jquery.counterup.min.js"></script> 
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
+        App.initCounter();
+        App.initParallaxBg();
     });
 </script>
+		<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
 
 </body>
-</html>	
+</html> 

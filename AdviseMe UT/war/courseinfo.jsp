@@ -362,18 +362,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 				</div><!--/col-md-9-->
 
             <div class="col-md-3">
@@ -418,9 +406,9 @@
 			<div class="col-md-7">
 				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
 	<script>
-// 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
-// 			document.getElementById("editbutton").style.visibility='hidden';			
-// 	}
+ 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
+ 			document.getElementById("editbutton").style.visibility='hidden';			
+ 	}
 	
 	
 	</script>
@@ -470,11 +458,7 @@
 
 
 
-
-
-
-
-
+<!--Start Disqus -->
 <div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = 'adviseme'; // required: replace example with your forum shortname
@@ -497,21 +481,7 @@
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by
 		<span class="logo-disqus">Disqus</span>
 	</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--End Disqus -->
 
 
 
