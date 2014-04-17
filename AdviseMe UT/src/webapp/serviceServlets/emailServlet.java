@@ -1,17 +1,21 @@
 package webapp.serviceServlets;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Address;
-import javax.mail.Message;
 import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import webapp.datastoreObjects.Course;
+import webapp.datastoreObjects.CourseEdits;
+
+import com.googlecode.objectify.ObjectifyService;
 
 
 public class emailServlet extends HttpServlet{
@@ -22,35 +26,53 @@ public class emailServlet extends HttpServlet{
 			Session session = Session.getDefaultInstance(props, null);
 			MimeMessage message = new MimeMessage(session, req.getInputStream());
 			Address[] fromAddresses = message.getFrom();
-			String strCallResult ="";
-			try{
-				strCallResult = "Sorry, This email address is automated.";
-				Message msg = new MimeMessage(session);
-				msg.setFrom(new InternetAddress("utadviseme@gmail.com", "Advise Me Automated Email"));
-				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(fromAddresses[0].toString()));
-				msg.setSubject("Error");
-				msg.setText(strCallResult);
-				Transport.send(msg);
-			}catch(Exception e){
-				Message msg = new MimeMessage(session);
-				msg.setFrom(new InternetAddress("utadviseme@gmail.com", "Advise Me Automated Email"));
-				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(fromAddresses[0].toString()));
-				msg.setSubject("Error");
-				msg.setText("Something wrong happened:(");
-				Transport.send(msg);
+			String recSubject = message.getSubject();
+			String[] splitSubject = recSubject.split(" ");
+			if(splitSubject.length==0||splitSubject.length==1){
+				return;
 			}
-		}catch(Exception e){/*Some exception occurred. Send email to admin*/
-			Properties props = new Properties();
-			Session session = Session.getDefaultInstance(props,null);
-			String address = "Jason.Anthraper@utexas.edu";
-			Message msg = new MimeMessage(session);
-			try{
-				msg.setFrom(new InternetAddress("Error@advisemeut.appspotmail.com", "WebAppBlog Error"));
-				msg.addRecipient(Message.RecipientType.TO,new InternetAddress(address));
-				msg.setSubject("Error When Sending Subscriber Email");
-				msg.setText("Error.");
-				Transport.send(msg);
-			}catch(Exception e1){}
+			ObjectifyService.register(CourseEdits.class);
+			List<CourseEdits> list = ObjectifyService.ofy().load().type(CourseEdits.class).list();
+			Iterator<CourseEdits> iter = list.iterator();
+			if(splitSubject[0].equalsIgnoreCase("yes")){
+				CourseEdits temp1 = null;
+				while(iter.hasNext()){
+					CourseEdits temp = iter.next();
+					if(temp.getId()==Long.valueOf(splitSubject[1]).longValue()){
+						temp1=temp;
+						ObjectifyService.ofy().delete().entity(temp).now();
+						break;
+					}
+				}
+				ObjectifyService.register(Course.class);
+				List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list();
+				Iterator<Course> iterator = courses.iterator();
+				while(iterator.hasNext()){
+					Course tempest = iterator.next();
+					if(tempest.getCourseName().equals(temp1.getCourseName())){
+						tempest.setDescription(temp1.getDescription());
+						tempest.setPrereq(temp1.getPrereq());
+						tempest.setProfessorList(temp1.getProfessorList());
+						tempest.setSemesterTaught(temp1.getSemesterTaught());
+						ObjectifyService.ofy().save().entity(tempest).now();
+						break;
+					}
+				}
+				//need to make changes to course
+			}else if(splitSubject[0].equalsIgnoreCase("no")){
+				//need to delete courseedit from datastore
+				while(iter.hasNext()){
+					CourseEdits temp = iter.next();
+					if(temp.getId()==Long.valueOf(splitSubject[1]).longValue()){
+						ObjectifyService.ofy().delete().entity(temp).now();
+						break;
+					}
+				}
+			}
+			
+
+		}catch(Exception e){
+			System.out.println("Something even more stupid happened.");
 		}
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{

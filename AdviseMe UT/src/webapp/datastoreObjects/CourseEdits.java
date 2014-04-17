@@ -48,6 +48,10 @@ public class CourseEdits implements Comparable<Course> {
 		this.upperDivision = upperDiv;
 	}
 	
+	public Long getId(){
+		return this.id;
+	}
+	
 	public String getCourseName(){
 		return this.courseName;
 	}

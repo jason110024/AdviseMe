@@ -1,10 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@ page import="webapp.addServlets.*"%>
-<%@ page import="webapp.datastoreObjects.*"%>
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.Collections"%>
-<%@ page import="java.util.*"%>
-<%@ page import="com.googlecode.objectify.*"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
@@ -12,7 +5,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>AdviseMe | Courses</title>
+    <title>AdviseMe | Create a Post</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -30,25 +23,28 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/sky-forms-ie8.css">
+    <![endif]-->
 
     <!-- CSS Page Style -->    
-    <link rel="stylesheet" href="assets/css/pages/page_search_inner.css">
+    <link rel="stylesheet" href="assets/css/pages/page_search.css">
 
     <!-- CSS Theme -->    
     <link rel="stylesheet" href="assets/css/themes/orange.css" id="style_color">
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
-</head> 
-
-<body>
-<%
+	
+	<%
 	String id = null;
 	String picurl = null;
 	String first = null;
 	String last = null;
 	String isLoggedIn = null;
 	HttpSession mysession = request.getSession(false);
+	System.out.println("Home page: " + mysession.getAttribute("id"));
 	if(mysession.getAttribute("id")!=null){
 		id = (String) mysession.getAttribute("userid");
 		picurl = (String) mysession.getAttribute("pic");
@@ -63,12 +59,15 @@
 		pageContext.setAttribute("guest","false");
 	}else{
 		pageContext.setAttribute("guest", "true");
-		throw new Exception("You gotta be logged in for that!");
 	}
 	%>
 
+</head> 
+
+<body> 
+
 <div class="wrapper">
-        <!--=== Header ===-->    
+    <!--=== Header ===-->    
     <div class="header">
         <!-- Topbar -->
         <div class="topbar">
@@ -77,7 +76,9 @@
                 <ul class="loginbar pull-right">
                     <li><a href="help.html">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="login.html">Login</a></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -116,14 +117,13 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="about.jsp">About Us</a></li>
-                                <li><a href="help.html">Useful Links</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
 
-                                
                             </ul>
                         </li>
                         <!-- End About -->
 
-                          <!-- courses -->
+                        <!-- courses -->
                         <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             Courses
@@ -139,14 +139,14 @@
                         <!-- End courses -->
 
                         <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
+<!--                             <ul class="dropdown-menu"> -->
+<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
+<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
+<!--                             </ul> -->
                         </li>
                         <!-- End Portfolio -->
 
@@ -178,55 +178,33 @@
         </div>            
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->   
+    <!--=== End Header ===-->    
 
-    <!--=== Breadcrumbs v3 ===-->
-    <div class="breadcrumbs-v3">
-        <div class="container">
-            <h1 class="pull-left">Manage Account</h1>
+  <!-- Comment Form -->
+        <div class="post-comment">
+            <h3>Create a Post</h3>
+            <form>
+
+                <label>Post Title<span class="color-red">*</span></label>
+                <div class="row margin-bottom-20">
+                    <div class="col-md-7 col-md-offset-0">
+                        <input type="text" class="form-control">
+                    </div>                
+                </div>
+                
+                <label>Content</label>
+                <div class="row margin-bottom-20">
+                    <div class="col-md-11 col-md-offset-0">
+                        <textarea class="form-control" rows="8"></textarea>
+                    </div>                
+                </div>
+                
+                <p><button class="btn-u" type="submit">Submit Message</button></p>
+            </form>
         </div>
-    </div>
-    <!--=== End Breadcrumbs v3 ===-->
-      <br><br><br>
-      <a href="home.jsp">   
-      <div class="col-md-4">
-            <div class="service">
-                    <i class="icon-home service-icon"></i>
-               <div class="desc">
-                  <h4>Go Back to Home Page</h4>
-                        <p>Click this button to go back to the home page.</p>
-               </div>
-            </div>   
-         </div>
-         </a>
-         <a href="addusercoursesnew.jsp?id=${fn:escapeXml(id)}">
-         <div class="col-md-4">
-            <div class="service">
-                    <i class="icon-wrench service-icon"></i>
-               <div class="desc">
-                  <h4>Manage Courses</h4>
-                        <p>Click this button to manage the courses you have taken.</p>
-               </div>
-            </div>            
-         </div>
-         </a>
-        
-	<a href="/removefacebookuser?id=${fn:escapeXml(id)}" onClick="return confirm('Are you sure you want to delete your account')">
-			<div class="col-md-4">
-				<div class="service">
-					<i class="icon-close service-icon"></i>
-					<div class="desc">
+        <!-- End Comment Form -->
 
-						<h4>Delete Account</h4>
-						<p>
-							Click this button to delete your account.<br>We are sorry to see you go.
-						</p>
-					</div>
-				</div>
-			</div>
-      </a>
-         
-<br><br><br><br><br><br><br><br><br><br><br>
+   
 
     <!--=== Footer ===-->
     <div class="footer">
@@ -278,27 +256,27 @@
                     <!-- End Recent Blogs -->                    
                 </div><!--/col-md-4-->
 
-               <div class="col-md-4">
-                  <!-- Contact Us -->
-                  <div class="headline"><h2>Contact Us</h2></div> 
-                  <address class="md-margin-bottom-40">
-                     Somewhere, Street <br />
-                     Texas, US <br />
-                     Phone: 000 123 3456 <br />
-                     Fax: 000 123 3456 <br />
-                     Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
-                  </address>
-                  <!-- End Contact Us -->
+					<div class="col-md-4">
+						<!-- Contact Us -->
+						<div class="headline"><h2>Contact Us</h2></div> 
+						<address class="md-margin-bottom-40">
+							Somewhere, Street <br />
+							Texas, US <br />
+							Phone: 000 123 3456 <br />
+							Fax: 000 123 3456 <br />
+							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
+						</address>
+						<!-- End Contact Us -->
 
-                  <!-- Social Links -->
-                  <div class="headline"><h2>Stay Connected</h2></div> 
-                  <ul class="social-icons">
-                     <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-                     <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-                     <li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
-                  </ul>
-                  <!-- End Social Links -->
-               </div><!--/col-md-4-->
+						<!-- Social Links -->
+						<div class="headline"><h2>Stay Connected</h2></div> 
+						<ul class="social-icons">
+							<li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
+							<li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+							<li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
+						</ul>
+						<!-- End Social Links -->
+					</div><!--/col-md-4-->
             </div>
         </div> 
     </div>    
@@ -326,13 +304,39 @@
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
 <!-- JS Implementing Plugins -->
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
+<script type="text/javascript" src="assets/plugins/counter/waypoints.min.js"></script>
+<script type="text/javascript" src="assets/plugins/counter/jquery.counterup.min.js"></script> 
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
+        App.initCounter();
+        App.initParallaxBg();
     });
 </script>
+		<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->

@@ -8,13 +8,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>AdviseMe | Course Info</title>
+    <title>AdviseMe- Forum</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -32,19 +31,22 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">           
-    <link rel="stylesheet" href="assets/plugins/bxslider/jquery.bxslider.css">
-    <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
-	<link type="text/css" rel="stylesheet" href="rateit.css">
+
+    <!-- CSS Page Style -->    
+    <link rel="stylesheet" href="assets/css/pages/blog.css">
+
     <!-- CSS Theme -->    
     <link rel="stylesheet" href="assets/css/themes/orange.css" id="style_color">
 
-    <!-- CSS Customization -->
+ <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
     
     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-	<script type="text/javascript" src="jquery.rateit.js"></script>
-	<%
+
+</head>	
+
+<body>
+<%
 	String id = null;
 	String picurl = null;
 	String first = null;
@@ -86,32 +88,12 @@
 				}
 			}
 		}
-	
-		function subscribe() {
-			var email = prompt("Please enter your email","Name@Domain.com");
-			var courseName = GetURLParameter('courseName');
-			$.ajax({
-				type : 'GET',
-				url : "addcoursesubscriber?email=" + email + "&course=" + courseName,
-				cache : false,
-				success : function(response) {
-					if(response=="true"){
-					}
-				}
-			}); 	
-		}
 	</script>
-	
-	
-	
-	
-</head> 
 
-<body>
-  
+
 
 <div class="wrapper">
-     <!--=== Header ===-->    
+    <!--=== Header ===-->    
     <div class="header">
         <!-- Topbar -->
         <div class="topbar">
@@ -122,14 +104,14 @@
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
-                    <li><a id="adviseloginbutton" href="login.html">Login</a></li>
+                    <li><a id="adviseloginbutton" href="login.jsp">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
         </div>
         <!-- End Topbar -->
     
-         <!-- Navbar -->
+        <!-- Navbar -->
         <div class="navbar navbar-default" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -148,7 +130,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="javascript:void(0);" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -183,14 +165,14 @@
                         <!-- End courses -->
 
                         <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
+<!--                             <ul class="dropdown-menu"> -->
+<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
+<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
+<!--                             </ul> -->
                         </li>
                         <!-- End Portfolio -->
 
@@ -222,9 +204,17 @@
         </div>            
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->     
+    <!--=== End Header ===-->  
 
 <%
+//
+//
+//
+//      NEEEDS TO BE SWITCHED TO POST OBJECT 
+//
+//
+//
+//
 		//retrieve courses
 		ObjectifyService.register(Course.class);
 		List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
@@ -258,207 +248,39 @@
 
 
 
-
-
-
-
-
-<!--     === Breadcrumbs === -->
+     <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3">
         <div class="container">
-            <h1 class="pull-left">${fn:escapeXml(course_title)}</h1>
+            <h1 class="pull-left">WHAT DO I PUT HERE</h1>
         </div>
-     </div>
-<!--     === End Breadcrumbs === -->
+    </div>
+    <!--=== End Breadcrumbs v3 ===-->
 
     <!--=== Content Part ===-->
-    <div class="container content">     
-        <div class="row">
-            <div class="col-md-9">
-                <!-- Our Services -->
-                <div class="row margin-bottom-20">
-                    
-<!--                     <div class="col-md-4"> -->
-<!--                         <div class="servive-block servive-block-red"> -->
-<!--                             <i class="icon-custom icon-color-light rounded-x icon-line icon-fire"></i> -->
-<!--                             <h2 class="heading-md">Red Box</h2> -->
-<!--                             <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                     <div class="col-md-4"> -->
-<!--                         <div class="servive-block servive-block-sea">             -->
-<!--                             <i class="icon-custom icon-color-light rounded-x icon-line icon-support"></i> -->
-<!--                             <h2 class="heading-md">Turquoise Box</h2> -->
-<!--                             <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p> -->
-<!--                         </div> -->
-<!--                     </div> -->
-                </div><!--/welcome-block-->
-                <!-- End Our Services -->
-
-                <!-- Blockquotes -->
-                <div class="headline"><h3>Course Description</h3></div>
-                <p>${fn:escapeXml(course_description)}</p>
-                <br>
-
-					<!-- End Blockquotes -->
-					
-					
-					
-<div class="row">
-		<div class="span3">
-			<div class="col-md-3">
-				<h4>Past Professors:</h4>
-				<br>
-				<p>
-				    <c:forEach var="professor" items="${fn:escapeXml(course_professorList)}" varStatus="status">
-     					${professor}<c:if test="${!status.last}">, </c:if>
-   					</c:forEach>
-				</p>
-			</div>
-		</div>
-		<div class="span3">
-			<div class="col-md-3">
-				<h4>Semesters Taught:</h4>
-				<br>
-				<p>
-					<c:forEach var="semester" items="${fn:escapeXml(course_semestersTaught)}" varStatus="status">
-     						${semester}<c:if test="${!status.last}">, </c:if>
-   					</c:forEach>
-				</p>
-			</div>
-		</div>
-		<div class="span3">
-			<div class="col-md-3">
-				<h4>Pre-Requisites:</h4>
-				<br>
-				<p>
-					<c:forEach var="prereq" items="${fn:escapeXml(course_prereq)}" varStatus="status">
-							${prereq}<c:if test="${!status.last}">, </c:if>
-   					</c:forEach>
-				</p>
-			</div>
-		</div>
-</div>
-<br>
-<br>
-<div class="span3">
-			<div class="col-md-4">
-			<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" onclick="subscribe()">Subscribe
-		To This Course</button>
-			</div>
-</div>
-
-<div class="span3">
-			<div class="col-md-4">
-			<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" onclick="window.location='${fn:escapeXml(course_eval_link)}'">UT Course Evaluations</button>			
-			</div>
-</div>
-<div class="span3">
-			<div class="col-md-4">
-					<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id=syllabi onclick="window.location='${fn:escapeXml(course_syllabus_link)}'">UT Past Syllabi</button>		
-			</div>
-</div>
-
-
-
-
-				</div><!--/col-md-9-->
-
-            <div class="col-md-3">
-                <!-- About Us -->
-                <div class="margin-bottom-30">
-                    
-
-
-
-                        <div class="servive-block servive-block-blue">
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
-                            <h2 class="heading-md">Course Difficulty: </h2>
-                            <p>
-                            
- <div class="rateit" id="rateit5" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_rating)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
- <script type="text/javascript">
-    $("#rateit5").bind('rated', 
-    		function(event, value){
-    			var courseName = GetURLParameter('courseName');
-				$.ajax({
-					type: 'GET',
-					url: "updatecourserating?rating="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
-					cache: false,
-					success: function(response){
-					}
-				});
-			});
-    $('#rateit5').on('beforerated', function (e, value) {
-        if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
-            e.preventDefault();
-        }
-    });       
-</script>   
-
- 
-</p>
-<p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
-                        </div>
-                        
-                        
-                      <div class="span3">
-			<div class="col-md-7">
-				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
-	<script>
- 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
- 			document.getElementById("editbutton").style.visibility='hidden';			
- 	}
-	
-	
-	</script>
-			</div>
-</div>      
-                </div>            
+    <div class="container content blog-page blog-item">		
+        <!--Blog Post-->        
+    	<div class="blog margin-bottom-40">
+           
+        	<h2><a href="blog_item_option1.html">Unify is an incredibly beautiful and fully responsive Bootstrap 3 Template</a></h2>
+            <div class="blog-post-tags">
+                <ul class="list-unstyled list-inline blog-info">
+                    <li><i class="fa fa-calendar"></i> February 02, 2013</li>
+                    <li><i class="fa fa-pencil"></i> Diana Anderson</li>
+<!--                     <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li> -->
+                    <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li>
+                </ul>                    
+            </div>
+            <p>At vero eos et accusag elit. ecing elit magna.</p><br>
             
-                <!-- Posts -->
-<!--                 <div class="posts margin-bottom-30"> -->
-<!--                     <div class="headline"><h2>Recent Blog Entries</h2></div> -->
-<!--                     <dl class="dl-horizontal"> -->
-<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt> -->
-<!--                         <dd> -->
-<!--                             <p><a href="#">Lorem sequat ipsum dolor lorem sunt aliqua put</a></p>  -->
-<!--                         </dd> -->
-<!--                     </dl> -->
-<!--                     <dl class="dl-horizontal"> -->
-<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt> -->
-<!--                         <dd> -->
-<!--                             <p><a href="#">It works on all major web browsers tablets</a></p>  -->
-<!--                         </dd> -->
-<!--                     </dl> -->
-<!--                     <dl class="dl-horizontal"> -->
-<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/9.jpg" alt="" /></a></dt> -->
-<!--                         <dd> -->
-<!--                             <p><a href="#">Brunch 3 wolf moon tempor sunt aliqua put.</a></p>  -->
-<!--                         </dd> -->
-<!--                     </dl> -->
-<!--                 </div>/posts -->
-
-<!--                 Contact Us -->
-<!--                 <div class="who margin-bottom-30"> -->
-<!--                     <div class="headline"><h2>Contact Us</h2></div> -->
-<!--                     <p>Vero facilis est etenim a feugiat cupiditate non quos etrerum facilis.</p> -->
-<!--                     <ul class="list-unstyled"> -->
-<!--                         <li><a href="#"><i class="fa fa-home"></i>5B amus ED554, New York, US</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-envelope"></i>infp@example.com</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li> -->
-<!--                     </ul> -->
-<!--                 </div> -->
-            </div><!--/col-md-3-->
-        </div><!--/row-->        
-
-    </div><!--/container-->     
-    <!--=== End Content Part ===-->
-
-
-
-<!--Start Disqus -->
+        </div>
+        <!--End Blog Post-->        
+ 
+        
+    </div><!--/container-->	
+    
+    
+    
+    <!--Start Disqus -->
 <div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = 'adviseme'; // required: replace example with your forum shortname
@@ -482,10 +304,10 @@
 		<span class="logo-disqus">Disqus</span>
 	</a>
 <!--End Disqus -->
-
-
-
-
+    
+    
+    	
+    <!--=== End Content Part ===-->
 
     <!--=== Footer ===-->
     <div class="footer">
@@ -583,47 +405,18 @@
 <script type="text/javascript" src="assets/plugins/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
-<!-- JS Implementing Plugins -->           
+<!-- JS Implementing Plugins -->
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-<script type="text/javascript" src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-<script type="text/javascript" src="assets/plugins/bxslider/jquery.bxslider.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
-
 <script type="text/javascript">
-
     jQuery(document).ready(function() {
         App.init();
-        App.initSliders();
-        App.initFancybox();
-        App.initBxSlider();
     });
 </script>
-		<script>
-	if ("${fn:escapeXml(guest)}" == "false") {
-		console.log('1');
-		if("${fn:escapeXml(isLoggedIn)}" == "true"){
-			console.log('2');
-			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
-			document.getElementById("adviseloginbutton").href = "logout.html";
-			document.getElementById("adviseloginbutton").innerHTML = "Logout";
-		}else{
-			console.log('3');
-			document.getElementById("advisename").innerHTML = "Welcome, Guest";
-			document.getElementById("adviseloginbutton").href = "login.html";
-			document.getElementById("adviseloginbutton").innerHTML = "Login";
-		}
-	} else {
-		console.log('4');
-		document.getElementById("advisename").innerHTML = "Welcome, Guest";
-		document.getElementById("adviseloginbutton").href = "login.html";
-		document.getElementById("adviseloginbutton").innerHTML = "Login";
-	}
-	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
 
 </body>
-</html> 
+</html>	
