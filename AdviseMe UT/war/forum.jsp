@@ -26,39 +26,13 @@
     <link rel="stylesheet" href="assets/css/pages/blog.css">
     
     <!-- CSS Theme -->    
-    <link rel="stylesheet" href="assets/css/themes/default.css" id="style_color">
+    <link rel="stylesheet" href="assets/css/themes/orange.css" id="style_color">
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>	
 
 <body>
-<!--=== Style Switcher ===-->    
-<i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
-<div class="style-switcher animated fadeInRight">
-    <div class="theme-close"><i class="icon-close"></i></div>
-    <div class="theme-heading">Theme Colors</div>
-    <ul class="list-unstyled">
-        <li class="theme-default theme-active" data-style="default" data-header="light"></li>
-        <li class="theme-blue" data-style="blue" data-header="light"></li>
-        <li class="theme-orange" data-style="orange" data-header="light"></li>
-        <li class="theme-red" data-style="red" data-header="light"></li>
-        <li class="theme-light last" data-style="light" data-header="light"></li>
-
-        <li class="theme-purple" data-style="purple" data-header="light"></li>
-        <li class="theme-aqua" data-style="aqua" data-header="light"></li>
-        <li class="theme-brown" data-style="brown" data-header="light"></li>
-        <li class="theme-dark-blue" data-style="dark-blue" data-header="light"></li>
-        <li class="theme-light-green last" data-style="light-green" data-header="light"></li>
-    </ul>
-    <div style="margin-bottom:18px;"></div>
-    <div class="theme-heading">Layouts</div>
-    <div class="text-center">
-        <a href="javascript:void(0);" class="btn-u btn-u-green btn-block active-switcher-btn wide-layout-btn">Wide</a>
-        <a href="javascript:void(0);" class="btn-u btn-u-green btn-block boxed-layout-btn">Boxed</a>
-    </div>
-</div><!--/style-switcher-->
-<!--=== End Style Switcher ===-->    
 
 <div class="wrapper">
    <!--=== Header ===-->    
@@ -68,7 +42,7 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                    <li><a href="help.html">FAQs</a></li>  
+                    <li><a href="usefulLinks.jsp">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
@@ -98,7 +72,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="javascript:void(0);" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -321,101 +295,18 @@
 
             <!-- Right Sidebar -->
         	<div class="col-md-3">
-                <!-- Social Icons -->
-                <div class="magazine-sb-social margin-bottom-30">
-                    <div class="headline headline-md"><h2>Social Icons</h2></div>
-                    <ul class="social-icons social-icons-color">
-                        <li><a class="social_rss" data-original-title="Feed" href="#"></a></li>
-                        <li><a class="social_facebook" data-original-title="Facebook" href="#"></a></li>
-                        <li><a class="social_twitter" data-original-title="Twitter" href="#"></a></li>
-                        <li><a class="social_vimeo" data-original-title="Vimeo" href="#"></a></li>
-                        <li><a class="social_googleplus" data-original-title="Goole Plus" href="#"></a></li>
-                        <li><a class="social_pintrest" data-original-title="Pinterest" href="#"></a></li>
-                        <li><a class="social_linkedin" data-original-title="Linkedin" href="#"></a></li>
-                        <li><a class="social_dropbox" data-original-title="Dropbox" href="#"></a></li>
-                        <li><a class="social_picasa" data-original-title="Picasa" href="#"></a></li>
-                        <li><a class="social_spotify" data-original-title="Spotify" href="#"></a></li>
-                        <li><a class="social_jolicloud" data-original-title="Jolicloud" href="#"></a></li>
-                        <li><a class="social_wordpress" data-original-title="Wordpress" href="#"></a></li>
-                        <li><a class="social_github" data-original-title="Github" href="#"></a></li>
-                        <li><a class="social_xing" data-original-title="Xing" href="#"></a></li>
-                    </ul>
-                    <div class="clearfix"></div>                
-                </div>
-                <!-- End Social Icons -->
-
-                <!-- Posts -->
-                <div class="posts margin-bottom-40">
-                    <div class="headline headline-md"><h2>Recent Posts</h2></div>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Responsive Bootstrap 3 Template placerat idelo alac eratamet.</a></p> 
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">100+ Amazing Features Layer Slider, Layer Slider, Icons, 60+ Pages etc.</a></p> 
-                        </dd>
-                    </dl>
-                    <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-                        <dd>
-                            <p><a href="#">Developer Friendly Code imperdiet condime ntumi mperdiet condim.</a></p> 
-                        </dd>
-                    </dl>
-                </div><!--/posts-->
-                <!-- End Posts -->
-
-            	<!-- Tabs Widget -->
-            	<div class="headline headline-md"><h2>Tabs Widget</h2></div>
-                <div class="tab-v2 margin-bottom-40">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home-1">About Us</a></li>
-                        <li><a data-toggle="tab" href="#home-2">Quick Links</a></li>
-                    </ul>                
-                    <div class="tab-content">
-                        <div id="home-1" class="tab-pane active">
-                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac ac adipiscing nunc.</p> <p>Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
-                        </div>
-                        <div id="home-2" class="tab-pane magazine-sb-categories">
-                            <div class="row">
-                                <ul class="list-unstyled col-xs-6">
-                                    <li><a href="#">Best Sliders</a></li>
-                                    <li><a href="#">Parralax Page</a></li>
-                                    <li><a href="#">Backgrounds</a></li>
-                                    <li><a href="#">Parralax Slider</a></li>
-                                    <li><a href="#">Responsive</a></li>
-                                    <li><a href="#">800+ Icons</a></li>
-                                </ul>                        
-                                <ul class="list-unstyled col-xs-6">
-                                    <li><a href="#">60+ Pages</a></li>
-                                    <li><a href="#">Layer Slider</a></li>
-                                    <li><a href="#">Bootstrap 3</a></li>
-                                    <li><a href="#">Fixed Header</a></li>
-                                    <li><a href="#">Best Template</a></li>
-                                    <li><a href="#">And Many More</a></li>
-                                </ul>                        
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-                <!-- End Tabs Widget -->
-
-            	<!-- Photo Stream -->
-            	<div class="headline headline-md"><h2>Photo Stream</h2></div>
-                <ul class="list-unstyled blog-photos margin-bottom-30">
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/5.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/6.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/8.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/10.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/11.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/1.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/2.jpg"></a></li>
-                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/7.jpg"></a></li>
-                </ul>
-                <!-- End Photo Stream -->
+        	
+            	<!-- Feedback -->
+            	<div class="headline headline-md"><h2>Student Feedback</h2></div>
+                <blockquote class="hero-unify">
+                    <p>I don't even know what I was doing with my life before AdviseMe.</p>
+                    <small>Alex Wishlinski</small>
+                </blockquote>
+                 <blockquote class="hero-unify">
+                    <p>... I just can't.</p>
+                    <small>Mary Ryan Gilmore</small>
+                </blockquote>
+                <!-- End Feedback -->
             </div>
             <!-- End Right Sidebar -->
         </div><!--/row-->        
@@ -449,25 +340,14 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- Recent Blogs -->
                     <div class="posts">
-                        <div class="headline"><h2>Recent Blog Entries</h2></div>
+                        <div class="headline"><h2>See Our Progress</h2></div>
                         <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                            <dt><a href="http://jasona-ee461l-webappblog.appspot.com/"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
                             <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                                <p><a href="http://jasona-ee461l-webappblog.appspot.com/">Check out our development blog to keep track of new developments and features available on AdviseMe!</a></p> 
                             </dd>
                         </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
+                        
                     </div>
                     <!-- End Recent Blogs -->                    
                 </div><!--/col-md-4-->
@@ -476,8 +356,8 @@
 						<!-- Contact Us -->
 						<div class="headline"><h2>Contact Us</h2></div> 
 						<address class="md-margin-bottom-40">
-							Somewhere, Street <br />
-							Texas, US <br />
+							2501 Speedway <br />
+							Austin, Texas <br />
 							Phone: 000 123 3456 <br />
 							Fax: 000 123 3456 <br />
 							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
@@ -487,35 +367,30 @@
 						<!-- Social Links -->
 						<div class="headline"><h2>Stay Connected</h2></div> 
 						<ul class="social-icons">
-							<li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-							<li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-							<li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="https://twitter.com/AdviseMeUT" data-original-title="Twitter" class="social_twitter"></a></li>
+							<li><a href="https://plus.google.com/115804048731357756426/about?hl=en" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="http://jasona-ee461l-webappblog.appspot.com/" data-original-title="Blogger" class="social_blogger"></a></li>
 						</ul>
 						<!-- End Social Links -->
 					</div><!--/col-md-4-->
             </div>
         </div> 
-    </div>    
+    </div>     
     <!--=== End Footer ===-->
 
     <!--=== Copyright ===-->
     <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">                     
-                    <p>
-                        2014 &copy; Unify. ALL Rights Reserved. 
+                <div class="col-md-6">                      
+                    <p class="copyright-space">
+                        2014 &copy; AdviseMe. ALL Rights Reserved. 
                         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>
-                <div class="col-md-6">  
-                    <a href="index.html">
-                        <img class="pull-right" id="logo-footer" src="assets/img/logo2-default.png" alt="">
-                    </a>
-                </div>
             </div>
         </div> 
-    </div><!--/copyright--> 
+    </div> 
     <!--=== End Copyright ===-->
 </div><!--/wrapper-->
 
