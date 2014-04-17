@@ -32,24 +32,31 @@ public class addCourseEdit extends HttpServlet{
 		String prereqs = req.getParameter("prereqs");
 		try{
 			if(courseName==null||courseName.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide a valid Course Name!");
 			}
 			if(courseTitle==null||courseTitle.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide a valid Course Title!");
 			}
 			if(courseDescription==null||courseDescription.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide a valid Course Description!");
 			}
 			if(upperDivision==null||upperDivision.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must select Upper/Lower Division!");
 			}
 			if(professorList==null||professorList.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide professors!");
 			}
 			if(semesterTaught==null||semesterTaught.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide semesters taught!");
 			}
 			if(prereqs==null||prereqs.isEmpty()){
+				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide Pre-requistites!");
 			}			
 		boolean upper;
@@ -82,7 +89,6 @@ public class addCourseEdit extends HttpServlet{
 							+ temp.getDescription() + "/nUpper Division?: " + temp.getUpperDivision() + "/nProfessor List: " +
 							temp.getProfessorList() + "/n Semesters Taught: " + temp.getSemesterTaught() + "/n Prereqs: " + temp.getPrereq();
 					System.out.println(change);
-					break;
 				}
 			}
 			//sending email to admin about change.
@@ -100,8 +106,9 @@ public class addCourseEdit extends HttpServlet{
 				Transport.send(msg);
 			}catch(Exception e1){
 				System.out.println("Was not able to send change to admin");
+				resp.sendRedirect("thankyou12.jsp");
 			}
-			resp.sendRedirect("thankyou.jsp");
+			resp.sendRedirect("thankyou1.jsp");
 			
 		} catch (Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
