@@ -164,7 +164,7 @@
 //                   $('td').click(function() {
 //                      $(this).css('background', '#aaa')
 //                   });
-//                });
+//                }); 
 <!--             </script> -->
 			<button class="btn-u btn-u-default" type="button" onclick="function()">
 
