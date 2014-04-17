@@ -24,6 +24,7 @@ public class Course implements Comparable<Course> {
 	private Integer numRating; 
 	private HashMap<String,Double> ratings;
 	private Double avg=0.0;
+	private Boolean change = false;
 	
 		
 	@SuppressWarnings("unused")
