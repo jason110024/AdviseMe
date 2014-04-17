@@ -32,31 +32,24 @@ public class addCourseEdit extends HttpServlet{
 		String prereqs = req.getParameter("prereqs");
 		try{
 			if(courseName==null||courseName.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide a valid Course Name!");
 			}
 			if(courseTitle==null||courseTitle.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide a valid Course Title!");
 			}
 			if(courseDescription==null||courseDescription.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide a valid Course Description!");
 			}
 			if(upperDivision==null||upperDivision.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must select Upper/Lower Division!");
 			}
 			if(professorList==null||professorList.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide professors!");
 			}
 			if(semesterTaught==null||semesterTaught.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide semesters taught!");
 			}
 			if(prereqs==null||prereqs.isEmpty()){
-				resp.sendRedirect("thankyou123.jsp");
 				throw new Exception("Must provide Pre-requistites!");
 			}			
 		boolean upper;
@@ -71,11 +64,20 @@ public class addCourseEdit extends HttpServlet{
 					professorList + "\n Semesters Taught: " + semesterTaught + "\n Prereqs: " + prereqs;
 
 			CourseEdits course = new CourseEdits(courseName,courseTitle,courseDescription,upper);
-			//TODO: Need to parse the list correctly and add the professors correctly
 			course.getProfessorList().add(professorList);
 			course.getSemesterTaught().add(semesterTaught);
 			course.getPrereq().add(prereqs);
 			ObjectifyService.ofy().save().entity(course).now();
+			List<CourseEdits> temps = ObjectifyService.ofy().load().type(CourseEdits.class).list();
+			Iterator<CourseEdits> iterator = temps.iterator();
+			Long id = null;
+			while(iterator.hasNext()){
+				CourseEdits temper = iterator.next();
+				if(temper.getTitle().equals(course.getTitle())&&temper.getCourseName().equals(course.getCourseName())&&temper.getDescription().equals(course.getDescription())){
+					id = temper.getId();
+					break;
+				}
+			}
 			//Get old course
 			ObjectifyService.register(Course.class);
 			List<Course> list = ObjectifyService.ofy().load().type(Course.class).list();
@@ -83,13 +85,14 @@ public class addCourseEdit extends HttpServlet{
 			while(iter.hasNext()){
 				Course temp = iter.next();
 				if(temp.getCourseName().equals(courseName)){
-					change+="\n\n Old Course Info: \n" +"Course Name: " +temp.getCourseName() + "\nCourse Title: "+temp.getTitle()+"\nCourse Description: "
+					change+="\n\nOld Course Info: \n" +"Course Name: " +temp.getCourseName() + "\nCourse Title: "+temp.getTitle()+"\nCourse Description: "
 							+ temp.getDescription() + "\nUpper Division?: " + temp.getUpperDivision() + "\nProfessor List: " +
 							temp.getProfessorList() + "\n Semesters Taught: " + temp.getSemesterTaught() + "\n Prereqs: " + temp.getPrereq();
+					break;
 				}
 			}
-			//sending email to admin about change.
 			Properties props = new Properties();
+			change+="\n\n\nTo approve the changes, click <a href=\"mailto:change@advisemeut.appspotmail.com?subject=Approve%20Changes%20for%20"+id+"\">Approve Changes</a>";
 			Session session = Session.getDefaultInstance(props,null);
 			String address = "UTAdviseMe@gmail.com";
 			Message msg = new MimeMessage(session);
