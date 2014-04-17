@@ -1,11 +1,20 @@
 package webapp.addServlets;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import webapp.datastoreObjects.Course;
 import webapp.datastoreObjects.CourseEdits;
 
 import com.googlecode.objectify.ObjectifyService;
@@ -50,14 +59,43 @@ public class addCourseEdit extends HttpServlet{
 			}else{
 				upper=false;
 			}
+			String change = "Course Name: " +courseName + "/nCourse Title: "+courseTitle+"/nCourse Description"
+					+ courseDescription + "/nUpper Division?: " + upperDivision + "/nProfessor List: " +
+					professorList + "/n Semesters Taught: " + semesterTaught + "/n Prereqs: " + prereqs;
 			CourseEdits course = new CourseEdits(courseName,courseTitle,courseDescription,upper);
 			//TODO: Need to parse the list correctly and add the professors correctly
 			course.getProfessorList().add(professorList);
 			course.getSemesterTaught().add(semesterTaught);
 			course.getPrereq().add(prereqs);
 			ObjectifyService.ofy().save().entity(course).now();
-			resp.sendRedirect("thankyou.jsp");
+			//Get old course
+			ObjectifyService.register(Course.class);
+			List<Course> list = ObjectifyService.ofy().load().type(Course.class).list();
+			Iterator<E> iter = list.iterator();
+			while(iter.hasNext()){
+				Course temp = iter.next();
+				if(temp.getCourseName().equals(courseName)){
+					change+="/n/n Old Course Info: /n" +"Course Name: " +temp.getCourseName() + "/nCourse Title: "+temp.getTitle()+"/nCourse Description"
+							+ temp.getDescription() + "/nUpper Division?: " + temp.getUpperDivision() + "/nProfessor List: " +
+							temp.getProfessorList() + "/n Semesters Taught: " + temp.getSemesterTaught() + "/n Prereqs: " + temp.getPrereq();
+				}
+			}
+			//sending email to admin about change.
+			Properties props = new Properties();
+			Session session = Session.getDefaultInstance(props,null);
+			String address = "UTAdviseMe@gmail.com";
+			Message msg = new MimeMessage(session);
 			
+			try{
+				msg.setFrom(new InternetAddress("CourseChange@advisemeut.appspotmail.com.com", "AdviseMe Course Change"));
+				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(address));
+				msg.setSubject("Edit for: "+courseName+" Requested");
+				msg.setText(change);
+				Transport.send(msg);
+			}catch(Exception e1){
+				System.out.println("Was not able to send change to admin");
+			}
+			resp.sendRedirect("thankyou.jsp");
 			
 		} catch (Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
