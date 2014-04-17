@@ -306,6 +306,10 @@
                     <p>... I just can't.</p>
                     <small>Mary Ryan Gilmore</small>
                 </blockquote>
+                <blockquote class="hero-unify">
+                    <p>Sometimes I wake up in the morning from a hellish nightmare where AdviseMe doesn't exist.</p>
+                    <small>David Sandler</small>
+                </blockquote>
                 <!-- End Feedback -->
             </div>
             <!-- End Right Sidebar -->
