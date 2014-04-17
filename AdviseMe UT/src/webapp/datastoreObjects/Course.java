@@ -119,6 +119,10 @@ public class Course implements Comparable<Course> {
 	public String getDescription(){
 		return this.description;
 	}
+	
+	public void setDescription(String des){
+		this.description=des;
+	}
 
 	public boolean getUpperDivision() {
 		return this.upperDivision;
@@ -136,8 +140,16 @@ public class Course implements Comparable<Course> {
 		return this.professorList;
 	}
 	
+	public void setProfessorList(ArrayList<String> test){
+		this.professorList=test;
+	}
+	
 	public ArrayList<String> getSemesterTaught(){
 		return this.semestersTaught;
+	}
+	
+	public void setSemesterTaught(ArrayList<String> test){
+		this.semestersTaught=test;
 	}
 	
 	public ArrayList<String> getSubscribers(){
@@ -146,6 +158,10 @@ public class Course implements Comparable<Course> {
 	
 	public ArrayList<String> getPrereq(){
 		return this.prereqs;
+	}
+	
+	public void setPrereq(ArrayList<String> test){
+		this.prereqs=test;
 	}
 	
 	public ArrayList<String> getUserTaken(){

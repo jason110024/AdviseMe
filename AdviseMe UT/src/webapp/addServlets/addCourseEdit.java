@@ -70,11 +70,11 @@ public class addCourseEdit extends HttpServlet{
 			ObjectifyService.ofy().save().entity(course).now();
 			List<CourseEdits> temps = ObjectifyService.ofy().load().type(CourseEdits.class).list();
 			Iterator<CourseEdits> iterator = temps.iterator();
-			Long id = null;
+			Long ids = null;
 			while(iterator.hasNext()){
 				CourseEdits temper = iterator.next();
-				if(temper.getTitle().equals(course.getTitle())&&temper.getCourseName().equals(course.getCourseName())&&temper.getDescription().equals(course.getDescription())){
-					id = temper.getId();
+				if(temper.getTitle().equals(course.getTitle())&&temper.getCourseName().equals(course.getCourseName())&&temper.getDescription().equals(course.getDescription())&&temper.getPrereq().equals(course.getPrereq())&&temper.getProfessorList().equals(course.getProfessorList())){
+					ids = temper.getId();
 					break;
 				}
 			}
@@ -92,7 +92,8 @@ public class addCourseEdit extends HttpServlet{
 				}
 			}
 			Properties props = new Properties();
-			change+="\n\n\nTo approve the changes, click <a href=\"mailto:change@advisemeut.appspotmail.com?subject=Approve%20Changes%20for%20"+id+"\">Approve Changes</a>";
+			change+="\n\n\nTo approve the changes, reply to change@advisemeut.appspotmail.com with the subject yes " + ids;
+			change+="\n\n\nTo discard the change, reply to change@advisemeut.appspotmail.com with the subject no "+ids;
 			Session session = Session.getDefaultInstance(props,null);
 			String address = "UTAdviseMe@gmail.com";
 			Message msg = new MimeMessage(session);
