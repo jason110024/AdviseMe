@@ -62,6 +62,9 @@ public class addCourseEdit extends HttpServlet{
 			String change = "Course Name: " +courseName + "/nCourse Title: "+courseTitle+"/nCourse Description"
 					+ courseDescription + "/nUpper Division?: " + upperDivision + "/nProfessor List: " +
 					professorList + "/n Semesters Taught: " + semesterTaught + "/n Prereqs: " + prereqs;
+			System.out.println("hi");
+			System.out.println(change);
+			System.out.println("hi2");
 			CourseEdits course = new CourseEdits(courseName,courseTitle,courseDescription,upper);
 			//TODO: Need to parse the list correctly and add the professors correctly
 			course.getProfessorList().add(professorList);
@@ -71,13 +74,15 @@ public class addCourseEdit extends HttpServlet{
 			//Get old course
 			ObjectifyService.register(Course.class);
 			List<Course> list = ObjectifyService.ofy().load().type(Course.class).list();
-			Iterator<E> iter = list.iterator();
+			Iterator<Course> iter = list.iterator();
 			while(iter.hasNext()){
 				Course temp = iter.next();
 				if(temp.getCourseName().equals(courseName)){
 					change+="/n/n Old Course Info: /n" +"Course Name: " +temp.getCourseName() + "/nCourse Title: "+temp.getTitle()+"/nCourse Description"
 							+ temp.getDescription() + "/nUpper Division?: " + temp.getUpperDivision() + "/nProfessor List: " +
 							temp.getProfessorList() + "/n Semesters Taught: " + temp.getSemesterTaught() + "/n Prereqs: " + temp.getPrereq();
+					System.out.println(change);
+					break;
 				}
 			}
 			//sending email to admin about change.
@@ -87,10 +92,11 @@ public class addCourseEdit extends HttpServlet{
 			Message msg = new MimeMessage(session);
 			
 			try{
-				msg.setFrom(new InternetAddress("CourseChange@advisemeut.appspotmail.com.com", "AdviseMe Course Change"));
+				msg.setFrom(new InternetAddress("CourseChange@advisemeut.appspotmail.com", "AdviseMe Course Change"));
 				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(address));
 				msg.setSubject("Edit for: "+courseName+" Requested");
 				msg.setText(change);
+				System.out.println("about to send email");
 				Transport.send(msg);
 			}catch(Exception e1){
 				System.out.println("Was not able to send change to admin");
