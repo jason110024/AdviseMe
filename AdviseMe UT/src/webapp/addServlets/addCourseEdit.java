@@ -66,7 +66,7 @@ public class addCourseEdit extends HttpServlet{
 			}else{
 				upper=false;
 			}
-			String change = "Course Name: " +courseName + "\nCourse Title: "+courseTitle+"\nCourse Description"
+			String change = "Course Name: " +courseName + "\nCourse Title: "+courseTitle+"\nCourse Description: "
 					+ courseDescription + "\nUpper Division?: " + upperDivision + "\nProfessor List: " +
 					professorList + "\n Semesters Taught: " + semesterTaught + "\n Prereqs: " + prereqs;
 			System.out.println("hi");
@@ -85,7 +85,7 @@ public class addCourseEdit extends HttpServlet{
 			while(iter.hasNext()){
 				Course temp = iter.next();
 				if(temp.getCourseName().equals(courseName)){
-					change+="\n\n Old Course Info: \n" +"Course Name: " +temp.getCourseName() + "\nCourse Title: "+temp.getTitle()+"\nCourse Description"
+					change+="\n\n Old Course Info: \n" +"Course Name: " +temp.getCourseName() + "\nCourse Title: "+temp.getTitle()+"\nCourse Description: "
 							+ temp.getDescription() + "\nUpper Division?: " + temp.getUpperDivision() + "\nProfessor List: " +
 							temp.getProfessorList() + "\n Semesters Taught: " + temp.getSemesterTaught() + "\n Prereqs: " + temp.getPrereq();
 					System.out.println(change);
