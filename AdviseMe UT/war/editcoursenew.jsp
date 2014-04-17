@@ -223,12 +223,12 @@
     	<div class="row">            
             <div class="col-md-9">
             
-            <div class="panel panel-default">
+            <div class="panel panel-custom">
 				<form action="/changecourse" method="post">
 				<div class="panel-heading">
 					<div class="row">
-						<div class="span10">
-							<div class="col-md-10">
+						<div class="span12">
+							<div class="col-md-12">
 								<h3>Title: ${fn:escapeXml(course_title)}, Abbreviation:
 									${fn:escapeXml(course_abbreviation)}</h3>
 							</div>
@@ -242,30 +242,30 @@
 							<div class="col-md-10">
 								<h4>Description:</h4>
 								<br>
-								<textarea name="coursedescription" rows="1" cols="30">${fn:escapeXml(course_description)}</textarea>
+								<textarea name="coursedescription" rows="5" cols="100">${fn:escapeXml(course_description)}</textarea>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="span3">
-							<div class="col-md-3">
+							<div class="col-md-8">
 								<h4>Past Professors:</h4>
 								<br>
-								<textarea name="professorList" rows="1" cols="30">${fn:escapeXml(course_professorList)}</textarea>
+								<textarea name="professorList" rows="5" cols="100">${fn:escapeXml(course_professorList)}</textarea>
 							</div>
 						</div>
 						<div class="span3">
-							<div class="col-md-3">
+							<div class="col-md-8">
 								<h4>Semesters Taught:</h4>
 								<br>
-								<textarea name="semestersTaught" rows="1" cols="30">${fn:escapeXml(course_semestersTaught)}</textarea>
+								<textarea name="semestersTaught" rows="5" cols="100">${fn:escapeXml(course_semestersTaught)}</textarea>
 							</div>
 						</div>
 						<div class="span3">
-							<div class="col-md-3">
+							<div class="col-md-8">
 								<h4>Pre-Requisites:</h4>
 								<br>
-								<textarea name="prereqs" rows="1" cols="30">${fn:escapeXml(course_prereq)}</textarea>
+								<textarea name="prereqs" rows="5" cols="100">${fn:escapeXml(course_prereq)}</textarea>
 							</div>
 						</div>
 					</div>
@@ -277,14 +277,14 @@
 				    <br>
 				    <div class="row">
 				    	<div class="span3">
-							<div class="col-md-2">
+							<div class="col-md-6">
 							    <h4>
 							    <input type="submit" value="Submit Edit" />
 			      				</h4>
 			      			</div>
 			      		</div>
 				    	<div class="span3">
-							<div class="col-md-2">
+							<div class="col-md-6">
 							    <h4>
 							    <input type="button" value="Cancel" onclick="window.location.href='/home.jsp'">
 			      				</h4>

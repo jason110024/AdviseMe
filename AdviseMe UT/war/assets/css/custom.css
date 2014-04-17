@@ -1,1 +1,10 @@
 /* Add here all your css styles (customizations) */
+
+.panel-custom{
+	padding-left: 0px; 
+	padding-top: 0px; 
+	padding-right: 600px; 
+	padding-bottom: 80px; 
+	border-width: 1px;
+	border-color: #eee;
+}
