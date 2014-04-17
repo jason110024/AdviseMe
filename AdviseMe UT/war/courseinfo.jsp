@@ -310,8 +310,8 @@
 				<h4>Past Professors:</h4>
 				<br>
 				<p>
-				    <c:forEach var="professor" items="${fn:escapeXml(course_professorList)}">
-     				<c:out value="${professor}"></c:out> <br>
+				    <c:forEach var="professor" items="${fn:escapeXml(course_professorList)}" varStatus="status">
+     					${professor}<c:if test="${!status.last}">, </c:if>
    					</c:forEach>
 				</p>
 			</div>
@@ -321,8 +321,8 @@
 				<h4>Semesters Taught:</h4>
 				<br>
 				<p>
-					<c:forEach var="semester" items="${fn:escapeXml(course_semestersTaught)}">
-     				<c:out value="${semester}"></c:out> <br>
+					<c:forEach var="semester" items="${fn:escapeXml(course_semestersTaught)}" varStatus="status">
+     						${semester}<c:if test="${!status.last}">, </c:if>
    					</c:forEach>
 				</p>
 			</div>
@@ -332,8 +332,8 @@
 				<h4>Pre-Requisites:</h4>
 				<br>
 				<p>
-					<c:forEach var="prereq" items="${fn:escapeXml(course_prereq)}">
-     				<c:out value="${prereq}"></c:out> <br>
+					<c:forEach var="prereq" items="${fn:escapeXml(course_prereq)}" varStatus="status">
+							${prereq}<c:if test="${!status.last}">, </c:if>
    					</c:forEach>
 				</p>
 			</div>
