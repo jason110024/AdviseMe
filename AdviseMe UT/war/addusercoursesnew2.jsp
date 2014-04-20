@@ -159,20 +159,20 @@
 			<h3>Courses:</h3>
 			<h4>What courses have you taken/are taking:</h4>
 
-<!-- 			<script> -->
-//                $(function() {
-//                   $('td').click(function() {
-//                      $(this).css('background', '#aaa')
-//                   });
-//                }); 
-<!--             </script> -->
-			<button class="btn-u btn-u-default" type="button" onclick="function()">
 
-				<label class="checkbox state-success"><input type="checkbox">
-					name="course" id="EE 125N" value="EE 125N">EE 125N - Cooperative
-					Engineering</label>
+			<button class="btn-u btn-u-default" type="button" onclick=test(this)>
+
+				<label name="onetwo" class="checkbox state-success"><input type="checkbox">EE 125N - Cooperative Engineering</label>
 			</button>
-
+ 			<script> 
+                function test(onetwo){
+                	if(onetwo.checked){
+                		onetwo.checked="false";
+                	}else{
+                		onetwo.checked="true";
+                	}
+                }
+           </script> 
 			<div>
 				<div>
 					<textarea name="id" id="id" rows="1" cols="30"
