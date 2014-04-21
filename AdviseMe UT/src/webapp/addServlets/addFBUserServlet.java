@@ -22,6 +22,7 @@ public class addFBUserServlet extends HttpServlet{
 		String FBFirst = req.getParameter("firstname");
 		String FBLast = req.getParameter("lastname");
 		String FBEmail = req.getParameter("email");
+		String password = req.getParameter("password");
 		String remoteAddr = req.getRemoteAddr();
 		String challenge = req.getParameter("recaptcha_challenge_field");
 		String response = req.getParameter("recaptcha_response_field");
@@ -42,11 +43,14 @@ public class addFBUserServlet extends HttpServlet{
 				if(FBEmail==null||FBEmail.isEmpty()){
 					throw new Exception("Must enter an email.");
 				}
+				if(password==null||password.isEmpty()){
+					throw new Exception("Must enter a password.");
+				}
 				if(FBId==null||FBId.isEmpty()){
-					user = new User(FBFirst,FBLast,FBEmail);
+					user = new User(FBFirst,FBLast,FBEmail,password);
 					user.setLoginStatus(true);
 				}else{
-					user = new User(FBId,FBFirst,FBLast,FBEmail);
+					user = new User(FBId,FBFirst,FBLast,FBEmail,password);
 					user.setLoginStatus(true);
 				}
 				ofy().save().entity(user).now();

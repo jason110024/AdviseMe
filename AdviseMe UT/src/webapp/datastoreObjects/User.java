@@ -16,6 +16,7 @@ public class User implements Comparable<User>{
 	String firstName = "No first name entered.";
 	String lastName = "No last name entered.";
 	String userEmail = null;
+	String password;					//NEED TO MAKE SECURE SOMEWAY
 	Boolean loginStatus = false;
 	ArrayList<String> courseList;
 	ArrayList<String> fbFriends;
@@ -26,7 +27,7 @@ public class User implements Comparable<User>{
 		courseList = new ArrayList<String>();
 	}
 	
-	public User(String firstName, String lastName, String email){
+	public User(String firstName, String lastName, String email, String password){
 		Integer temp =firstName.hashCode() + lastName.hashCode();
 		temp=(temp/2)*(int)Math.round(Math.random()*13);
 		this.id=temp.toString();
@@ -34,16 +35,18 @@ public class User implements Comparable<User>{
 		this.lastName=lastName;
 		this.userEmail=email;
 		this.loginStatus = false;
+		this.password=password;			//NEED TO MAKE SECURE SOMEWAY
 		this.loginDate = new Date();
 		courseList = new ArrayList<String>();
 	}
 
 	
-	public User(String fbUserId, String firstName, String lastName, String userEmail){
+	public User(String fbUserId, String firstName, String lastName, String userEmail, String password){
 		this.id=fbUserId;
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.userEmail=userEmail;
+		this.password=password;			//NEED TO MAKE SECURE SOMEWAY
 		this.loginStatus=false;
 		this.loginDate = new Date();
 		courseList = new ArrayList<String>();

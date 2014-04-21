@@ -35,9 +35,9 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    
     <!-- CSS Parsley Form Confirmation -->
     <link rel="stylesheet" href="stylesheets/parsley.css">
+
 </head> 
 
 <body>   
@@ -207,22 +207,22 @@
 					You can use Facebook to Create Your Account:  <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 					<br>
                     <label>First Name<span class="color-red">*</span></label>
-                    <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20" required>
+                    <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20" data-parsley-trigger="change" data-parsley-type="alphanum" required>
                    
                     <label>Last Name<span class="color-red">*</span></label>
-                    <input id="lastname" name="lastname" type="text" class="form-control margin-bottom-20" required>
+                    <input id="lastname" name="lastname" type="text" class="form-control margin-bottom-20" data-parsley-trigger="change" data-parsley-type="alphanum" required>
                    
                     <label>Email Address <span class="color-red">*</span></label>
                     <input id="email" name="email" type="email" class="form-control margin-bottom-20" data-parsley-trigger="change" required>
                     
                     <label>Confirm Email Address <span class="color-red">*</span></label>
-                    <input id="confirmemail" name="confirmemail" type="text" class="form-control margin-bottom-20">
+                    <input id="confirmemail" name="confirmemail" type="email" class="form-control margin-bottom-20" data-parsley-trigger="change" data-parsley-equalto="#email" required>
                     
                     <label>Password <span class="color-red">*</span></label>
-                    <input id="password" name="password" type="text" class="form-control margin-bottom-20">
+                    <input id="password" name="password" type="password" class="form-control margin-bottom-20" data-parsley-minlength="6" data-parsley-trigger="change" required>
                     
                     <label>Confirm Password <span class="color-red">*</span></label>
-                    <input id="confirmpass" name="confirmpass" type="text" class="form-control margin-bottom-20">
+                    <input id="confirmpass" name="confirmpass" type="password" class="form-control margin-bottom-20" data-parsley-equalto="#password" data-parsley-trigger="change" required>
 					<div><textarea name="id" id="id" rows="1" cols="30" style="display:none;"></textarea></div>
 
                     <hr>
@@ -344,6 +344,8 @@
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
+<!-- CSS Parsley Form Confirmation -->
+<script type="text/javascript" src="stylesheets/parsley.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
