@@ -12,7 +12,7 @@ import com.googlecode.objectify.annotation.Index;
 @Index
 @Entity
 public class User implements Comparable<User>{
-	@Id String fbUserId = null;
+	@Id String id = null;
 	String firstName = "No first name entered.";
 	String lastName = "No last name entered.";
 	String userEmail = null;
@@ -26,29 +26,21 @@ public class User implements Comparable<User>{
 		courseList = new ArrayList<String>();
 	}
 	
-	public User(String firstName, String lastName){
-		this.fbUserId=null;
+	public User(String firstName, String lastName, String email){
+		Integer temp =firstName.hashCode() + lastName.hashCode();
+		temp=(temp/2)*(int)Math.round(Math.random()*13);
+		this.id=temp.toString();
 		this.firstName=firstName;
 		this.lastName=lastName;
-		this.userEmail=null;
+		this.userEmail=email;
 		this.loginStatus = false;
+		this.loginDate = new Date();
+		courseList = new ArrayList<String>();
+	}
 
-		this.loginDate = new Date();
-		courseList = new ArrayList<String>();
-	}
-	
-	public User(String fbUserId, String firstName, String lastName){
-		this.fbUserId=fbUserId;
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.userEmail=null;
-		this.loginStatus=false;
-		this.loginDate = new Date();
-		courseList = new ArrayList<String>();
-	}
 	
 	public User(String fbUserId, String firstName, String lastName, String userEmail){
-		this.fbUserId=fbUserId;
+		this.id=fbUserId;
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.userEmail=userEmail;
@@ -66,11 +58,11 @@ public class User implements Comparable<User>{
 	}
 	
 	public String getfbUserId(){
-		return this.fbUserId;
+		return this.id;
 	}
 	
 	public void addfbUserId(String fbID){
-		this.fbUserId=fbID;
+		this.id=fbID;
 	}
 	
 	public String getFullName(){
