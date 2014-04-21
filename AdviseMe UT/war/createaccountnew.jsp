@@ -195,22 +195,31 @@
     <div class="container content">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 
                 <form class="reg-page" action="/addfacebookuser" method="post">
                     <div class="reg-header">
                         <h2>Register a new account</h2>
                         <p>Already Signed Up? Click <a href="login.jsp" class="color-green">Sign In</a> to login your account.</p>                    
                     </div>
-
-                    <label>First Name</label>
+					You can use Facebook to login: <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+					<br>
+                    <label>First Name<span class="color-red">*</span></label>
                     <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20">
                    
-                    <label>Last Name</label>
+                    <label>Last Name<span class="color-red">*</span></label>
                     <input id="lastname" name="lastname" type="text" class="form-control margin-bottom-20">
                    
                     <label>Email Address <span class="color-red">*</span></label>
                     <input id="email" name="email" type="text" class="form-control margin-bottom-20">
+                    
+                    <label>Confirm Email Address <span class="color-red">*</span></label>
+                    <input id="confirmemail" name="confirmemail" type="text" class="form-control margin-bottom-20">
+                    
+                    <label>Password <span class="color-red">*</span></label>
+                    <input id="password" name="password" type="text" class="form-control margin-bottom-20">
+                    
+                    <label>Confirm Password <span class="color-red">*</span></label>
+                    <input id="confirmpass" name="confirmpass" type="text" class="form-control margin-bottom-20">
 					<div><textarea name="id" id="id" rows="1" cols="30" style="display:none;"></textarea></div>
 
                     <hr>

@@ -33,17 +33,17 @@ public class addFBUserServlet extends HttpServlet{
 				throw new Exception("Captcha Entered Incorrectly! Please Try Again.");
 			}else{
 				User user;
-				if(FBId==null||FBId.isEmpty()){
-					throw new Exception("Facebook not returning valid Identification. Please relogin.");
-				}
 				if(FBFirst==null||FBFirst.isEmpty()){
 					throw new Exception("Must enter a first name");
 				}
 				if(FBLast==null||FBLast.isEmpty()){
 					throw new Exception("Must enter a last name.");
 				}
-				if(FBEmail==null||FBId.isEmpty()){
-					user = new User(FBId,FBFirst,FBLast);
+				if(FBEmail==null||FBEmail.isEmpty()){
+					throw new Exception("Must enter an email.");
+				}
+				if(FBId==null||FBId.isEmpty()){
+					user = new User(FBFirst,FBLast,FBEmail);
 					user.setLoginStatus(true);
 				}else{
 					user = new User(FBId,FBFirst,FBLast,FBEmail);

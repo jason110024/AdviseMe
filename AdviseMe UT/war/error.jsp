@@ -47,15 +47,19 @@
             </div>
         </div>
         <!-- End Error Block -->
-
+		<script>
+		function goBack(){
+			window.history.back()
+		}
+		</script>
         <!-- Begin Service Block V2 -->
         <div class="row servive-block-v2">
             <div class="col-md-4">
                 <div class="servive-block-in service-or">
                     <div class="service-bg"></div>
                     <i class="icon-directions"></i>
-                    <h4>Go Back to Home?</h4>                       
-                    <a class="btn-u btn-brd btn-brd-hover btn-u-light" href="home.jsp"> Go back to Home Page</a>
+                    <h4>Go Back?</h4>                       
+                    <a class="btn-u btn-brd btn-brd-hover btn-u-light" onclick="goBack()"> Go back</a>
                 </div>
             </div>
             <div class="col-md-4">

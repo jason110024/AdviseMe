@@ -33,13 +33,7 @@
 					xfbml      : true  // parse XFBML
 				});
 	  			FB.Event.subscribe('auth.authResponseChange', function(response){
-		    		if(response.status === 'connected'){
-		      			checkLogin();
-		    		}else if(response.status === 'not_authorized'){
-		      			FB.login();
-		    		}else{
-		      			FB.login();
-		    		}
+		      		FB.login();
 		  		});
 	  		};
 	  		function checkLogin(){
@@ -73,6 +67,8 @@
 	    <form action="/addfacebookuser" method="post">
 	   		<div>First Name:<textarea name="firstname" id="first" rows="1" cols="30"></textarea></div>
 	   		<div>Last Name:<textarea name="lastname" id="last" rows="1" cols="30"></textarea></div>
+	   		<div>Password:<textarea name="password" id="password" rows="1" cols="30"></textarea></div>
+	   		<div>Confirm Password:<textarea name="confirmpass" id="confirmpass" rows="1" cols="30"></textarea></div>
 	   		<div>Email:<textarea name="email" id="email" rows="1" cols="30"></textarea></div>
 	   		<div><textarea name="id" id="id" rows="1" cols="30" style="display:none;"></textarea></div>
 	   		<%
