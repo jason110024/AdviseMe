@@ -35,6 +35,9 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <!-- CSS Parsley Form Confirmation -->
+    <link rel="stylesheet" href="stylesheets/parsley.css">
 </head> 
 
 <body>   
@@ -196,21 +199,21 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-                <form class="reg-page" action="/addfacebookuser" method="post">
+                <form class="reg-page" action="/addfacebookuser" method="post" data-parsley-validate>
                     <div class="reg-header">
                         <h2>Register a new account</h2>
                         <p>Already Signed Up? Click <a href="login.jsp" class="color-green">Sign In</a> to login your account.</p>                    
                     </div>
-					You can use Facebook to login: <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+					You can use Facebook to Create Your Account:  <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 					<br>
                     <label>First Name<span class="color-red">*</span></label>
-                    <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20">
+                    <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20" required>
                    
                     <label>Last Name<span class="color-red">*</span></label>
-                    <input id="lastname" name="lastname" type="text" class="form-control margin-bottom-20">
+                    <input id="lastname" name="lastname" type="text" class="form-control margin-bottom-20" required>
                    
                     <label>Email Address <span class="color-red">*</span></label>
-                    <input id="email" name="email" type="text" class="form-control margin-bottom-20">
+                    <input id="email" name="email" type="email" class="form-control margin-bottom-20" data-parsley-trigger="change" required>
                     
                     <label>Confirm Email Address <span class="color-red">*</span></label>
                     <input id="confirmemail" name="confirmemail" type="text" class="form-control margin-bottom-20">
