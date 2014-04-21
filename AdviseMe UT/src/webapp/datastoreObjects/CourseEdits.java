@@ -23,28 +23,31 @@ public class CourseEdits implements Comparable<Course> {
 	@SuppressWarnings("unused")
 	private CourseEdits(){}
 
-	public CourseEdits(String courseName){
+	public CourseEdits(String courseName, String user){
 		this.courseName=courseName;
 		this.professorList = new ArrayList<String>();
 		this.semestersTaught = new ArrayList<String>();
+		this.userID=user;
 		this.prereqs = new ArrayList<String>();
 	}
 	
-	public CourseEdits(String courseName, String title){
+	public CourseEdits(String courseName, String user, String title){
 		this.courseName=courseName;
 		this.title=title;
 		this.professorList = new ArrayList<String>();
 		this.semestersTaught = new ArrayList<String>();
+		this.userID=user;
 		this.prereqs = new ArrayList<String>();
 	}
 	
-	public CourseEdits(String courseName, String title, String description,boolean upperDiv){
+	public CourseEdits(String courseName, String user, String title, String description,boolean upperDiv){
 		this.courseName=courseName;
 		this.title=title;
 		this.description=description;
 		this.professorList = new ArrayList<String>();
 		this.semestersTaught = new ArrayList<String>();
 		this.prereqs = new ArrayList<String>();
+		this.userID=user;
 		this.upperDivision = upperDiv;
 	}
 	

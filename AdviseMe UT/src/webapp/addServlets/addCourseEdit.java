@@ -24,6 +24,7 @@ public class addCourseEdit extends HttpServlet{
 	static{ObjectifyService.register(CourseEdits.class);}
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String courseName = req.getParameter("coursename");
+		String id = req.getParameter("userID");
 		String courseTitle = req.getParameter("coursetitle");
 		String courseDescription = req.getParameter("coursedescription");
 		String upperDivision = req.getParameter("division");
@@ -33,6 +34,9 @@ public class addCourseEdit extends HttpServlet{
 		try{
 			if(courseName==null||courseName.isEmpty()){
 				throw new Exception("Must provide a valid Course Name!");
+			}
+			if(id==null||id.isEmpty()){
+				throw new Exception("User Id not Passed!");
 			}
 			if(courseTitle==null||courseTitle.isEmpty()){
 				throw new Exception("Must provide a valid Course Title!");
@@ -59,11 +63,11 @@ public class addCourseEdit extends HttpServlet{
 			}else{
 				upper=false;
 			}
-			String change = "Course Name: " +courseName + "\nCourse Title: "+courseTitle+"\nCourse Description: "
+			String change = "User requesting change: " + id+ "\nCourse Name: " +courseName + "\nCourse Title: "+courseTitle+"\nCourse Description: "
 					+ courseDescription + "\nUpper Division?: " + upperDivision + "\nProfessor List: " +
 					professorList + "\n Semesters Taught: " + semesterTaught + "\n Prereqs: " + prereqs;
 
-			CourseEdits course = new CourseEdits(courseName,courseTitle,courseDescription,upper);
+			CourseEdits course = new CourseEdits(courseName,id,courseTitle,courseDescription,upper);
 			course.getProfessorList().add(professorList);
 			course.getSemesterTaught().add(semesterTaught);
 			course.getPrereq().add(prereqs);

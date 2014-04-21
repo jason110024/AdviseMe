@@ -229,7 +229,7 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                     <%
+                    <%
 					ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LfFIe8SAAAAAFvovPN2pD-lUKHixmEufNFITZ91", "6LfFIe8SAAAAADGueFM28Toq3H3OJWqB2xTpoj-A", false);
 					out.print(c.createRecaptchaHtml(null, null));
 					%>
