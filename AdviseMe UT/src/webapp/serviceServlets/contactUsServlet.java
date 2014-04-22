@@ -47,7 +47,7 @@ public class contactUsServlet extends HttpServlet{
 			}catch(Exception e1){
 				System.out.println("Was not able to send change to admin");
 			}
-			resp.sendRedirect("thankyou.jsp");
+			resp.sendRedirect("home.jsp");
 		}catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);

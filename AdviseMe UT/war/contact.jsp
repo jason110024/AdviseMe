@@ -173,21 +173,21 @@
                     <label>Name</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>                
                     </div>
                     
                     <label>Email <span class="color-red">*</span></label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" id="email" class="form-control" required>
+                            <input type="text" id="email" name="email" class="form-control" required>
                         </div>                
                     </div>
                     
                     <label>Message</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-11 col-md-offset-0">
-                            <textarea rows="8" id="message" class="form-control"></textarea required>
+                            <input type="text" id="message" name="message" class="form-control" required>
                         </div>                
                     </div>
                     
