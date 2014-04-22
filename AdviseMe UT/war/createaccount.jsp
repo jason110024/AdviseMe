@@ -218,6 +218,9 @@
                     <label>Confirm Email Address <span class="color-red">*</span></label>
                     <input id="confirmemail" name="confirmemail" type="email" class="form-control margin-bottom-20" data-parsley-trigger="change" data-parsley-equalto="#email" required>
                     
+                    <label>Username <span class="color-red">*</span></label>
+                    <input id="username" name="username" type="text" class="form-control margin-bottom-20" data-parsley-minlength="5" data-parsley-trigger="change" required>
+                    
                     <label>Password <span class="color-red">*</span></label>
                     <input id="password" name="password" type="password" class="form-control margin-bottom-20" data-parsley-minlength="6" data-parsley-trigger="change" required>
                     

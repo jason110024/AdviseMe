@@ -13,7 +13,7 @@ public class CourseEdits implements Comparable<Course> {
 	@Id Long id;
 	private String title = "No course title entered.";
 	private String description= "Default UT description";
-	private String userID= "Default UT description";
+	private String userID;
 	private Boolean upperDivision; 	//true if upper division; false if lower division
 	private ArrayList<String> professorList;
 	private ArrayList<String> semestersTaught;
@@ -53,6 +53,10 @@ public class CourseEdits implements Comparable<Course> {
 	
 	public Long getId(){
 		return this.id;
+	}
+	
+	public String getUserId(){
+		return this.userID;
 	}
 	
 	public String getCourseName(){

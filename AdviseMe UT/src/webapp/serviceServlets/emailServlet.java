@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import javax.mail.Address;
 import javax.mail.Session;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +24,6 @@ public class emailServlet extends HttpServlet{
 			Properties props = new Properties();
 			Session session = Session.getDefaultInstance(props, null);
 			MimeMessage message = new MimeMessage(session, req.getInputStream());
-			Address[] fromAddresses = message.getFrom();
 			String recSubject = message.getSubject();
 			String[] splitSubject = recSubject.split(" ");
 			if(splitSubject.length==0||splitSubject.length==1){
