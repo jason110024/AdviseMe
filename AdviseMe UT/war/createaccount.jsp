@@ -205,6 +205,7 @@
                         <p>Already Signed Up? Click <a href="login.jsp" class="color-green">Sign In</a> to login your account.</p>                    
                     </div>
 					You can use Facebook to Create Your Account:  <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+					<h5>(please refresh the page if you use FB login)</h5>
 					<br>
                     <label>First Name<span class="color-red">*</span></label>
                     <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20" data-parsley-trigger="change" data-parsley-type="alphanum" required>

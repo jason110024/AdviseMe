@@ -29,6 +29,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/changecourse</url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>contact</servlet-name>
+		<servlet-class>webapp.serviceServlets.contactUsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>contact</servlet-name>
+		<url-pattern>/contact</url-pattern>
+	</servlet-mapping>	
+	<servlet>
 		<servlet-name>addCollege</servlet-name>
 		<servlet-class>webapp.addServlets.addCollegeServlet</servlet-class>
 	</servlet>

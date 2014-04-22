@@ -31,6 +31,8 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- CSS Parsley Form Confirmation -->
+    <link rel="stylesheet" href="stylesheets/parsley.css">
 </head> 
 
 <body> 
@@ -167,25 +169,25 @@
                 <div class="headline"><h2>Contact Form</h2></div>
                 <p>Have any suggestions or concerns? Just want to say hi to the AdviseMe creators?<br> 
                 Fill out the survey below and we will get back to you as soon as possible!</p><br />
-    			<form>
+    			<form action="/contact" method="post" data-parsley-validate>
                     <label>Name</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control">
+                            <input type="text" id="name" class="form-control" required>
                         </div>                
                     </div>
                     
                     <label>Email <span class="color-red">*</span></label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" class="form-control">
+                            <input type="text" id="email" class="form-control" required>
                         </div>                
                     </div>
                     
                     <label>Message</label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-11 col-md-offset-0">
-                            <textarea rows="8" class="form-control"></textarea>
+                            <textarea rows="8" id="message" class="form-control"></textarea required>
                         </div>                
                     </div>
                     
@@ -421,6 +423,8 @@
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript" src="assets/js/pages/page_contacts.js"></script>
+<!-- CSS Parsley Form Confirmation -->
+<script type="text/javascript" src="stylesheets/parsley.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
