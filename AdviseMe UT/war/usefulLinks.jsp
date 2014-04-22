@@ -212,7 +212,7 @@
                         <div id="collapse-Two" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
                                         <p>In the ECE Department, the curriculum is different depending on which Catalog a student is under. 
                                         Currently, students are either under the 2010-2012 Catalog or the 2012-2014 Catalog. On the ECE Curriculum page,
                                         students can view:
@@ -228,9 +228,6 @@
                                         <p>In addition, there is a Prerequisite Flowchart Chart you can download that can help in planning your schedules.
                                         Click <a href="http://www.ece.utexas.edu/undergraduate/curriculum">here</a>
                                         to view the ECE Curriculum page.</p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img class="img-responsive" src="assets/img/main/6.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
