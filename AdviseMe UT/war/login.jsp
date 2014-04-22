@@ -1,5 +1,3 @@
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
@@ -151,16 +149,10 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
-    <%
-    	String error = request.getParameter("error");
-    	if(error.equals("true")){
-        	pageContext.setAttribute("error1", "There was an error logging in. Please Try again.");
-    	}
-     %>
     <div class="container content">		
     	<div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <form class="reg-page" id="loginform" action="/checkuser" method="post" data-parsley-validate>
+                <form class="reg-page" id="loginform" data-parsley-validate>
                     <div class="reg-header">            
                         <h2>Login to your account</h2>
                     </div>
@@ -168,20 +160,20 @@
 					<hr>
                     <div class="input-group margin-bottom-20">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" id="username" name="username" placeholder="Username" class="form-control" required>
+                        <input type="text" id="username" placeholder="Username" class="form-control" required>
                     </div>                    
                     <div class="input-group margin-bottom-20">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                        <input type="password" id="password" placeholder="Password" class="form-control" required>
                     </div>
-					     <h2 id="test">${fn:escapeXml(error1)}</h2>
+					     <h2 id="test"></h2>
                     <hr>
                      <div class="row">
                      <div class="col-md-6">
                          <button class="btn-u pull-right" type="submit" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
                      </div>
                      <div class="col-md-6">
-                         <button class="btn-u pull-right" type="submit">Login</button>                        
+                         <button class="btn-u pull-right" type="submit" onclick="timetologin()">Login</button>                        
                      </div>
                     </div>
                     
@@ -368,7 +360,45 @@
 			});
 		}
 		</script>
+		<script>
+		console.log(document.getElementById("test").innerHTML);
+		function timetologin(){
+			if(id1=="null"){
+				id1="0";
+			}
+			var user = document.getElementById("username").value;
+			var pass = document.getElementById("password").value;
+			$.ajax({
+				type:'GET',
+				url : "checkuser?username="+user+"&password="+pass,	//need to pass username and password
+				cache : false,
+				success: function(response){
+					console.log(response);
+					if(response=="true"){
+						$.ajax({
+							type:'GET',
+							url : "changeloginstatus?id="+id1,
+							cache : false,
+							success: function(response1){
+								console.log(response1);
+								$.ajax({
+									type:'GET',
+									url : "createsessionservlet?id="+id1+"&picurl="+ picurl,
+									cache : false,
+									success: function(response2){
+										window.location.replace('home.jsp');
+									}
+								});
+							}
+						});
+					}else if(response=="false"){
+						document.getElementById("test").innerHTML="Wrong Username/Password. Try Again.";
 
+					}
+				}
+			});
+		}
+		</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
