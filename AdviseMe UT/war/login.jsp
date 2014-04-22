@@ -379,7 +379,7 @@
 			}
 			$.ajax({
 				type:'GET',
-				url : "checkfacebookuser?id="+id1,
+				url : "checkfacebookuser?id="+id1,	//need to pass username and password
 				cache : false,
 				success: function(response){
 					console.log(response);
@@ -401,7 +401,8 @@
 							}
 						});
 					}else if(response=="false"){
-						window.location.replace('createaccount.jsp');
+						document.getElementById("test").innerHTML="Wrong Username/Password. Try Again.";
+
 					}
 				}
 			});
