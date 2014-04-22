@@ -209,14 +209,14 @@ pageContext.setAttribute("postcount",posts.size());
                 	  
                     <div class="col-md-12">
                       
-						 <h2><a onclick="window.location.href='forumpost.jsp?postTitle=${fn:escapeXml(postID)}'">${fn:escapeXml(postTitle)}</a></h2>
+						 <h2><a onclick="window.location.href='forumpost.jsp?postID=${fn:escapeXml(postID)}'">${fn:escapeXml(postTitle)}</a></h2>
                         
                         <ul class="list-unstyled list-inline blog-info">
                             <li><i class="fa fa-calendar"></i> ${fn:escapeXml(postDate)}</li>                         
 <!--                             <li><i class="fa fa-tags"></i> Technology, Internet</li>  -->
                         </ul>
-                        <p>   ${fn:escapeXml(postContent)}                 </p>
-                        <p><a class="btn-u btn-u-small" href="blog_item.html"><i class="fa fa-location-arrow"></i> Read More</a></p>
+<%--                         <p>   ${fn:escapeXml(postContent)}                 </p> --%>
+                        <p><a onclick="window.location.href='forumpost.jsp?postTitle=${fn:escapeXml(postID)}'" class="btn-u btn-u-small" href="blog_item.html"><i class="fa fa-location-arrow"></i> Read More</a></p>
                     </div>  
                     
             

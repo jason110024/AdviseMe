@@ -1,5 +1,5 @@
 <%@ page import="java.util.*"%>
-<%@ page import="webapp.datastoreObjects.Course"%>
+<%@ page import="webapp.datastoreObjects.Post"%>
 <%@ page import="com.googlecode.objectify.Objectify"%>
 <%@ page import="com.googlecode.objectify.ObjectifyService"%>
 <%@ page import="com.google.appengine.api.users.User"%>
@@ -215,27 +215,22 @@
 //
 //
 //
-		//retrieve courses
-		ObjectifyService.register(Course.class);
-		List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
-		Collections.sort(courses);
-		String name = request.getParameter("courseName");
-		pageContext.setAttribute("courseName",name);
+		//retrieve posts
+		ObjectifyService.register(Post.class);
+		List<Post> posts = ObjectifyService.ofy().load().type(Post.class).list(); 
+		Collections.sort(posts);
+		String postID = request.getParameter("postID");
+		pageContext.setAttribute("postID",postID);
 		//Course current;
 		//System.out.println(name);
-		for(Course course : courses){
-			if(course.getCourseName().equals(name)){
+		for(Post post : posts){
+			if(post.getId().equals(postID)){
 		//current = course;
-		pageContext.setAttribute("course_title", course.getTitle());
-		pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
-		pageContext.setAttribute("course_description", course.getDescription());
-		pageContext.setAttribute("course_professorList", course.getProfessorList());
-		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught());
-		pageContext.setAttribute("course_prereq", course.getPrereq());
-		pageContext.setAttribute("course_syllabus_link", course.getSyllabusLink());
-		pageContext.setAttribute("course_eval_link", course.getEvalLink());
-		pageContext.setAttribute("course_num_users_rating", course.getNumRating());
-		pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
+		pageContext.setAttribute("postTitle", post.getTitle());
+		pageContext.setAttribute("postContent", post.getContent());
+		pageContext.setAttribute("postUserId", post.getUserId());
+		pageContext.setAttribute("postDate", post.getDate());
+		
 		break;
 			}
 		}
@@ -261,16 +256,16 @@
         <!--Blog Post-->        
     	<div class="blog margin-bottom-40">
            
-        	<h2><a href="blog_item_option1.html">Unify is an incredibly beautiful and fully responsive Bootstrap 3 Template</a></h2>
+        	<h2><a href="blog_item_option1.html">${fn:escapeXml(postTitle)}</a></h2>
             <div class="blog-post-tags">
                 <ul class="list-unstyled list-inline blog-info">
-                    <li><i class="fa fa-calendar"></i> February 02, 2013</li>
-                    <li><i class="fa fa-pencil"></i> Diana Anderson</li>
+                    <li><i class="fa fa-calendar"></i> ${fn:escapeXml(postDate)}</li>
+                    <li><i class="fa fa-pencil"></i> ${fn:escapeXml(postUserId)}</li>
 <!--                     <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li> -->
-                    <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li>
+<!--                     <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li> -->
                 </ul>                    
             </div>
-            <p>At vero eos et accusag elit. ecing elit magna.</p><br>
+            <p>${fn:escapeXml(postContent)}</p><br>
             
         </div>
         <!--End Blog Post-->        
