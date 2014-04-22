@@ -78,6 +78,8 @@
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
+                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+					<li class="topbar-devider"></li>   
                     <li><a id="adviseloginbutton" href="login.jsp">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
