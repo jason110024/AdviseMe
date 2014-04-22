@@ -53,6 +53,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/checkfacebookuser</url-pattern>	
 	</servlet-mapping>
 	<servlet>
+		<servlet-name>checkUser</servlet-name>
+		<servlet-class>webapp.checkServlets.checkUserServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>checkUser</servlet-name>
+		<url-pattern>/checkuser</url-pattern>	
+	</servlet-mapping>	
+	<servlet>
 	    <servlet-name>changeloginstatus</servlet-name>
 	    <servlet-class>webapp.checkServlets.changeLoginStatus</servlet-class>
 	</servlet>
