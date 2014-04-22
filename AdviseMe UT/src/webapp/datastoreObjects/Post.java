@@ -12,7 +12,7 @@ import com.googlecode.objectify.annotation.Id;
 public class Post implements Comparable<Post> {
 	@Id private Long id;
 	private String userId;
-	private String userFullName;
+//	private String userFullName;
 	private String title;
 	private String content;
 	private ArrayList<String> tags = new ArrayList<String>(0);
@@ -20,17 +20,17 @@ public class Post implements Comparable<Post> {
 	
 	public Post(){}
 	
-	public Post(String userId,String userFullName, String title, String content){
+	public Post(String userId, String title, String content){
 		this.userId=userId;
-		this.userFullName=userFullName;
+//		this.userFullName=userFullName;
 		this.title=title;
 		this.content=content;
 		this.date=new Date();
 	}
 	
-	public Post(String id, String name, String title, String content, ArrayList<String> tags){
+	public Post(String id, String title, String content, ArrayList<String> tags){
 		this.userId=id;
-		this.userFullName=name;
+//		this.userFullName=name;
 		this.title=title;
 		this.content=content;
 		this.tags=tags;
@@ -41,9 +41,9 @@ public class Post implements Comparable<Post> {
 		return this.userId;
 	}
 	
-	public String getUserName(){
-		return this.userFullName;
-	}
+//	public String getUserName(){
+//		return this.userFullName;
+//	}
 	
 	public String getTitle(){
 		return this.title;

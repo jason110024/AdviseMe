@@ -184,11 +184,14 @@
         <div class="post-comment">
             <h3>Create a Post</h3> 
             <form action="/addforumpost" method="post">
-
+           
+	      	<input type="hidden" name="id" value="${fn:escapeXml(id)}"/>
+	      	<input type="hidden" name="tags" value="testtags"/>
+	      	
                 <label>Post Title<span class="color-red">*</span></label>
                 <div class="row margin-bottom-20">
                     <div class="col-md-7 col-md-offset-0">
-                    	 <textarea class="form-control" name="forumtitle"rows="1"></textarea>
+                    	 <textarea class="form-control" name="title"rows="1"></textarea>
                
                
                     </div>                
@@ -197,7 +200,7 @@
                 <label>Content</label>
                 <div class="row margin-bottom-20">
                     <div class="col-md-11 col-md-offset-0">
-                        <textarea class="form-control" name="forumcontent"rows="8"></textarea>
+                        <textarea class="form-control" name="content"rows="8"></textarea>
                     </div>                
                 </div>
                 

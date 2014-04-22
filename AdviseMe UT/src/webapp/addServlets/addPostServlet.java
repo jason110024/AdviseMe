@@ -16,9 +16,9 @@ public class addPostServlet extends HttpServlet{
 	static{ObjectifyService.register(Post.class);}
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String userId = req.getParameter("id");
-		String username = req.getParameter("username");
-		String title = req.getParameter("forumtitle");
-		String content = req.getParameter("forumcontent");
+//		String username = req.getParameter("username");
+		String title = req.getParameter("title");
+		String content = req.getParameter("content");
 		String tags = req.getParameter("tags");
 		ArrayList<String> tag = new ArrayList<String>(0);
 		Post post;
@@ -26,9 +26,9 @@ public class addPostServlet extends HttpServlet{
 			if(userId==null||userId.isEmpty()){
 				throw new Exception("User Identification not sent!");
 			}
-			if(username==null||username.isEmpty()){
-				throw new Exception("User Info not sent!");
-			}
+//			if(username==null||username.isEmpty()){
+//				throw new Exception("User Info not sent!");
+//			}
 			if(title==null||title.isEmpty()){
 				throw new Exception("Must provide a Title!");
 			}
@@ -36,10 +36,10 @@ public class addPostServlet extends HttpServlet{
 				throw new Exception("Must provide a Content!");
 			}
 			if(tags==null||tags.isEmpty()){
-				post=new Post(userId,username,title,content);
+				post=new Post(userId,title,content);
 			}else{
 				tag.add(tags);
-				post = new Post(userId,username,title,content,tag);
+				post = new Post(userId,title,content,tag);
 			}
 			ObjectifyService.ofy().save().entity(post).now();
 			resp.sendRedirect("/forum.jsp");
