@@ -11,6 +11,8 @@ import com.googlecode.objectify.annotation.Id;
 @Entity
 public class Post implements Comparable<Post> {
 	@Id private Long id;
+	
+
 	private String userId;
 //	private String userFullName;
 	private String title;
@@ -56,7 +58,9 @@ public class Post implements Comparable<Post> {
 	public ArrayList<String> getTags(){
 		return this.tags;
 	}
-	
+	public Long getId() {
+		return id;
+	}
 	public String getDate(){
 		SimpleDateFormat dateFormat = new SimpleDateFormat ("E, MMMM d yyyy 'at' h:mm:ss aaa");
 		dateFormat.setTimeZone(TimeZone.getTimeZone("CST"));

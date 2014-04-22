@@ -1,3 +1,12 @@
+<%@ page import="java.util.*"%>
+<%@ page import="webapp.datastoreObjects.Post"%>
+<%@ page import="com.googlecode.objectify.Objectify"%>
+<%@ page import="com.googlecode.objectify.ObjectifyService"%>
+<%@ page import="com.google.appengine.api.users.User"%>
+<%@ page import="com.google.appengine.api.users.UserService"%>
+<%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
@@ -156,6 +165,20 @@
     </div><!--/breadcrumbs-->
     <!--=== End Breadcrumbs ===-->
 
+
+<%
+ObjectifyService.register(Post.class);
+List<Post> posts = ObjectifyService.ofy().load().type(Post.class).list();
+Collections.sort(posts);
+Iterator<Post> low = posts.iterator();
+while (low.hasNext()){
+	Post currentPost = low.next(); 
+
+}
+pageContext.setAttribute("postcount",posts.size());
+%>
+
+
     <!--=== Content Part ===-->
     <div class="container content">		
     	<div class="row blog-page">    
@@ -163,133 +186,73 @@
         	<div class="col-md-9 md-margin-bottom-40">
                 <!--Blog Post-->
                 <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <img class="img-responsive" src="assets/img/main/11.jpg" alt="">
-                    </div>    
-                    <div class="col-md-7">
-                        <h2>Pellentesque Habitant Morbi Tristique</h2>
+					<%       
+                if (posts.isEmpty()) {
+                	%><h1>There are no posts to display</h1>
+                	 <%
+                } else {
+                	%>              	
+                	<%
+                	Iterator<Post> lowerIterator = posts.iterator();
+                	while (lowerIterator.hasNext()){
+                		Post currentPost = lowerIterator.next();       
+                      	 pageContext.setAttribute("postTitle",currentPost.getTitle());
+                      	pageContext.setAttribute("postContent",currentPost.getContent());
+                       pageContext.setAttribute("postUser",currentPost.getUserId());
+                       pageContext.setAttribute("postDate",currentPost.getDate());
+                       String postID=currentPost.getId().toString();
+        
+                	  %>
+                	  <script>
+                		document.getElementById("<%=postID%>");
+                		</script><%
+                		String url = "forumpost.jsp?name=" + postID;
+                %>
+                	  
+                	  
+                    <div class="col-md-12">
+                      
+						 <h2><a onclick="window.location.href='forumpost.jsp?postTitle=${fn:escapeXml(postID)}'">${fn:escapeXml(PostTitle)}</a></h2>
+                        
                         <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            <li><i class="fa fa-tags"></i> Technology, Internet</li>
+                            <li><i class="fa fa-calendar"></i> ${fn:escapeXml(postDate)}/li>                         
+<!--                             <li><i class="fa fa-tags"></i> Technology, Internet</li>  -->
                         </ul>
-                        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                        <p>   ${fn:escapeXml(postContent)}                 </p>
                         <p><a class="btn-u btn-u-small" href="blog_item.html"><i class="fa fa-location-arrow"></i> Read More</a></p>
-                    </div>    
-                </div>
-                <!--End Blog Post-->        
-
-                <hr class="margin-bottom-40">
-
-                <!--Blog Post-->
-                <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <div class="blog-img">
-                            <div class="responsive-video">
-                                <iframe src="//www.youtube.com/embed/ufsrgE0BYf0" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="col-md-7">
-                        <h2>Pellentesque Habitant Morbi Tristique</h2>
-                        <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <p><a class="btn-u btn-u-small" href="blog_item.html"><i class="fa fa-location-arrow"></i> Read More</a></p>
-                    </div>    
-                </div>
-                <!--End Blog Post-->        
-
-                <hr class="margin-bottom-40">
-
-                <!--Blog Post-->
-                <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <img class="img-responsive" src="assets/img/main/12.jpg" alt="">
-                    </div>    
-                    <div class="col-md-7">
-                        <h2>Pellentesque Habitant Morbi Tristique</h2>
-                        <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <p><a class="btn-u btn-u-small" href="blog_item.html"><i class="fa fa-location-arrow"></i> Read More</a></p>
-                    </div>    
-                </div>
-                <!--End Blog Post-->        
-
-                <hr class="margin-bottom-40">
-
-                <!--Blog Post-->
-                <div class="row blog blog-medium margin-bottom-40">
-                    <div class="col-md-5">
-                        <div class="carousel slide carousel-v1" id="myCarousel">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img alt="" src="assets/img/main/3.jpg">
-                                    <div class="carousel-caption">
-                                        <p>Facilisis odio, dapibus ac justo acilisis gestinas.</p>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="blog-img">
-                                        <div class="responsive-video">
-                                            <iframe src="http://player.vimeo.com/video/9679622" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>                         
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <img alt="" src="assets/img/main/13.jpg">
-                                    <div class="carousel-caption">
-                                        <p>Justo cras odio apibus ac afilisis lingestas de.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-arrow">
-                                <a data-slide="prev" href="#myCarousel" class="left carousel-control">
-                                    <i class="fa fa-angle-left"></i>
-                                </a>
-                                <a data-slide="next" href="#myCarousel" class="right carousel-control">
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="col-md-7">
-                        <h2>Pellentesque Habitant Morbi Tristique</h2>
-                        <ul class="list-unstyled list-inline blog-info">
-                            <li><i class="fa fa-calendar"></i> November 02, 2013</li>
-                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
-                            <li><i class="fa fa-tags"></i> Technology, Internet</li>
-                        </ul>
-                        <p>At vero eos et accusamus et iusto odiomolestias dignis simos ducimus qui blandit occaeca bais praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <p><a class="btn-u btn-u-small" href="blog_item.html"><i class="fa fa-location-arrow"></i> Read More</a></p>
-                    </div>    
-                </div>
-                <!--End Blog Post-->        
+                    </div>  
+                    
+            
+                <%
+                		}
+                		
+                	
+                	}
                 
-                <!--Pagination-->
-                <div class="text-center">
-                    <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li class="active"><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>                                                            
+                	%>
+                      
                 </div>
-                <!--End Pagination-->
+                <!--End Blog Post-->        
+
+                <hr class="margin-bottom-40">
+
+                
+<!--                 Pagination -->
+<!--                 <div class="text-center"> -->
+<!--                     <ul class="pagination"> -->
+<!--                         <li><a href="#">«</a></li> -->
+<!--                         <li><a href="#">1</a></li> -->
+<!--                         <li><a href="#">2</a></li> -->
+<!--                         <li class="active"><a href="#">3</a></li> -->
+<!--                         <li><a href="#">4</a></li> -->
+<!--                         <li><a href="#">5</a></li> -->
+<!--                         <li><a href="#">6</a></li> -->
+<!--                         <li><a href="#">7</a></li> -->
+<!--                         <li><a href="#">8</a></li> -->
+<!--                         <li><a href="#">»</a></li> -->
+<!--                     </ul>                                                             -->
+<!--                 </div> -->
+<!--                 End Pagination -->
             </div>
             <!-- End Left Sidebar -->
 
