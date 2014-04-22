@@ -30,88 +30,12 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- CSS Parsley Form Confirmation -->
+    <link rel="stylesheet" href="stylesheets/parsley.css">
 </head> 
 
 <body>
-<script>
-		var picurl;
-		window.fbAsyncInit = function(){
-			FB.init({
-				appId      : '125801300852907',
-			    status     : true, // check login status
-			    cookie     : true, // enable cookies to allow the server to access the session
-			    xfbml      : true  // parse XFBML
-			});
-			FB.Event.subscribe('auth.authResponseChange', function(response){
-				if(response.status === 'connected'){
-			    	checkLogin();
-			    }else if(response.status === 'not_authorized'){
-			    	FB.login({
-			    		scope: 'basic_info'
-			    	});
-			    }else{
-			    	FB.login({
-			    		scope: 'basic_info'
-			    	});
-			    }
-			});
-		};
-		(function(d){
-			var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-			if(d.getElementById(id)){
-				return;
-			}
-			js = d.createElement('script'); js.id = id; js.async = true;
-			js.src = "//connect.facebook.net/en_US/all.js";
-			ref.parentNode.insertBefore(js, ref);
-		}(document));
-		function checkLogin(){
-			console.log('Retrieving User ID and Name');
-			document.getElementById("test").innerHTML="Logging In....Redirecting";
-			FB.api("/me/picture", {
-				"redirect" : false,
-				"height" : "40",
-				"type" : "normal",
-				"width" : "40"
-			}, function(response) {
-				if (response && !response.error) {
-					picurl = response.data.url;
-				}
-			});
-			FB.api('/me', function(response){
-				var id=response.id;
-				console.log(id);
-				$.ajax({
-					type:'GET',
-					url : "checkfacebookuser?id="+id,
-					cache : false,
-					success: function(response){
-						console.log(response);
-						if(response=="true"){
-							$.ajax({
-								type:'GET',
-								url : "changeloginstatus?id="+id,
-								cache : false,
-								success: function(response1){
-									console.log(response1);
-									$.ajax({
-										type:'GET',
-										url : "createsessionservlet?id="+id+"&picurl="+ picurl,
-										cache : false,
-										success: function(response2){
-											window.location.replace('home.jsp');
-										}
-									});
-								}
-							});
-						}else if(response=="false"){
-							window.location.replace('createaccount.jsp');
-						}
-					}
-				});
-			});
-		}
-		</script>
+
 <div class="wrapper">
         <!--=== Header ===-->    
     <div class="header">
@@ -228,13 +152,30 @@
     <div class="container content">		
     	<div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <form class="reg-page">
+                <form class="reg-page" data-parsley-validate>
                     <div class="reg-header">            
                         <h2>Login to your account</h2>
                     </div>
-					<h2 id="test"></h2>
 					<div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="false"></div>
+					<hr>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" id="username" placeholder="Username" class="form-control" required>
+                    </div>                    
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" id="password" placeholder="Password" class="form-control" required>
+                    </div>
+					     <h2 id="test"></h2>
                     <hr>
+                     <div class="row">
+                     <div class="col-md-6">
+                     </div>
+                        <div class="col-md-6">
+                            <button class="btn-u pull-right" type="submit" onclick="timetologin()">Login</button>                        
+                        </div>
+                    </div>
+                    
                 </form>            
             </div>
         </div><!--/row-->
@@ -341,11 +282,131 @@
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
+<!-- CSS Parsley Form Confirmation -->
+<script type="text/javascript" src="stylesheets/parsley.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
     });
 </script>
+<script>
+		var picurl;
+		var id1;
+		window.fbAsyncInit = function(){
+			FB.init({
+				appId      : '125801300852907',
+			    status     : true, // check login status
+			    cookie     : true, // enable cookies to allow the server to access the session
+			    xfbml      : true  // parse XFBML
+			});
+			FB.Event.subscribe('auth.authResponseChange', function(response){
+				if(response.status === 'connected'){
+			    	checkLogin();
+			    }else if(response.status === 'not_authorized'){
+			    	FB.login({
+			    		scope: 'basic_info'
+			    	});
+			    }else{
+			    	FB.login({
+			    		scope: 'basic_info'
+			    	});
+			    }
+			});
+		};
+		(function(d){
+			var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+			if(d.getElementById(id)){
+				return;
+			}
+			js = d.createElement('script'); js.id = id; js.async = true;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			ref.parentNode.insertBefore(js, ref);
+		}(document));
+		function checkLogin(){
+			console.log('Retrieving User ID and Name');
+			document.getElementById("test").innerHTML="Logging In....Redirecting";
+			FB.api("/me/picture", {
+				"redirect" : false,
+				"height" : "40",
+				"type" : "normal",
+				"width" : "40"
+			}, function(response) {
+				if (response && !response.error) {
+					picurl = response.data.url;
+				}
+			});
+			FB.api('/me', function(response){
+				var id=response.id;
+				id1=id;
+				console.log(id);
+				console.log(document.getElementById("test").innerHTML);
+				$.ajax({
+					type:'GET',
+					url : "checkfacebookuser?id="+id+"&username="+document.getElementById("username").innerHTML,
+					cache : false,
+					success: function(response){
+						console.log(response);
+						if(response=="true"){
+							$.ajax({
+								type:'GET',
+								url : "changeloginstatus?id="+id,
+								cache : false,
+								success: function(response1){
+									console.log(response1);
+									$.ajax({
+										type:'GET',
+										url : "createsessionservlet?id="+id+"&picurl="+ picurl,
+										cache : false,
+										success: function(response2){
+											window.location.replace('home.jsp');
+										}
+									});
+								}
+							});
+						}else if(response=="false"){
+							window.location.replace('createaccount.jsp');
+						}
+					}
+				});
+			});
+		}
+		</script>
+		<script>
+		console.log(document.getElementById("test").innerHTML);
+		function timetologin(){
+			if(id1=="null"){
+				id1="0";
+			}
+			$.ajax({
+				type:'GET',
+				url : "checkfacebookuser?id="+id1,
+				cache : false,
+				success: function(response){
+					console.log(response);
+					if(response=="true"){
+						$.ajax({
+							type:'GET',
+							url : "changeloginstatus?id="+id1,
+							cache : false,
+							success: function(response1){
+								console.log(response1);
+								$.ajax({
+									type:'GET',
+									url : "createsessionservlet?id="+id1+"&picurl="+ picurl,
+									cache : false,
+									success: function(response2){
+										window.location.replace('home.jsp');
+									}
+								});
+							}
+						});
+					}else if(response=="false"){
+						window.location.replace('createaccount.jsp');
+					}
+				}
+			});
+		}
+		</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
