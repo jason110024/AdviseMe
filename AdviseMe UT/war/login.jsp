@@ -155,14 +155,12 @@
     	String error = request.getParameter("error");
     	if(error.equals("true")){
         	pageContext.setAttribute("error1", "There was an error logging in. Please Try again.");
-    	}else{
-    		pageContext.setAttribute("error1", " ");
     	}
      %>
     <div class="container content">		
     	<div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <form class="reg-page" id="loginform" action="/checkuser" method="get" data-parsley-validate>
+                <form class="reg-page" id="loginform" action="/checkuser" method="post" data-parsley-validate>
                     <div class="reg-header">            
                         <h2>Login to your account</h2>
                     </div>
@@ -179,13 +177,14 @@
 					     <h2 id="test">${fn:escapeXml(error1)}</h2>
                     <hr>
                      <div class="row">
- <!--                     <div class="col-md-6">
-                         <button class="btn-u pull-right" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
+                     <div class="col-md-6">
+                         <button class="btn-u pull-right" type="submit" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
                      </div>
-  -->                   <div class="col-md-6">
+                     <div class="col-md-6">
                          <button class="btn-u pull-right" type="submit">Login</button>                        
                      </div>
                     </div>
+                    
                 </form>            
             </div>
         </div><!--/row-->
