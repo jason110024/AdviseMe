@@ -17,8 +17,8 @@ public class addPostServlet extends HttpServlet{
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		String userId = req.getParameter("id");
 		String username = req.getParameter("username");
-		String title = req.getParameter("title");
-		String content = req.getParameter("content");
+		String title = req.getParameter("forumtitle");
+		String content = req.getParameter("forumcontent");
 		String tags = req.getParameter("tags");
 		ArrayList<String> tag = new ArrayList<String>(0);
 		Post post;

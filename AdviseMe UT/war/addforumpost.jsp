@@ -183,19 +183,20 @@
   <!-- Comment Form -->
         <div class="post-comment">
             <h3>Create a Post</h3>
-            <form>
+            <form action="/addforumpost" method="post">
 
                 <label>Post Title<span class="color-red">*</span></label>
                 <div class="row margin-bottom-20">
                     <div class="col-md-7 col-md-offset-0">
-                        <input type="text" class="form-control">
+                    	 <textarea class="form-control" name="forumtitle"rows="1"></textarea>
+               
                     </div>                
                 </div>
                 
                 <label>Content</label>
                 <div class="row margin-bottom-20">
                     <div class="col-md-11 col-md-offset-0">
-                        <textarea class="form-control" rows="8"></textarea>
+                        <textarea class="form-control" name="forumcontent"rows="8"></textarea>
                     </div>                
                 </div>
                 

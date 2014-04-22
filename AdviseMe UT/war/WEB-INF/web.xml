@@ -117,6 +117,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <url-pattern>/createsessionservlet</url-pattern>
 	</servlet-mapping>
 	<servlet>
+	    <servlet-name>addforumpost</servlet-name>
+	    <servlet-class>webapp.addServlets.addPostServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>addforumpost</servlet-name>
+	    <url-pattern>/addforumpost</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>ChatBot</servlet-name>
 		<servlet-class>webapp.serviceServlets.chatServlet</servlet-class>
 	</servlet>
