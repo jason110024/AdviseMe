@@ -9,35 +9,39 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import webapp.datastoreObjects.PasswordReset;
 import webapp.datastoreObjects.User;
 
 import com.googlecode.objectify.ObjectifyService;
 
 @SuppressWarnings("serial")
 public class passwordResetServlet extends HttpServlet{
-	static{ObjectifyService.register(User.class);}
+	static{ObjectifyService.register(PasswordReset.class);}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
-		String username = req.getParameter("username");
+		String key = req.getParameter("key");
 		String password = req.getParameter("password");
 		try{
-			if(username==null||username.isEmpty()){
-				throw new Exception("Please enter a username");
+			if(key==null||key.isEmpty()){
+				throw new Exception("Invalid key. Please use the password reset tool to reset your password.");
 			}
 			if(password==null||password.isEmpty()){
 				throw new Exception("Please enter a password");
 			}
-			List<User> users = ofy().load().type(User.class).list();
-			for(User user: users){
-				if(user.getUsername().equals(username)){
-					if(user.changePassword(password)){
-						ofy().save().entity(user).now();
-						resp.sendRedirect("/home.jsp");
-					}else{
-						throw new Exception("Error when resetting password");
+			List<PasswordReset> passwords = ofy().load().type(PasswordReset.class).list();
+			for(PasswordReset passwordss : passwords){
+				if(passwordss.getKey().equals(key)){
+					ObjectifyService.register(User.class);
+					List<User> user = ofy().load().type(User.class).list();
+					for(User users: user){
+						if(users.getfbUserId().equals(passwordss.getUserId())){
+							users.changePassword(password);
+						}
 					}
+				}else{
+					throw new Exception("Error when resetting password");
 				}
 			}
-		} catch(Exception e){
+		}catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);
 		}
