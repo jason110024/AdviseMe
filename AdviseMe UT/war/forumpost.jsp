@@ -218,13 +218,13 @@
 		//retrieve posts
 		ObjectifyService.register(Post.class);
 		List<Post> posts = ObjectifyService.ofy().load().type(Post.class).list(); 
-		Collections.sort(posts);
+		//Collections.sort(posts);
 		String postID = request.getParameter("postID");
 		pageContext.setAttribute("postID",postID);
 		//Course current;
-		//System.out.println(name);
+		System.out.println(postID);
 		for(Post post : posts){
-			if(post.getId().equals(postID)){
+			if(post.getId().toString().equals(postID)){
 		//current = course;
 		pageContext.setAttribute("postTitle", post.getTitle());
 		pageContext.setAttribute("postContent", post.getContent());
