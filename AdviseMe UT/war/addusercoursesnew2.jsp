@@ -164,15 +164,7 @@
 
 				<label name="onetwo" class="checkbox state-success"><input type="checkbox">EE 125N - Cooperative Engineering</label>
 			</button>
- 			<script> 
-                function test(onetwo){
-                	if(onetwo.checked){
-                		onetwo.checked="false";
-                	}else{
-                		onetwo.checked="true";
-                	}
-                }
-           </script> 
+ 			 
 			<div>
 				<div>
 					<textarea name="id" id="id" rows="1" cols="30"
