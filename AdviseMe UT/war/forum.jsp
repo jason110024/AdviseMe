@@ -200,14 +200,11 @@ pageContext.setAttribute("postcount",posts.size());
                       	pageContext.setAttribute("postContent",currentPost.getContent());
                        pageContext.setAttribute("postUser",currentPost.getUserId());
                        pageContext.setAttribute("postDate",currentPost.getDate());
-                       String postID=currentPost.getId().toString();
+                       pageContext.setAttribute("postID",currentPost.getId().toString());
+                       
         
                 	  %>
-                	  <script>
-                		document.getElementById("<%=postID%>");
-                		</script><%
-                		String url = "forumpost.jsp?name=" + postID;
-                %>
+                	  
                 	  
                 	  
                     <div class="col-md-12">
