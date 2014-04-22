@@ -152,7 +152,7 @@
     <div class="container content">		
     	<div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <form class="reg-page" data-parsley-validate>
+                <form class="reg-page" id="loginform" data-parsley-validate>
                     <div class="reg-header">            
                         <h2>Login to your account</h2>
                     </div>
@@ -324,7 +324,7 @@
 		}(document));
 		function checkLogin(){
 			console.log('Retrieving User ID and Name');
-			document.getElementById("test").innerHTML="Logging In....Redirecting";
+			document.getElementById("test").innerHTML="FB Logging In....Redirecting";
 			FB.api("/me/picture", {
 				"redirect" : false,
 				"height" : "40",
@@ -342,7 +342,7 @@
 				console.log(document.getElementById("test").innerHTML);
 				$.ajax({
 					type:'GET',
-					url : "checkfacebookuser?id="+id+"&username="+document.getElementById("username").innerHTML,
+					url : "checkfacebookuser?id="+id,
 					cache : false,
 					success: function(response){
 						console.log(response);
@@ -364,7 +364,7 @@
 								}
 							});
 						}else if(response=="false"){
-							window.location.replace('createaccount.jsp');
+							document.getElementById("test").innerHTML="FB Account not Found.";
 						}
 					}
 				});
@@ -377,9 +377,11 @@
 			if(id1=="null"){
 				id1="0";
 			}
+			var user = document.getElementById("username").value;
+			var pass = document.getElementById("password").value;
 			$.ajax({
 				type:'GET',
-				url : "checkfacebookuser?id="+id1,	//need to pass username and password
+				url : "checkuser?username="+user+"&password="+pass,	//need to pass username and password
 				cache : false,
 				success: function(response){
 					console.log(response);

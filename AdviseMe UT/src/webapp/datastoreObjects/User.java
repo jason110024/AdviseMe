@@ -65,6 +65,17 @@ public class User implements Comparable<User>{
 		this.passwordSalt=passwordAndSalt.getPasswordSalt();
 	}
 	
+	public boolean changePassword(String password)throws NoSuchAlgorithmException, UnsupportedEncodingException{
+		try{
+			PasswordAndSalt passwordAndSalt = new PasswordAndSalt(password);
+			this.passwordHash=passwordAndSalt.getPasswordHash();
+			this.passwordSalt=passwordAndSalt.getPasswordSalt();
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	
 	public ArrayList<String> getUserClassList(){
 		return courseList;
 	}
