@@ -649,115 +649,69 @@
 		%>
 		<!--=== End Content Part ===-->
 
-		<!--=== Footer ===-->
-		<div class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 md-margin-bottom-40">
-						<!-- About -->
-						<div class="headline" href="about.html">
-							<h2>About</h2>
-						</div>
-						<p class="margin-bottom-25 md-margin-bottom-40">Helping
-							students help students in order to help students by helping!</p>
-						<!-- End About -->
+    <!--=== Footer ===-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 md-margin-bottom-40">
+                    <!-- About -->
+                    <div class="headline" href="about.html"><h2>About</h2></div>  
+                    <p class="margin-bottom-25 md-margin-bottom-40">Helping students help students in order to help students by helping!</p>    
+                    <!-- End About -->
 
-						<!-- Update Newsletter -->
-						<div class="headline">
-							<h2>Update Newsletter</h2>
-						</div>
-						<p>Subscribe to AdviseMe and stay up to date with the latest
-							news!</p>
-						<form class="footer-subscribe">
-							<div class="input-group">
-								<input type="text" class="form-control"
-									placeholder="Email Address"> <span
-									class="input-group-btn">
-									<button class="btn-u" type="button">Subscribe</button>
-								</span>
-							</div>
-						</form>
-						<!-- End Update Newsletter -->
-					</div>
-					<!--/col-md-4-->
-
-					<div class="col-md-4 md-margin-bottom-40">
-						<!-- Recent Blogs -->
-						<div class="posts">
-							<div class="headline">
-								<h2>Recent Blog Entries</h2>
-							</div>
-							<dl class="dl-horizontal">
-								<dt>
-									<a href="#"><img src="assets/img/sliders/elastislide/6.jpg"
-										alt="" /></a>
-								</dt>
-								<dd>
-									<p>
-										<a href="#">Anim moon officia Unify is an incredibly
-											beautiful responsive Bootstrap Template</a>
-									</p>
-								</dd>
-							</dl>
-							<dl class="dl-horizontal">
-								<dt>
-									<a href="#"><img
-										src="assets/img/sliders/elastislide/10.jpg" alt="" /></a>
-								</dt>
-								<dd>
-									<p>
-										<a href="#">Anim moon officia Unify is an incredibly
-											beautiful responsive Bootstrap Template</a>
-									</p>
-								</dd>
-							</dl>
-							<dl class="dl-horizontal">
-								<dt>
-									<a href="#"><img
-										src="assets/img/sliders/elastislide/11.jpg" alt="" /></a>
-								</dt>
-								<dd>
-									<p>
-										<a href="#">Anim moon officia Unify is an incredibly
-											beautiful responsive Bootstrap Template</a>
-									</p>
-								</dd>
-							</dl>
-						</div>
-						<!-- End Recent Blogs -->
-					</div>
-					<!--/col-md-4-->
+                    <!-- Update Newsletter -->
+                    <div class="headline"><h2>Update Newsletter</h2></div> 
+                    <p>Subscribe to AdviseMe and stay up to date with the latest news!</p>
+                    <form class="footer-subscribe">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Email Address">                            
+                            <span class="input-group-btn">
+                                <button class="btn-u" type="button">Subscribe</button>
+                            </span>
+                        </div>                  
+                    </form>                         
+                    <!-- End Update Newsletter -->
+                </div><!--/col-md-4-->  
+                
+                <div class="col-md-4 md-margin-bottom-40">
+                    <!-- Recent Blogs -->
+                    <div class="posts">
+                        <div class="headline"><h2>See Our Progress</h2></div>
+                        <dl class="dl-horizontal">
+                            <dt><a href="http://jasona-ee461l-webappblog.appspot.com/"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                            <dd>
+                                <p><a href="http://jasona-ee461l-webappblog.appspot.com/">Check out our development blog to keep track of new developments and features available on AdviseMe!</a></p> 
+                            </dd>
+                        </dl>
+                        
+                    </div>
+                    <!-- End Recent Blogs -->                    
+                </div><!--/col-md-4-->
 
 					<div class="col-md-4">
 						<!-- Contact Us -->
-						<div class="headline">
-							<h2>Contact Us</h2>
-						</div>
+						<div class="headline"><h2>Contact Us</h2></div> 
 						<address class="md-margin-bottom-40">
-							2501 Speedway <br /> Austin, Texas <br /> Phone: 000 123 3456 <br />
-							Fax: 000 123 3456 <br /> Email: <a
-								href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
+							2501 Speedway <br />
+							Austin, Texas <br />
+							Phone: 1-800-NOT-REAL <br />
+							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
 						</address>
 						<!-- End Contact Us -->
 
 						<!-- Social Links -->
-						<div class="headline">
-							<h2>Stay Connected</h2>
-						</div>
+						<div class="headline"><h2>Stay Connected</h2></div> 
 						<ul class="social-icons">
-							<li><a href="https://twitter.com/AdviseMeUT"
-								data-original-title="Twitter" class="social_twitter"></a></li>
-							<li><a
-								href="https://plus.google.com/115804048731357756426/about?hl=en"
-								data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="https://twitter.com/AdviseMeUT" data-original-title="Twitter" class="social_twitter"></a></li>
+							<li><a href="https://plus.google.com/115804048731357756426/about?hl=en" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="http://jasona-ee461l-webappblog.appspot.com/" data-original-title="Blogger" class="social_blogger"></a></li>
 						</ul>
 						<!-- End Social Links -->
-					</div>
-					<!--/col-md-4-->
-				</div>
-			</div>
-		</div>
-		<!--=== End Footer ===-->
+					</div><!--/col-md-4-->
+            </div>
+        </div> 
+    </div>    
+    <!--=== End Footer ===-->
 
 		<!--=== Copyright ===-->
 		<div class="copyright">

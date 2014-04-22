@@ -350,25 +350,14 @@ while (up.hasNext()){
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- Recent Blogs -->
                     <div class="posts">
-                        <div class="headline"><h2>Recent Blog Entries</h2></div>
+                        <div class="headline"><h2>See Our Progress</h2></div>
                         <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                            <dt><a href="http://jasona-ee461l-webappblog.appspot.com/"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
                             <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
+                                <p><a href="http://jasona-ee461l-webappblog.appspot.com/">Check out our development blog to keep track of new developments and features available on AdviseMe!</a></p> 
                             </dd>
                         </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p> 
-                            </dd>
-                        </dl>
+                        
                     </div>
                     <!-- End Recent Blogs -->                    
                 </div><!--/col-md-4-->
@@ -377,10 +366,9 @@ while (up.hasNext()){
 						<!-- Contact Us -->
 						<div class="headline"><h2>Contact Us</h2></div> 
 						<address class="md-margin-bottom-40">
-							Somewhere, Street <br />
-							Texas, US <br />
-							Phone: 000 123 3456 <br />
-							Fax: 000 123 3456 <br />
+							2501 Speedway <br />
+							Austin, Texas <br />
+							Phone: 1-800-NOT-REAL <br />
 							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
 						</address>
 						<!-- End Contact Us -->
@@ -388,9 +376,9 @@ while (up.hasNext()){
 						<!-- Social Links -->
 						<div class="headline"><h2>Stay Connected</h2></div> 
 						<ul class="social-icons">
-							<li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-							<li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-							<li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="https://twitter.com/AdviseMeUT" data-original-title="Twitter" class="social_twitter"></a></li>
+							<li><a href="https://plus.google.com/115804048731357756426/about?hl=en" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="http://jasona-ee461l-webappblog.appspot.com/" data-original-title="Blogger" class="social_blogger"></a></li>
 						</ul>
 						<!-- End Social Links -->
 					</div><!--/col-md-4-->

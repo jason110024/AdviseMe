@@ -352,28 +352,26 @@ while (it.hasNext()){
                     <!-- End Recent Blogs -->                    
                 </div><!--/col-md-4-->
 
-               <div class="col-md-4">
-                  <!-- Contact Us -->
-                  <div class="headline"><h2>Contact Us</h2></div> 
-                  <address class="md-margin-bottom-40">
-                     Somewhere, Street <br />
-                     Texas, US <br />
-                     Phone: 000 123 3456 <br />
-                     Fax: 000 123 3456 <br />
-                     Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
-                  </address>
-                  <!-- End Contact Us -->
+					<div class="col-md-4">
+						<!-- Contact Us -->
+						<div class="headline"><h2>Contact Us</h2></div> 
+						<address class="md-margin-bottom-40">
+							2501 Speedway <br />
+							Austin, Texas <br />
+							Phone: 1-800-NOT-REAL <br />
+							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
+						</address>
+						<!-- End Contact Us -->
 
-                  <!-- Social Links -->
-                  <div class="headline"><h2>Stay Connected</h2></div> 
-                  <ul class="social-icons">
-                     <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
-                     <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
-                     <li><a href="#" data-original-title="Google Plus" class="social_googleplus"></a></li>
-                     <li><a href="http://jasona-ee461l-webappblog.appspot.com/" data-original-title="Blogger" class="social_blogger"></a></li>
-                  </ul>
-                  <!-- End Social Links -->
-               </div><!--/col-md-4-->
+						<!-- Social Links -->
+						<div class="headline"><h2>Stay Connected</h2></div> 
+						<ul class="social-icons">
+							<li><a href="https://twitter.com/AdviseMeUT" data-original-title="Twitter" class="social_twitter"></a></li>
+							<li><a href="https://plus.google.com/115804048731357756426/about?hl=en" data-original-title="Google Plus" class="social_googleplus"></a></li>
+							<li><a href="http://jasona-ee461l-webappblog.appspot.com/" data-original-title="Blogger" class="social_blogger"></a></li>
+						</ul>
+						<!-- End Social Links -->
+					</div><!--/col-md-4-->
             </div>
         </div> 
     </div>    

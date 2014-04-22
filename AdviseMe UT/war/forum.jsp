@@ -325,8 +325,7 @@ pageContext.setAttribute("postcount",posts.size());
 						<address class="md-margin-bottom-40">
 							2501 Speedway <br />
 							Austin, Texas <br />
-							Phone: 000 123 3456 <br />
-							Fax: 000 123 3456 <br />
+							Phone: 1-800-NOT-REAL <br />
 							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
 						</address>
 						<!-- End Contact Us -->
@@ -342,7 +341,7 @@ pageContext.setAttribute("postcount",posts.size());
 					</div><!--/col-md-4-->
             </div>
         </div> 
-    </div>     
+    </div>    
     <!--=== End Footer ===-->
 
     <!--=== Copyright ===-->
