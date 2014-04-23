@@ -225,17 +225,17 @@
     <!--=== End Header ===-->     
 
 <%
-		// retrieve courses
+		//retrieve courses
 		ObjectifyService.register(Course.class);
 		List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
 		Collections.sort(courses);
 		String name = request.getParameter("courseName");
 		pageContext.setAttribute("courseName",name);
-		// Course current;
-		// System.out.println(name);
+		//Course current;
+		//System.out.println(name);
 		for(Course course : courses){
 			if(course.getCourseName().equals(name)){
-		// current = course;
+		//current = course;
 		pageContext.setAttribute("course_title", course.getTitle());
 		pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
 		pageContext.setAttribute("course_description", course.getDescription());
@@ -244,10 +244,8 @@
 		pageContext.setAttribute("course_prereq", course.getPrereq());
 		pageContext.setAttribute("course_syllabus_link", course.getSyllabusLink());
 		pageContext.setAttribute("course_eval_link", course.getEvalLink());
-		pageContext.setAttribute("course_num_users_rating", course.getNumDiffRating());
-		pageContext.setAttribute("course_rating", ((double)Math.round(course.getDiffAvg() * 10) / 10));
-		pageContext.setAttribute("course_num_users_work_rating", course.getNumDiffRating());
-		pageContext.setAttribute("course_work_rating", ((double)Math.round(course.getDiffAvg() * 10) / 10));
+		pageContext.setAttribute("course_num_users_rating", course.getNumRating());
+		pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
 		break;
 			}
 		}
@@ -418,57 +416,6 @@
 </div>      
                 </div>            
             
-                
-                
-                
-                
-                
-                
-                <div class="servive-block servive-block-purple">
-                <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
-                <h2 class="heading-md">Workload: </h2>
-                <p>
-                
-<div class="rateit" id="rateit5" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_work_rating)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
-<script type="text/javascript">
-$("#rateit5").bind('rated', 
-function(event, value){
-	var courseName = GetURLParameter('courseName');
-	$.ajax({
-		type: 'GET',
-		url: "updatecourserating?rating="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
-		cache: false,
-		success: function(response){
-		}
-	});
-});
-$('#rateit5').on('beforerated', function (e, value) {
-if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
-e.preventDefault();
-}
-});       
-</script>   
-
-
-</p>
-<p>${fn:escapeXml(course_num_users_work_rating)} users rate this course: ${fn:escapeXml(course_work_rating)}</p>
-            </div>
-            
-            
-          <div class="span3">
-<div class="col-md-7">
-	<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
-<script>
-if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
-	document.getElementById("editbutton").style.visibility='hidden';			
-}
-
-
-</script>
-</div>
-</div>      
-    </div>
-                
                 <!-- Posts -->
 <!--                 <div class="posts margin-bottom-30"> -->
 <!--                     <div class="headline"><h2>Recent Blog Entries</h2></div> -->
@@ -500,8 +447,7 @@ if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "fals
 <!--                         <li><a href="#"><i class="fa fa-home"></i>5B amus ED554, New York, US</a></li> -->
 <!--                         <li><a href="#"><i class="fa fa-envelope"></i>infp@example.com</a></li> -->
 <!--                         <li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-globe"></i>http:// www.example.com</a></li>
-																				// -->
+<!--                         <li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li> -->
 <!--                     </ul> -->
 <!--                 </div> -->
             </div><!--/col-md-3-->
@@ -515,8 +461,7 @@ if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "fals
 <!--Start Disqus -->
 <div id="disqus_thread"></div>
 	<script type="text/javascript">
-		var disqus_shortname = 'adviseme'; // required: replace example with
-											// your forum shortname
+		var disqus_shortname = 'adviseme'; // required: replace example with your forum shortname
 
 		/* * * DON'T EDIT BELOW THIS LINE * * */
 		(function() {
