@@ -36,6 +36,7 @@ public class passwordResetServlet extends HttpServlet{
 					for(User users: user){
 						if(users.getfbUserId().equals(passwordss.getUserId())){
 							users.changePassword(password);
+							ObjectifyService.ofy().save().entity(users).now();
 							flag = true;
 						}
 					}
