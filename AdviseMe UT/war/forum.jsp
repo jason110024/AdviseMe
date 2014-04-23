@@ -272,7 +272,12 @@ pageContext.setAttribute("postcount",posts.size());
 
             <!-- Right Sidebar -->
         	<div class="col-md-3">
-        	
+        	<div class="span3">
+<!-- 				<div class="col-md-4"> -->
+					<button class="btn-u btn-brd btn-block btn-brd-hover btn-u-lg rounded-4x btn-u-dark-blue" type="button" onclick="window.location.replace('/addforumpost.jsp')">Create a Post</button>		
+<!-- 				</div> -->
+			</div>
+			<br>
             	<!-- Feedback -->
             	<div class="headline headline-md"><h2>Student Feedback</h2></div>
                 <blockquote class="hero-unify">
