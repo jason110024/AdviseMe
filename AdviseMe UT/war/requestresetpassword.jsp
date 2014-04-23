@@ -30,7 +30,14 @@
 </head> 
 
 <body>    
-
+    <%
+    	String error = request.getParameter("error");
+    	if(error.equals("true")){
+        	pageContext.setAttribute("error1", "Email not found. Please Try Again.");
+    	}else{
+    		pageContext.setAttribute("error1", " ");
+    	}
+     %>
 <div class="wrapper">
     <!--=== Header ===-->    
     <div class="header">
@@ -150,7 +157,8 @@
     <!--=== Content Part ===-->
     <div class="container content">		
     	<div class="row-fluid privacy">
-			<form action="/addpasswordreset" method="post">
+    		<h2 id="test">${fn:escapeXml(error1)}</h2>
+    		<form action="/addpasswordreset" method="post">
 			<h3>Enter your account email :</h3>
 			<input type="text" name="email" id="email" placeholder="Email Address">
 			<button type="submit">Submit Request</button>

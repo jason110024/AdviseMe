@@ -26,6 +26,7 @@ public class addPasswordReset extends HttpServlet{
 		long range = 1234567L;
 		Random r = new Random();
 		PasswordReset temp;
+		boolean flag=false;
 		long number = (long)(r.nextDouble()*range);
 		try{
 			if(email==null||email.isEmpty()){
@@ -38,23 +39,28 @@ public class addPasswordReset extends HttpServlet{
 					ObjectifyService.register(PasswordReset.class);
 					temp = new PasswordReset(number, users.getfbUserId());
 					ObjectifyService.ofy().save().entity(temp).now();
+					flag = true;
 					break;
 				}
 			}
-			Properties props = new Properties();
-			Session session = Session.getDefaultInstance(props,null);
-			Message msg = new MimeMessage(session);
-			try{
-				msg.setFrom(new InternetAddress("PasswordReset@advisemeut.appspotmail.com", "AdviseMe Password Reset"));
-				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
-				msg.setSubject("Password Reset");
-				msg.setText("You have submitted a request for a password reset. (If you have recieved this message in error, please visit advisemeut.appspot.com/contact.jsp ASAP.\n\n"
-						+ "Go to http://advisemeut.appspot.com/resetpassword.jsp?key="+number); //NEED TO MAKE TEXT INCLUDE LINK TO PAGE WITH SPECIAL NUMBER.
-				Transport.send(msg);
-			}catch(Exception e1){
-				System.out.println("Was not able to send change to admin");
+			if(flag){
+				Properties props = new Properties();
+				Session session = Session.getDefaultInstance(props,null);
+				Message msg = new MimeMessage(session);
+				try{
+					msg.setFrom(new InternetAddress("PasswordReset@advisemeut.appspotmail.com", "AdviseMe Password Reset"));
+					msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
+					msg.setSubject("Password Reset");
+					msg.setText("You have submitted a request for a password reset. (If you have recieved this message in error, please visit advisemeut.appspot.com/contact.jsp ASAP.\n\n"
+							+ "Go to http://advisemeut.appspot.com/resetpassword.jsp?key="+number); //NEED TO MAKE TEXT INCLUDE LINK TO PAGE WITH SPECIAL NUMBER.
+					Transport.send(msg);
+				}catch(Exception e1){
+					System.out.println("Was not able to send change to admin");
+				}
+				resp.sendRedirect("home.jsp");
+			}else{
+				resp.sendRedirect("requestpasswordreset.jsp?error=true");
 			}
-			resp.sendRedirect("home.jsp");
 		}catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);
