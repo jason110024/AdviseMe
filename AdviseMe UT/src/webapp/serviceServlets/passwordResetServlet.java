@@ -27,6 +27,7 @@ public class passwordResetServlet extends HttpServlet{
 			if(password==null||password.isEmpty()){
 				throw new Exception("Please enter a password");
 			}
+			boolean flag = false;
 			List<PasswordReset> passwords = ofy().load().type(PasswordReset.class).list();
 			for(PasswordReset passwordss : passwords){
 				if(passwordss.getKey().toString().equals(key)){
@@ -35,11 +36,15 @@ public class passwordResetServlet extends HttpServlet{
 					for(User users: user){
 						if(users.getfbUserId().equals(passwordss.getUserId())){
 							users.changePassword(password);
+							flag = true;
 						}
 					}
-				}else{
-					throw new Exception("Error when resetting password");
 				}
+			}
+			if(!flag){
+				throw new Exception("Error when resetting password");
+			}else{
+				resp.sendRedirect("home.jsp");
 			}
 		}catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
