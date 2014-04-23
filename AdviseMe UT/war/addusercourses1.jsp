@@ -7,6 +7,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <html>
 	<head>
     	<link href="stylesheets/bootstrap.css" rel="stylesheet" media="screen">
