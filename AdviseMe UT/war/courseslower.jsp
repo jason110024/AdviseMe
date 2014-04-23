@@ -67,16 +67,20 @@
 	}
 	%>
 <div class="wrapper">
-        <!--=== Header ===-->    
+ <!--=== Header ===-->    
     <div class="header">
         <!-- Topbar -->
         <div class="topbar">
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                    <li><a href="help.html">FAQs</a></li>  
+                    <li><a href="usefulLinks.jsp">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="login.html">Login</a></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -115,40 +119,31 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="about.jsp">About Us</a></li>
-                                <li><a href="help.html">Useful Links</a></li>
-
-                                
+                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
                             </ul>
                         </li>
                         <!-- End About -->
 
-                       <!-- courses -->
+                        <!-- Courses -->
                         <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            Courses
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="courseslower.jsp">Lower Division</a></li>
-                            <li><a href="coursesupper.jsp">Upper Division</a></li>
-                            <li><a href="coursesall.jsp">All Courses</a></li>
+	                        <a class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="javascript:void(0);">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
+                        <!-- End Courses -->
 
-                            
-                        </ul>
-                    </li>
-                        <!-- End courses -->
-
-                        <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
+                        <!-- Forum -->
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
                         </li>
-                        <!-- End Portfolio -->
-
+                        <!-- End Forum -->
 
                         <!-- Contacts -->
                         <li>
