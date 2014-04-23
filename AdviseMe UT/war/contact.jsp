@@ -36,7 +36,29 @@
 </head> 
 
 <body> 
-
+	<%
+		String ids = null;
+		String picurl = null;
+		String first = null;
+		String last = null;
+		String isLoggedIn = null;
+		HttpSession mysession = request.getSession(false);
+		if(mysession.getAttribute("id")!=null){
+			ids = (String) mysession.getAttribute("userid");
+			picurl = (String) mysession.getAttribute("pic");
+			first = (String) mysession.getAttribute("first");
+			last = (String) mysession.getAttribute("last");
+			isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+			pageContext.setAttribute("id", ids);
+			pageContext.setAttribute("pic",picurl);
+			pageContext.setAttribute("first", first);
+			pageContext.setAttribute("last", last);
+			pageContext.setAttribute("isLoggedIn", isLoggedIn);
+			pageContext.setAttribute("guest","false");
+		}else{
+			pageContext.setAttribute("guest", "true");
+		}
+	%>
 <div class="wrapper">
         <!--=== Header ===-->    
     <div class="header">
@@ -45,9 +67,13 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                    <li><a href="usefulLinksNew.jsp">FAQs</a></li>  
+                    <li><a href="usefulLinks.jsp">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="login.html">Login</a></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -85,40 +111,32 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="help.html">Useful Links</a></li>
-
+                                <li><a href="about.jsp">About Us</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
                             </ul>
                         </li>
                         <!-- End About -->
 
-                       <!-- courses -->
+                        <!-- Courses -->
                         <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            Courses
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="courseslower.jsp">Lower Division</a></li>
-                            <li><a href="coursesupper.jsp">Upper Division</a></li>
-                            <li><a href="coursesall.jsp">All Courses</a></li>
+	                        <a class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="courseslower.jsp">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
+                        <!-- End Courses -->
 
-                            
-                        </ul>
-                    </li>
-                        <!-- End courses -->
-
-                        <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
+                        <!-- Forum -->
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
                         </li>
-                        <!-- End Portfolio -->
-
+                        <!-- End Forum -->
 
                         <!-- Contacts -->
                         <li>
@@ -147,7 +165,7 @@
         </div>            
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->   
+    <!--=== End Header ===-->
 
     <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3">
@@ -214,120 +232,9 @@
                 	<li><i class="fa fa-check color-green"></i> Making a difference</li>
                 	<li><i class="fa fa-check color-green"></i> Learning new things</li>
                 </ul>
-                <!-- End Info Block -->
-            </div><!--/col-md-3-->
-        </div><!--/row-->        
-
-<!--         Our Clients
-        <div id="clients-flexslider" class="flexslider home clients">
-            <div class="headline"><h2>Our Clients</h2></div>    
-            <ul class="slides">
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/hp_grey.png" alt="" /> 
-                        <img src="assets/img/clients/hp.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/igneus_grey.png" alt="" /> 
-                        <img src="assets/img/clients/igneus.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/vadafone_grey.png" alt="" /> 
-                        <img src="assets/img/clients/vadafone.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/walmart_grey.png" alt="" /> 
-                        <img src="assets/img/clients/walmart.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
-                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
-                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/aztec_grey.png" alt="" /> 
-                        <img src="assets/img/clients/aztec.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
-                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/cisco_grey.png" alt="" /> 
-                        <img src="assets/img/clients/cisco.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
-                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/cocacola_grey.png" alt="" /> 
-                        <img src="assets/img/clients/cocacola.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
-                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/shell_grey.png" alt="" /> 
-                        <img src="assets/img/clients/shell.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/natural_grey.png" alt="" /> 
-                        <img src="assets/img/clients/natural.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/gamescast_grey.png" alt="" /> 
-                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/everyday_grey.png" alt="" /> 
-                        <img src="assets/img/clients/everyday.png" class="color-img" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/img/clients/spinworkx_grey.png" alt="" /> 
-                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" />
-                    </a>
-                </li>
-            </ul>
-        </div>/flexslider
-        End Our Clients -->
-    </div><!--/container-->		
+            </div>
+        </div>      
+    </div>	
     <!--=== End Content Part ===-->
 
     <!--=== Footer ===-->
@@ -431,6 +338,27 @@
         ContactPage.initMap();        
     });
 </script>
+	<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->

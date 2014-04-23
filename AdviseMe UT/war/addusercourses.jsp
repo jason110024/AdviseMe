@@ -72,91 +72,112 @@
 		}
 	%>
 	<div class="wrapper">
-		<!--=== Header ===-->
-		<div class="header">
-			<!-- Topbar -->
-			<div class="topbar">
-				<div class="container">
-					<!-- Topbar Navigation -->
-					<ul class="loginbar pull-right">
-						<li><a href="usefulLinksNew.jsp">FAQs</a></li>
-						<li class="topbar-devider"></li>
-						<li><a href="login.html">Login</a></li>
-					</ul>
-					<!-- End Topbar Navigation -->
-				</div>
-			</div>
-			<!-- End Topbar -->
+		<!--=== Header ===-->    
+    <div class="header">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <!-- Topbar Navigation -->
+                <ul class="loginbar pull-right">
+                    <li><a href="usefulLinks.jsp">FAQs</a></li>  
+                    <li class="topbar-devider"></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
+                </ul>
+                <!-- End Topbar Navigation -->
+            </div>
+        </div>
+        <!-- End Topbar -->
+    
+        <!-- Navbar -->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
+                    </a>
+                </div>
 
-			<!-- Navbar -->
-			<div class="navbar navbar-default" role="navigation">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target=".navbar-responsive-collapse">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="fa fa-bars"></span>
-						</button>
-						<a class="navbar-brand" href="index.html"> <img
-							id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
-						</a>
-					</div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Home -->
+                        <li>
+                            <a href="home.jsp" >
+                                Home
+                            </a>
+                        </li>
+                        <!-- End Home -->
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse navbar-responsive-collapse">
-						<ul class="nav navbar-nav">
-							<!-- Home -->
-							<li><a href="home.jsp"> Home </a></li>
-							<!-- End Home -->
+                        <!-- About -->                        
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.jsp">About Us</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
+                            </ul>
+                        </li>
+                        <!-- End About -->
 
-							<!-- About -->
-							<li class="dropdown"><a href="javascript:void(0);"
-								class="dropdown-toggle" data-toggle="dropdown"> About Us </a>
-								<ul class="dropdown-menu">
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="help.html">Useful Links</a></li>
+                        <!-- Courses -->
+                        <li class="dropdown">
+	                        <a class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="courseslower.jsp">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
+                        <!-- End Courses -->
 
-								</ul></li>
-							<!-- End About -->
+                        <!-- Forum -->
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
+                            </a>
+                        </li>
+                        <!-- End Forum -->
 
-							<!-- Courses -->
-							<li><a href="coursesnew.jsp"> Courses </a></li>
-							<!-- End Courses -->
+                        <!-- Contacts -->
+                        <li>
+                            <a href="contact.jsp">
+                                Contact Us
+                            </a>
+                        </li>                    
+                        <!-- End Contacts -->
 
-							<!-- Portfolio -->
-							<li class="dropdown"><a href="javascript:void(0);"
-								class="dropdown-toggle" data-toggle="dropdown"> Schedules </a>
-								<ul class="dropdown-menu">
-									<li><a href="javascript:void(0);">Something</a></li>
-									<li><a href="javascript:void(0);">Something</a></li>
-								</ul></li>
-							<!-- End Portfolio -->
-
-
-							<!-- Contacts -->
-							<li><a href="javascript:void(0);"> Contact Us </a></li>
-							<!-- End Contacts -->
-
-							<!-- Search Block -->
-							<li><i class="search fa fa-search search-btn"></i>
-								<div class="search-open">
-									<div class="input-group animated fadeInDown">
-										<input type="text" class="form-control" placeholder="Search">
-										<span class="input-group-btn">
-											<button class="btn-u" type="button">Go</button>
-										</span>
-									</div>
-								</div></li>
-							<!-- End Search Block -->
-						</ul>
-					</div>
-					<!--/navbar-collapse-->
-				</div>
-			</div>
-			<!-- End Navbar -->
-		</div>
-		<!--=== End Header ===-->
+                        <!-- Search Block -->
+                        <li>
+                            <i class="search fa fa-search search-btn"></i>
+                            <div class="search-open">
+                                <div class="input-group animated fadeInDown">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button class="btn-u" type="button">Go</button>
+                                    </span>
+                                </div>
+                            </div>    
+                        </li>
+                        <!-- End Search Block -->
+                    </ul>
+                </div><!--/navbar-collapse-->
+            </div>    
+        </div>            
+        <!-- End Navbar -->
+    </div>
+    <!--=== End Header ===-->
 
 	<!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3">
@@ -397,6 +418,27 @@
 			App.initSliders();
 			ContactPage.initMap();
 		});
+	</script>
+	<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
 	</script>
 	<!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
