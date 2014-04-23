@@ -80,7 +80,7 @@
 					<li class="topbar-devider"></li>   
                     <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
 					<li class="topbar-devider"></li>   
-                    <li><a id="adviseloginbutton" href="login.jsp">Login</a></li>
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
