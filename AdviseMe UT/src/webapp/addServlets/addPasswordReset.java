@@ -59,7 +59,7 @@ public class addPasswordReset extends HttpServlet{
 				}
 				resp.sendRedirect("home.jsp");
 			}else{
-				resp.sendRedirect("requestpasswordreset.jsp?error=true");
+				resp.sendRedirect("requestresetpassword.jsp?error=true");
 			}
 		}catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
