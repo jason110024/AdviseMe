@@ -100,11 +100,13 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                    <li><a href="help.html">FAQs</a></li>  
+                    <li><a href="usefulLinks.jsp">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
-                    <li><a id="adviseloginbutton" href="login.jsp">Login</a></li>
+                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -130,7 +132,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="home.jsp" >
+                            <a href="javascript:void(0);" >
                                 Home
                             </a>
                         </li>
@@ -144,38 +146,30 @@
                             <ul class="dropdown-menu">
                                 <li><a href="about.jsp">About Us</a></li>
                                 <li><a href="usefulLinks.jsp">Useful Links</a></li>
-
                             </ul>
                         </li>
                         <!-- End About -->
 
-                        <!-- courses -->
+                        <!-- Courses -->
                         <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            Courses
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="courseslower.jsp">Lower Division</a></li>
-                            <li><a href="coursesupper.jsp">Upper Division</a></li>
-                            <li><a href="coursesall.jsp">All Courses</a></li>
+	                        <a class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="courseslower.jsp">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
+                        <!-- End Courses -->
 
-                            
-                        </ul>
-                    </li>
-                        <!-- End courses -->
-
-                        <!-- Portfolio -->
+                        <!-- Forum -->
                         <li>
                             <a href="forum.jsp">
                                 Forum
                             </a>
-<!--                             <ul class="dropdown-menu"> -->
-<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
-<!--                                 <li><a href="javascript:void(0);">Something</a></li> -->
-<!--                             </ul> -->
                         </li>
-                        <!-- End Portfolio -->
-
+                        <!-- End Forum -->
 
                         <!-- Contacts -->
                         <li>
@@ -397,6 +391,27 @@
         App.init();
     });
 </script>
+		<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->

@@ -34,9 +34,32 @@
 </head> 
 
 <body> 
-
+<%
+	String id = null;
+	String picurl = null;
+	String first = null;
+	String last = null;
+	String isLoggedIn = null;
+	HttpSession mysession = request.getSession(false);
+	if(mysession.getAttribute("id")!=null){
+		id = (String) mysession.getAttribute("userid");
+		picurl = (String) mysession.getAttribute("pic");
+		first = (String) mysession.getAttribute("first");
+		last = (String) mysession.getAttribute("last");
+		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+		pageContext.setAttribute("id", id);
+		pageContext.setAttribute("pic",picurl);
+		pageContext.setAttribute("first", first);
+		pageContext.setAttribute("last", last);
+		pageContext.setAttribute("isLoggedIn", isLoggedIn);
+		pageContext.setAttribute("guest","false");
+	}else{
+		pageContext.setAttribute("guest", "true");
+		throw new Exception("You gotta be logged in for that!");
+	}
+	%>
 <div class="wrapper">
-            <!--=== Header ===-->    
+           <!--=== Header ===-->    
     <div class="header">
         <!-- Topbar -->
         <div class="topbar">
@@ -45,7 +68,11 @@
                 <ul class="loginbar pull-right">
                     <li><a href="javascript:void(0);">FAQs</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="login.jsp">Login</a></li>   
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -79,37 +106,36 @@
 
                         <!-- About -->                        
                         <li class="dropdown">
-                            <a href="about.jsp" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="about.jsp">About Us</a></li>
                                 <li><a href="javascript:void(0);">Useful Links</a></li>
-
                             </ul>
                         </li>
                         <!-- End About -->
 
                         <!-- Courses -->
-                        <li>
-                            <a href="courses.jsp">
-                                Courses
-                            </a>
-                        </li>
+                        <li class="dropdown">
+	                        <a class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="courseslower.jsp">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
                         <!-- End Courses -->
 
-                        <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
+                        <!-- Forum -->
+                        <li>
+                            <a href="forum.jsp">
+                                Forum
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
                         </li>
-                        <!-- End Portfolio -->
-
+                        <!-- End Forum -->
 
                         <!-- Contacts -->
                         <li>
@@ -480,6 +506,27 @@
         App.init();
     });
 </script>
+		<script>
+	if ("${fn:escapeXml(guest)}" == "false") {
+		console.log('1');
+		if("${fn:escapeXml(isLoggedIn)}" == "true"){
+			console.log('2');
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
+		}else{
+			console.log('3');
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
+		}
+	} else {
+		console.log('4');
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
