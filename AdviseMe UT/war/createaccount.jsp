@@ -35,6 +35,7 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
     <!-- CSS Parsley Form Confirmation -->
     <link rel="stylesheet" href="stylesheets/parsley.css">
 

@@ -29,6 +29,9 @@
     
 	<!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <!-- CSS Parsley Form Confirmation -->
+    <link rel="stylesheet" href="stylesheets/parsley.css">
 </head> 
 
 <body>    
@@ -158,15 +161,33 @@
 
     <!--=== Content Part ===-->
     <div class="container content">		
-    	<div class="row-fluid privacy">
-    		<h2 id="test">${fn:escapeXml(error1)}</h2>
-    		<form action="/addpasswordreset" method="post">
-			<h3>Enter your account email :</h3>
-			<input type="text" name="email" id="email" placeholder="Email Address">
-			<button type="submit">Submit Request</button>
+    	<div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">		
+			<form class="reg-page" action="/addpasswordreset" method="post" data-parsley-validate>
+                    <div class="reg-header">            
+                        <h2>Request Password Reset</h2>
+                    </div>
+					<hr>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="email" id="email" name="email" placeholder="Email Address" class="form-control" data-parsley-trigger="change" required>
+                    </div>                    
+
+					     <h2 id="test">${fn:escapeXml(error1)}</h2>
+                    <hr>
+                     <div class="row">
+ 	                     <div class="col-md-6">
+                         <button class="btn-u pull-right" onclick="window.location.replace('/home.jsp')">Cancel</button>                        
+                     </div>
+  		                  <div class="col-md-6">
+                         <button class="btn-u pull-right" type="submit">Submit</button>                        
+                     </div>
+                    </div>
+                </form>
 			<br>
-			<h4>If you enter the same email you have on file for your account, you will receive instructions on how to reset your password.</h4>
-        </div><!--/row-fluid-->        
+			<h4>You will receive instructions on how to reset your password.</h4>
+            </div>
+        </div><!--/row-->       
     </div><!--/container-->		
     <!--=== End Content Part ===-->
 
@@ -263,6 +284,8 @@
 <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
 <!-- JS Page Level -->           
 <script type="text/javascript" src="assets/js/app.js"></script>
+<!-- CSS Parsley Form Confirmation -->
+<script type="text/javascript" src="stylesheets/parsley.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();

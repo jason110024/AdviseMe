@@ -11,6 +11,8 @@ public class PasswordReset {
 	@Id private Long key;
 	private String userId;
 	
+	public PasswordReset(){}
+	
 	public PasswordReset(Long id, String user){
 		this.key=id;
 		this.userId=user;

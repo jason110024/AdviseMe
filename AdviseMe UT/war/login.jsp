@@ -32,6 +32,7 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
     <!-- CSS Parsley Form Confirmation -->
     <link rel="stylesheet" href="stylesheets/parsley.css">
 </head> 
@@ -178,10 +179,10 @@
 					     <h2 id="test">${fn:escapeXml(error1)}</h2>
                     <hr>
                      <div class="row">
- <!--                     <div class="col-md-6">
+ 	                     <div class="col-md-6">
                          <button class="btn-u pull-right" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
                      </div>
-  -->                   <div class="col-md-6">
+  		                  <div class="col-md-6">
                          <button class="btn-u pull-right" type="submit">Login</button>                        
                      </div>
                     </div>

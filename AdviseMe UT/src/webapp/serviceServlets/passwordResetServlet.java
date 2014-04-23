@@ -29,7 +29,7 @@ public class passwordResetServlet extends HttpServlet{
 			}
 			List<PasswordReset> passwords = ofy().load().type(PasswordReset.class).list();
 			for(PasswordReset passwordss : passwords){
-				if(passwordss.getKey().equals(key)){
+				if(passwordss.getKey().toString().equals(key)){
 					ObjectifyService.register(User.class);
 					List<User> user = ofy().load().type(User.class).list();
 					for(User users: user){
