@@ -94,7 +94,7 @@
         </div>
         <!-- End Topbar -->
     
-                <!-- Navbar -->
+        <!-- Navbar -->
         <div class="navbar navbar-default" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -113,7 +113,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="home.jsp" >
+                            <a href="home.html" >
                                 Home
                             </a>
                         </li>
@@ -125,36 +125,37 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.jsp">About Us</a></li>
-                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="help.html">Useful Links</a></li>
+
                             </ul>
                         </li>
                         <!-- End About -->
 
                         <!-- Courses -->
-                        <li class="dropdown">
-	                        <a class="dropdown-toggle" data-toggle="dropdown">
-	                            Courses
-	                        </a>
-	                        <ul class="dropdown-menu">
-	                        	<li><a href="coursesall.jsp">All Courses</a></li>
-	                            <li><a href="courseslower.jsp">Lower Division</a></li>
-	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
-	                        </ul>
-                    	</li>
-                        <!-- End Courses -->
-
-                        <!-- Forum -->
                         <li>
-                            <a href="forum.jsp">
-                                Forum
+                            <a href="courses.html">
+                                Courses
                             </a>
                         </li>
-                        <!-- End Forum -->
+                        <!-- End Courses -->
+
+                        <!-- Portfolio -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                Schedules
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0);">Something</a></li>
+                                <li><a href="javascript:void(0);">Something</a></li>
+                            </ul>
+                        </li>
+                        <!-- End Portfolio -->
+
 
                         <!-- Contacts -->
                         <li>
-                            <a href="contact.jsp">
+                            <a href="contact.html">
                                 Contact Us
                             </a>
                         </li>                    
