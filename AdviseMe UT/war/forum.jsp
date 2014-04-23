@@ -233,7 +233,7 @@ pageContext.setAttribute("postcount",posts.size());
 <!--                             <li><i class="fa fa-tags"></i> Technology, Internet</li>  -->
                         </ul>
 <%--                         <p>   ${fn:escapeXml(postContent)}                 </p> --%>
-                        <p><a class="btn-u btn-u-small" href="'forumpost.jsp?postTitle=${fn:escapeXml(postID)}'"><i class="fa fa-location-arrow"></i> Read More</a></p>
+                        <p><a class="btn-u btn-u-small" href="forumpost.jsp?postID=${fn:escapeXml(postID)}"><i class="fa fa-location-arrow"></i> Read More</a></p>
                     </div>  
                     
             
