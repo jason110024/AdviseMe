@@ -32,8 +32,7 @@ public class userCourseGenerator extends HttpServlet{
 			System.out.println("Course List was empty at Cron Time");
 			return;
 		}
-		Collections.sort(users);
-		Collections.sort(courses);		Iterator<Course> temporary = courses.iterator();
+		Iterator<Course> temporary = courses.iterator();
 		while(temporary.hasNext()){
 			ArrayList<String> newlist = new ArrayList<String>();
 			temporary.next().setUserTaken(newlist);

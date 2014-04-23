@@ -58,6 +58,7 @@
 		pageContext.setAttribute("guest","false");
 	}else{
 		pageContext.setAttribute("guest", "true");
+		throw new Exception("You gotta be logged in for that!");
 	}
 	%>
 
