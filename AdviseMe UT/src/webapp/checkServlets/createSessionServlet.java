@@ -20,7 +20,6 @@ public class createSessionServlet extends HttpServlet{
 	static{ObjectifyService.register(User.class);}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		try{
-			String picurl = req.getParameter("picurl");
 			String fbid = req.getParameter("id");
 			HttpSession session = req.getSession(true);
 			List<User> users = ofy().load().type(User.class).list();
@@ -28,11 +27,11 @@ public class createSessionServlet extends HttpServlet{
 				if(user.getfbUserId().equals(fbid)){
 					session.setAttribute("first", user.getFirstName());
 					session.setAttribute("last", user.getLastName());
-					session.setAttribute("pic", picurl);
 					session.setAttribute("id", fbid);
 					session.setAttribute("isLoggedIn", user.getLoginStatus().toString());
 				}
 			}
+			resp.sendRedirect("home.jsp");
 		}catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);

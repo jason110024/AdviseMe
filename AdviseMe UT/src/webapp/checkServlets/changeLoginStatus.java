@@ -5,6 +5,8 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,8 +24,7 @@ public class changeLoginStatus extends HttpServlet {
 		HttpSession session = req.getSession(false);
 		try{
 			if(id==null||id.isEmpty()){
-				throw new Exception("Facebook not returning valid identification. Please relogin.");
-
+				throw new Exception("User Id was not passed correctly. Please Try again");
 			}
 			List<User> users = ofy().load().type(User.class).list();
 			boolean flag = false;
@@ -42,10 +43,6 @@ public class changeLoginStatus extends HttpServlet {
 						session.setAttribute("isLoggedIn", "true");
 						ofy().save().entity(user).now();
 					}
-					status=user.getLoginStatus();
-					resp.setContentType("text/plain");
-					resp.setCharacterEncoding("UTF-8");
-					resp.getWriter().write(status.toString());
 					flag = true;
 					break;
 				}
@@ -53,6 +50,9 @@ public class changeLoginStatus extends HttpServlet {
 			if(!flag){
 				throw new Exception("User account not found in database.");
 			}
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher("/createsessionservlet?id="+id);
+			rd.forward(req, resp);
 		} catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);
