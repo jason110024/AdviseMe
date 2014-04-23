@@ -34,13 +34,13 @@ public class updateCourseRating extends HttpServlet{
 			List<Course> courses = ofy().load().type(Course.class).list();
 			for(Course course: courses){
 				if(course.getCourseName().equals(courseName)){
-					System.out.println("Old Rating for "+courseName+" was :"+course.getDiffAvg());
-					course.processDiffRating(rating,id); 
-					System.out.println("New Rating for " + courseName+" is :"+ course.getDiffAvg());
+					System.out.println("Old Rating for "+courseName+" was :"+course.getAvg());
+					course.processRating(rating,id); 
+					System.out.println("New Rating for " + courseName+" is :"+ course.getAvg());
 					ofy().save().entity(course).now();
 					resp.setContentType("text/plain");
 					resp.setCharacterEncoding("UTF-8");
-					resp.getWriter().write(course.getDiffAvg().toString());
+					resp.getWriter().write(course.getAvg().toString());
 					break;
 				}
 			}

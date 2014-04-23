@@ -1,4 +1,4 @@
-package webapp.checkServlets;
+/*package webapp.checkServlets;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
@@ -54,3 +54,4 @@ public class updateWorkloadRating extends HttpServlet{
 		doGet(req,resp);
 	}
 }
+*/
