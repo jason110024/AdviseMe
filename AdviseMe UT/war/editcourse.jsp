@@ -433,13 +433,13 @@
 		}else{
 			console.log('3');
 			document.getElementById("advisename").innerHTML = "Welcome, Guest";
-			document.getElementById("adviseloginbutton").href = "login.jsp";
+			document.getElementById("adviseloginbutton").href = "login.jsp?error=false";
 			document.getElementById("adviseloginbutton").innerHTML = "Login";
 		}
 	} else {
 		console.log('4');
 		document.getElementById("advisename").innerHTML = "Welcome, Guest";
-		document.getElementById("adviseloginbutton").href = "login.jsp";
+		document.getElementById("adviseloginbutton").href = "login.jsp?error=false";
 		document.getElementById("adviseloginbutton").innerHTML = "Login";
 	}
 	</script>

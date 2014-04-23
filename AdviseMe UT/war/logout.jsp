@@ -1,3 +1,5 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
@@ -78,6 +80,20 @@
 				});
 			});
 		}
+		</script>
+		<script>
+		function timetologout(){
+			document.getElementById("test").innerHTML="Logging Out....Redirecting";
+			$.ajax({
+				type:'GET',
+				url : "changeloginstatus?id=${fn:escapeXml(id)}",
+				cache : false,
+				success: function(response){
+					window.location.replace('home.jsp');
+				}
+			});
+		}
+		window.onload = timetologout;
 		</script>
 <div class="wrapper">
         <!--=== Header ===-->    

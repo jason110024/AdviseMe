@@ -438,13 +438,13 @@ while (low.hasNext()){
 		}else{
 			console.log('3');
 			document.getElementById("advisename").innerHTML = "Welcome, Guest";
-			document.getElementById("adviseloginbutton").href = "login.html";
+			document.getElementById("adviseloginbutton").href = "login.html?error=false";
 			document.getElementById("adviseloginbutton").innerHTML = "Login";
 		}
 	} else {
 		console.log('4');
 		document.getElementById("advisename").innerHTML = "Welcome, Guest";
-		document.getElementById("adviseloginbutton").href = "login.html";
+		document.getElementById("adviseloginbutton").href = "login.html?error=false";
 		document.getElementById("adviseloginbutton").innerHTML = "Login";
 	}
 	</script>
