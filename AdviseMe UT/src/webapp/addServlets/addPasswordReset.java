@@ -49,7 +49,7 @@ public class addPasswordReset extends HttpServlet{
 				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 				msg.setSubject("Password Reset");
 				msg.setText("You have submitted a request for a password reset. (If you have recieved this message in error, please visit advisemeut.appspot.com/contact.jsp ASAP.\n\n"
-						+ "Go to http://advisemeut.appspot.com/passwordreset.jsp?key="+number); //NEED TO MAKE TEXT INCLUDE LINK TO PAGE WITH SPECIAL NUMBER.
+						+ "Go to http://advisemeut.appspot.com/resetpassword.jsp?key="+number); //NEED TO MAKE TEXT INCLUDE LINK TO PAGE WITH SPECIAL NUMBER.
 				Transport.send(msg);
 			}catch(Exception e1){
 				System.out.println("Was not able to send change to admin");
