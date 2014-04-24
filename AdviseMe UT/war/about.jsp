@@ -37,7 +37,6 @@
 	String last = null;
 	String isLoggedIn = null;
 	HttpSession mysession = request.getSession(false);
-	System.out.println("Home page: " + mysession.getAttribute("id"));
 	if(mysession.getAttribute("id")!=null){
 		id = (String) mysession.getAttribute("userid");
 		picurl = (String) mysession.getAttribute("pic");

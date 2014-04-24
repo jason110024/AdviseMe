@@ -26,7 +26,7 @@ public class User implements Comparable<User>{
 	private String lastName = "No last name entered.";
 	private String userEmail = null;
 	private String username;
-	private String passwordHash; // thesh base64 encoded SHA1 haed password + added salt
+	private String passwordHash; // the base64 encoded SHA1 hashed password + added salt
 	private String passwordSalt; // the random salt added to the password
 	private boolean loginStatus = false;
 	private ArrayList<String> courseList;
