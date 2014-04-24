@@ -59,7 +59,7 @@ public class checkUserServlet extends HttpServlet{
 				resp.sendRedirect("login.jsp?error=true");
 			}
 			ServletContext sc = getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("/changeloginfalse?id="+id);
+			RequestDispatcher rd = sc.getRequestDispatcher("/changelogintrue?id="+id);
 			rd.forward(req, resp);
 		} catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
