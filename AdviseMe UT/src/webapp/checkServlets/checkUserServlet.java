@@ -30,7 +30,6 @@ public class checkUserServlet extends HttpServlet{
 			}
 			List<User> users = ofy().load().type(User.class).list();
 			boolean flag = false;
-			boolean loginstatus = false;
 			String id=null; 
 			for(User user: users){
 				if(user.getUsername().equals(username)){
@@ -40,7 +39,6 @@ public class checkUserServlet extends HttpServlet{
 						//user provided authentic credentials
 						id=user.getfbUserId();
 						System.out.println("User: " + username + " provided the correct password.");
-						loginstatus=user.getLoginStatus();
 						flag=true;
 						break;
 					}else{
@@ -60,15 +58,9 @@ public class checkUserServlet extends HttpServlet{
 			if(id==null||id.isEmpty()||id.equals("")){
 				resp.sendRedirect("login.jsp?error=true");
 			}
-			if(loginstatus){
-				ServletContext sc = getServletContext();
-				RequestDispatcher rd = sc.getRequestDispatcher("/changeloginfalse?id="+id);
-				rd.forward(req, resp);
-			}else{
-				ServletContext sc = getServletContext();
-				RequestDispatcher rd = sc.getRequestDispatcher("/changelogintrue?id="+id);
-				rd.forward(req, resp);
-			}
+			ServletContext sc = getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher("/changeloginfalse?id="+id);
+			rd.forward(req, resp);
 		} catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
 			throw new IOException(logMsg);

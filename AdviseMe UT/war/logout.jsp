@@ -72,7 +72,7 @@
 				var id=response.id;
 				$.ajax({
 					type:'GET',
-					url : "changeloginstatus?id="+id,
+					url : "changeloginfalse?id="+id,
 					cache : false,
 					success: function(response){
 						window.location.replace('home.jsp');
@@ -86,7 +86,7 @@
 			document.getElementById("test").innerHTML="Logging Out....Redirecting";
 			$.ajax({
 				type:'GET',
-				url : "changeloginstatus?id=${fn:escapeXml(id)}",
+				url : "changeloginfalse?id=${fn:escapeXml(id)}",
 				cache : false,
 				success: function(response){
 					window.location.replace('home.jsp');
