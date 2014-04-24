@@ -93,6 +93,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <url-pattern>/changeloginstatus</url-pattern>
 	</servlet-mapping>
 	<servlet>
+	    <servlet-name>changelogintrue</servlet-name>
+	    <servlet-class>webapp.checkServlets.changeLoginTrue</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>changelogintrue</servlet-name>
+	    <url-pattern>/changelogintrue</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>changeloginfalse</servlet-name>
+	    <servlet-class>webapp.checkServlets.changeLoginFalse</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>changeloginfalse</servlet-name>
+	    <url-pattern>/changeloginfalse</url-pattern>
+	</servlet-mapping>
+	<servlet>
 	    <servlet-name>checkloginstatus</servlet-name>
 	    <servlet-class>webapp.checkServlets.checkLoginStatus</servlet-class>
 	</servlet>

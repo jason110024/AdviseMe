@@ -371,7 +371,7 @@
 						if(response=="true"){
 							$.ajax({
 								type:'GET',
-								url : "changeloginstatus?id="+id,
+								url : "changelogintrue?id="+id,
 								cache : false,
 								success: function(response1){
 									console.log(response1);
