@@ -147,7 +147,7 @@ public class Course implements Comparable<Course> {
 			if(i==size-1){
 				profs.append(professorList.get(i));
 			}
-			profs.append(professorList.get(i) + ", ");
+			else profs.append(professorList.get(i) + ", ");
 		}
 		return profs.toString();
 	}
@@ -167,7 +167,7 @@ public class Course implements Comparable<Course> {
 			if(i==size-1){
 				sems.append(semestersTaught.get(i));
 			}
-			sems.append(semestersTaught.get(i) + ", ");
+			else sems.append(semestersTaught.get(i) + ", ");
 		}
 		return sems.toString();
 	}
@@ -191,7 +191,7 @@ public class Course implements Comparable<Course> {
 			if(i==size-1){
 				reqs.append(prereqs.get(i));
 			}
-			reqs.append(prereqs.get(i) + ", ");
+			else reqs.append(prereqs.get(i) + ", ");
 		}
 		return reqs.toString();
 	}
