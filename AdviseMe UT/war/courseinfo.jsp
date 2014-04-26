@@ -229,9 +229,9 @@
 		pageContext.setAttribute("course_title", course.getTitle());
 		pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
 		pageContext.setAttribute("course_description", course.getDescription());
-		pageContext.setAttribute("course_professorList", course.getProfessorList());
-		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught());
-		pageContext.setAttribute("course_prereq", course.getPrereq());
+		pageContext.setAttribute("course_professorList", course.getProfessorList(true));
+		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught(true));
+		pageContext.setAttribute("course_prereq", course.getPrereq(true));
 		pageContext.setAttribute("course_syllabus_link", course.getSyllabusLink());
 		pageContext.setAttribute("course_eval_link", course.getEvalLink());
 		pageContext.setAttribute("course_num_users_rating", course.getNumRating());
@@ -299,33 +299,21 @@
 			<div class="col-md-3">
 				<h4>Past Professors:</h4>
 				<br>
-				<p>
-				    <c:forEach var="professor" items="${fn:escapeXml(course_professorList)}" varStatus="status">
-     					${professor}<c:if test="${!status.last}">, </c:if>
-   					</c:forEach>
-				</p>
+				<p>${fn:escapeXml(course_professorList)}</p>
 			</div>
 		</div>
 		<div class="span3">
 			<div class="col-md-3">
 				<h4>Semesters Taught:</h4>
 				<br>
-				<p>
-					<c:forEach var="semester" items="${fn:escapeXml(course_semestersTaught)}" varStatus="status">
-     						${semester}<c:if test="${!status.last}">, </c:if>
-   					</c:forEach>
-				</p>
+				<p>${fn:escapeXml(course_semestersTaught)}</p>
 			</div>
 		</div>
 		<div class="span3">
 			<div class="col-md-3">
 				<h4>Pre-Requisites:</h4>
 				<br>
-				<p>
-					<c:forEach var="prereq" items="${fn:escapeXml(course_prereq)}" varStatus="status">
-							${prereq}<c:if test="${!status.last}">, </c:if>
-   					</c:forEach>
-				</p>
+				<p>${fn:escapeXml(course_prereq)}</p>
 			</div>
 		</div>
 </div>

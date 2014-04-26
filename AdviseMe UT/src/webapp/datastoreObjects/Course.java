@@ -140,12 +140,28 @@ public class Course implements Comparable<Course> {
 		return this.professorList;
 	}
 	
+	public String getProfessorList(Boolean val){		//
+		StringBuilder profs = new StringBuilder();
+		for(String prof : professorList){
+			profs.append(prof + "\n");
+		}
+		return profs.toString();
+	}
+	
 	public void setProfessorList(ArrayList<String> test){
 		this.professorList=test;
 	}
 	
 	public ArrayList<String> getSemesterTaught(){
 		return this.semestersTaught;
+	}
+	
+	public String getSemesterTaught(Boolean val){		//
+		StringBuilder sems = new StringBuilder();
+		for(String sem : semestersTaught){
+			sems.append(sem + "\n");
+		}
+		return sems.toString();
 	}
 	
 	public void setSemesterTaught(ArrayList<String> test){
@@ -158,6 +174,14 @@ public class Course implements Comparable<Course> {
 	
 	public ArrayList<String> getPrereq(){
 		return this.prereqs;
+	}
+	
+	public String getPrereq(Boolean val){		//
+		StringBuilder reqs = new StringBuilder();
+		for(String prereq : prereqs){
+			reqs.append(prereq + "\n");
+		}
+		return prereqs.toString();
 	}
 	
 	public void setPrereq(ArrayList<String> test){
