@@ -221,7 +221,6 @@
                 <ul class="list-unstyled who margin-bottom-30">
                     <li><a href="#"><i class="fa fa-home"></i>2501 Speedway, Austin, TX 78712 </a></li>
                     <li><a href="mailto:utadviseme@gmail.com"><i class="fa fa-envelope-o"></i>utadviseme@gmail.com</a></li>
-                    <li><a href="#"><i class="fa fa-phone"></i>000 123 4567</a></li>
                     <li><a href="#"><i class="fa fa-globe"></i>http://advisemeut.appspot.com/</a></li>
                 </ul>
                 <!-- End Contacts -->
