@@ -246,7 +246,7 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- About -->
                     <div class="headline" href="about.html"><h2>About</h2></div>  
-                    <p class="margin-bottom-25 md-margin-bottom-40">Helping students help students in order to help students by helping!</p>    
+                    <p class="margin-bottom-25 md-margin-bottom-40">AdviseMe is a website for UT students to get course advice from their peers.</p>    
                     <!-- End About -->
 
                     <!-- Update Newsletter -->
@@ -284,7 +284,6 @@
 						<address class="md-margin-bottom-40">
 							2501 Speedway <br />
 							Austin, Texas <br />
-							Phone: 1-800-NOT-REAL <br />
 							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
 						</address>
 						<!-- End Contact Us -->
@@ -310,7 +309,6 @@
                 <div class="col-md-6">                      
                     <p class="copyright-space">
                         2014 &copy; AdviseMe. ALL Rights Reserved. 
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>
             </div>
