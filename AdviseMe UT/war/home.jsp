@@ -1,4 +1,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page import="webapp.datastoreObjects.*"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.Collections"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.googlecode.objectify.*"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
@@ -196,7 +202,14 @@
     </div><!--/container-->     
     <!--=== End Search Block ===-->
 
-   
+   <%
+	ObjectifyService.register(Course.class);
+	int numCourses = ObjectifyService.ofy().load().type(Course.class).list().size();
+	pageContext.setAttribute("num_courses",numCourses);
+	ObjectifyService.register(User.class);
+	int numUsers = ObjectifyService.ofy().load().type(User.class).list().size();
+	pageContext.setAttribute("num_users",numUsers);
+    %>
 
     <!--=== Parallax Counter ===-->
     <div class="parallax-counter parallaxBg margin-bottom-50">
@@ -204,13 +217,13 @@
             <div class="row">
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">4,560</span>   
+                        <span class="counter">${fn:escapeXml(num_users)}</span>   
                         <h4>Users</h4>
                     </div>    
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">1,178</span> 
+                        <span class="counter">${fn:escapeXml(num_courses)}</span> 
                         <h4>Courses</h4>
                     </div>    
                 </div>
