@@ -228,7 +228,7 @@
             <div class="col-sm-4">
                 <div class="thumbnail-style">
                     <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/3.jpg" alt="" />
-                    <h3><a>David Sandler</a> <small>Developerr</small></h3>
+                    <h3><a>David Sandler</a> <small>Developer</small></h3>
 <!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
 <!-- <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> --> 
@@ -254,12 +254,12 @@
                 <div class="thumbnail-style">
                     <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/1.jpg" alt="" />
                     <h3><a>Alex Stolzberg</a> <small>Developer</small></h3>
-<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
-<!--                     <ul class="list-unstyled list-inline team-socail"> -->
-<!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
-<!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
-<!--                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
-<!--                     </ul> -->
+                    <p>Alex is a Junior ECE Student at UT and enjoys Ultimate Frisbee, music, and hanging out with friends.</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="https://www.facebook.com/astolz92?ref=tn_tnmn"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="https://twitter.com/astolz92"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="https://plus.google.com/u/0/"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
                 </div>
             </div>
             <div class="col-sm-4">
