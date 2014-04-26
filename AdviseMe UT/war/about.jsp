@@ -213,166 +213,85 @@
     	<!-- Meer Our Team -->
     	<div class="headline"><h2>Meet Our Team</h2></div>
         <div class="row team">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/1.jpg" alt="" />
-                    <h3><a>Jack Bour</a> <small>Chief Executive Officer</small></h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/1.jpg" alt="" />
+                    <h3><a>Jason Anthraper</a> <small>Developer</small></h3>
+<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+<!--                     <ul class="list-unstyled list-inline team-socail"> -->
+<!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+<!--                     </ul> -->
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/3.jpg" alt="" />
-                    <h3><a>Kate Metus</a> <small>Project Manager</small></h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/3.jpg" alt="" />
+                    <h3><a>David Sandler</a> <small>Developerr</small></h3>
+<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+<!--                     <ul class="list-unstyled list-inline team-socail"> -->
+<!-- <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> --> 
+<!-- <!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> --> 
+<!-- <!--                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li> --> 
+<!--                     </ul> -->
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/afrodavid.jpg" alt="" />
-                    <h3><a>David  Sandler</a> <small>Supreme Leader</small></h3>
-                    <p>All hail supreme leader!</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/4.jpg" alt="" />
+                    <h3><a>Alex Wishlinksi</a> <small>Developer</small></h3>
+<!--                     <p>Developer</p> -->
+<!--                     <ul class="list-unstyled list-inline team-socail"> -->
+<!-- <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> --> 
+<!-- <!--                     	<li><a href="https://www.twitter.com/davidsandler92"><i class="fa fa-twitter"></i></a></li> -->
+<!-- <!--                     	<li><a href="https://www.twitter.com/davidsandler92"><i class="fa fa-google-plus"></i></a></li> --> 
+<!--                     </ul> -->
                 </div>
             </div>
-            <div class="col-sm-3">
+             <div class="row team">
+            <div class="col-sm-4 col-md-offset-2">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/4.jpg" alt="" />
-                    <h3><a>Donec Elit</a> <small>Director, R &amp; D Talent</small></h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/1.jpg" alt="" />
+                    <h3><a>Alex Stolzberg</a> <small>Developer</small></h3>
+<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+<!--                     <ul class="list-unstyled list-inline team-socail"> -->
+<!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+<!--                     </ul> -->
                 </div>
             </div>
+            <div class="col-sm-4">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/3.jpg" alt="" />
+                    <h3><a>Ross McGarity</a> <small>Developer</small></h3>
+<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+<!--                     <ul class="list-unstyled list-inline team-socail"> -->
+<!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+<!--                     </ul> -->
+                </div>
+            </div>
+            </div>
+
+<!--             <div class="col-sm-3"> -->
+<!--                 <div class="thumbnail-style"> -->
+<!--                     <img class="img-responsive" src="assets/img/team/4.jpg" alt="" /> -->
+<!--                     <h3><a>Donec Elit</a> <small>Director, R &amp; D Talent</small></h3> -->
+<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+<!--                     <ul class="list-unstyled list-inline team-socail"> -->
+<!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+<!--                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
+<!--                     </ul> -->
+<!--                 </div> -->
+<!--             </div> -->
         </div><!--/team-->
     	<!-- End Meer Our Team -->
 
-<!--         Our Clients -->
-<!--         <div id="clients-flexslider" class="flexslider home clients"> -->
-<!--             <div class="headline"><h2>Our Clients</h2></div>     -->
-<!--             <ul class="slides"> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/hp_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/hp.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/igneus_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/igneus.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/vadafone_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/vadafone.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/walmart_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/walmart.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/shell_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/shell.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/natural_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/natural.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/aztec_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/aztec.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/gamescast_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/gamescast.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/cisco_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/cisco.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/everyday_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/everyday.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/cocacola_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/cocacola.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/spinworkx_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/shell_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/shell.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/natural_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/natural.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/gamescast_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/gamescast.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/everyday_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/everyday.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                 <li> -->
-<!--                     <a href="#"> -->
-<!--                         <img src="assets/img/clients/spinworkx_grey.png" alt="" />  -->
-<!--                         <img src="assets/img/clients/spinworkx.png" class="color-img" alt="" /> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--             </ul> -->
-<!--         </div>/flexslider -->
-<!--         //End Our Clients -->
+
     </div><!--/container-->		
     <!--=== End Content Part ===-->
 
