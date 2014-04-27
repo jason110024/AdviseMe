@@ -3,10 +3,12 @@ package webapp.addServlets;
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
@@ -57,7 +59,11 @@ public class addFBUserServlet extends HttpServlet{
 					user = new User(FBId,FBFirst,FBLast,FBEmail,username,password);
 					user.setLoginStatus(true);
 				}
-				ofy().save().entity(user).now();
+				HttpSession session = req.getSession(true);
+				session.setAttribute("first", FBFirst);
+				session.setAttribute("last", FBLast);
+				session.setAttribute("id", FBId);
+				session.setAttribute("isLoggedIn", "true");
 				resp.sendRedirect("/addusercourses.jsp?id="+FBId);
 			}
 		} catch(Exception e){
