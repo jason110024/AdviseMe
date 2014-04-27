@@ -187,9 +187,7 @@
 					those problems and make it easier to plan out their schedules.                <ul class="list-unstyled">
                     <li><i class="fa fa-check color-green"></i> Easy to Use!</li>
                     <li><i class="fa fa-check color-green"></i> Works!</li>
-                    <li><i class="fa fa-check color-green"></i> Responds!</li>
-                    <li><i class="fa fa-check color-green"></i> Facebook!</li>
-                    <li><i class="fa fa-check color-green"></i> 5th Item!</li>
+                    <li><i class="fa fa-check color-green"></i> Connects with Facebook!</li>
                 </ul><br />
 
                 <!-- Blockquotes -->
@@ -205,7 +203,7 @@
 
         	<div class="col-md-6 md-margin-bottom-40">
                 <div class="responsive-video">
-                    <iframe src="https://www.youtube.com/watch?v=EsMRujIMUHk" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+                    <iframe src="//www.youtube.com/embed/EsMRujIMUHk" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
                 </div>
             </div>
         </div><!--/row-->
