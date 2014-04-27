@@ -49,27 +49,27 @@
 <body>
 	<%
 		String id = null;
-		String picurl = null;
-		String first = null;
-		String last = null;
-		String isLoggedIn = null;
-		HttpSession mysession = request.getSession(false);
-		System.out.println("Home page: " + mysession.getAttribute("id"));
-		if(mysession.getAttribute("id")!=null){
-			id = (String) mysession.getAttribute("userid");
-			picurl = (String) mysession.getAttribute("pic");
-			first = (String) mysession.getAttribute("first");
-			last = (String) mysession.getAttribute("last");
-			isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
-			pageContext.setAttribute("id", id);
-			pageContext.setAttribute("pic",picurl);
-			pageContext.setAttribute("first", first);
-			pageContext.setAttribute("last", last);
-			pageContext.setAttribute("isLoggedIn", isLoggedIn);
-			pageContext.setAttribute("guest","false");
-		}else{
-			pageContext.setAttribute("guest", "true");
-		}
+			String picurl = null;
+			String first = null;
+			String last = null;
+			String isLoggedIn = null;
+			HttpSession mysession = request.getSession(false);
+			System.out.println("Home page: " + mysession.getAttribute("id"));
+			if(mysession.getAttribute("id")!=null){
+		id = (String) mysession.getAttribute("userid");
+		picurl = (String) mysession.getAttribute("pic");
+		first = (String) mysession.getAttribute("first");
+		last = (String) mysession.getAttribute("last");
+		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+		pageContext.setAttribute("id", id);
+		pageContext.setAttribute("pic",picurl);
+		pageContext.setAttribute("first", first);
+		pageContext.setAttribute("last", last);
+		pageContext.setAttribute("isLoggedIn", isLoggedIn);
+		pageContext.setAttribute("guest","false");
+			}else{
+		pageContext.setAttribute("guest", "true");
+			}
 	%>
 	<div class="wrapper">
 		<!--=== Header ===-->
@@ -83,7 +83,8 @@
 						<li class="topbar-devider"></li>
 						<li><a id="advisename">Welcome, Guest!</a></li>
 						<li class="topbar-devider"></li>
-                    	<li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
+						<li><a id="createanewaccount"
+							href="createaccount.jsp?error=false">Create Account</a></li>
 						<li class="topbar-devider"></li>
 						<li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
 					</ul>
@@ -209,15 +210,15 @@
 				<!--/col-md-2-->
 				<%
 					ObjectifyService.register(Course.class);
-				List<Course> schools = ObjectifyService.ofy().load().type(Course.class).list();
-				Collections.sort(schools);
-				int numCourses = 0;
-				Iterator<Course> it = schools.iterator();
-				while (it.hasNext()){
-				   Course currentCourse = it.next(); 
-				   numCourses++;
-				}
-				    pageContext.setAttribute("num_courses",numCourses);
+						List<Course> schools = ObjectifyService.ofy().load().type(Course.class).list();
+						Collections.sort(schools);
+						int numCourses = 0;
+						Iterator<Course> it = schools.iterator();
+						while (it.hasNext()){
+						   Course currentCourse = it.next(); 
+						   numCourses++;
+						}
+						    pageContext.setAttribute("num_courses",numCourses);
 				%>
 
 				<div class="col-md-10">
@@ -231,16 +232,15 @@
 					%>
 					<%
 						Iterator<Course> iter = schools.iterator();
-					                  while (iter.hasNext()){
-					                        Course currentCourse = iter.next(); 
-					                        
-					                           pageContext.setAttribute("course_name",currentCourse.getCourseName());
-					                           pageContext.setAttribute("course_description",currentCourse.getDescription());
-					                           pageContext.setAttribute("course_title",currentCourse.getTitle());
-					                           String courseName=currentCourse.getCourseName();
+								                  while (iter.hasNext()){
+								                        Course currentCourse = iter.next(); 
+								                        
+								                           pageContext.setAttribute("course_name",currentCourse.getCourseName());
+								                           pageContext.setAttribute("course_description",currentCourse.getDescription());
+								                           pageContext.setAttribute("course_title",currentCourse.getTitle());
+								                           String courseName=currentCourse.getCourseName();
 					%><script>
-                   document.getElementById("<%=courseName%>
-																					");
+                   document.getElementById("<%=courseName%>");
 																				</script>
 					<%
 						String url = "courseinfo.jsp?name=" + courseName;
@@ -257,7 +257,7 @@
 					<hr>
 					<%
 						}
-					                }
+								                }
 					%>
 
 

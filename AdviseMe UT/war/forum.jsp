@@ -235,6 +235,7 @@ pageContext.setAttribute("postcount",posts.size());
 <%--                         <p>   ${fn:escapeXml(postContent)}                 </p> --%>
 
                         <p><a class="btn-u btn-brd rounded btn-u-default btn-u-xs" href="forumpost.jsp?postID=${fn:escapeXml(postID)}"><i class="fa fa-location-arrow"></i> Read More</a></p>
+                    <hr>
                     </div>  
                     
             
