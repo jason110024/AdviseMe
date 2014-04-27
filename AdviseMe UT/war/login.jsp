@@ -180,7 +180,7 @@
                     <hr>
                      <div class="row">
  	                     <div class="col-md-6">
-                         <button class="btn-u pull-left" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
+                         <button class="btn-u pull-left" onclick="window.location.replace('/createaccount.jsp?error=false')">Create an Account!</button>                        
                      </div>
   		             <div class="col-md-6">
                          <button class="btn-u pull-right" type="submit">Login</button>                        

@@ -220,6 +220,8 @@
 					You can use Facebook to Create Your Account:  <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 					<h5>(please refresh the page if you use FB login)</h5>
 					<br>
+					<h2 id="test" color="red">${fn:escapeXml(error1)}</h2>
+					<hr>
                     <label>First Name<span class="color-red">*</span></label>
                     <input id="firstname" name="firstname" type="text" class="form-control margin-bottom-20" data-parsley-trigger="change" data-parsley-type="alphanum" required>
                    
@@ -241,7 +243,6 @@
                     <label>Confirm Password <span class="color-red">*</span></label>
                     <input id="confirmpass" name="confirmpass" type="password" class="form-control margin-bottom-20" data-parsley-equalto="#password" data-parsley-trigger="change" required>
 					<div><textarea name="id" id="id" rows="1" cols="30" style="display:none;"></textarea></div>
-					<h2 id="test">${fn:escapeXml(error1)}</h2>
                     <hr>
 
                     <div class="row">
