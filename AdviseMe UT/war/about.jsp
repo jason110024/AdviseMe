@@ -239,8 +239,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/4.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="https://scontent-b-dfw.xx.fbcdn.net/hphotos-frc3/t1.0-9/397797_10200619368619969_1801033503_n.jpg" alt="" />
                     <h3><a>Alex Wishlinksi</a> <small>Developer</small></h3>
+                    <p>Alex is a Junior ECE Student at UT involved in the Student Engineering Council and Women in ECE. Outside of school, she enjoys exploring Austin and all the different places to eat.</p>
 <!--                     <p>Developer</p> -->
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
 <!-- <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> --> 
@@ -252,7 +253,7 @@
              <div class="row team">
             <div class="col-sm-4 col-md-offset-2">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/1.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="https://i.groupme.com/480x640.jpeg.b2f8d220afa90131dc1c22000a2d16e3.large" alt="" />
                     <h3><a>Alex Stolzberg</a> <small>Developer</small></h3>
                     <p>Alex is a Junior ECE Student at UT and enjoys Ultimate Frisbee, music, and hanging out with friends.</p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
@@ -301,7 +302,7 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- About -->
                     <div class="headline" href="about.html"><h2>About</h2></div>  
-                    <p class="margin-bottom-25 md-margin-bottom-40">Helping students help students in order to help students by helping!</p>    
+                    <p class="margin-bottom-25 md-margin-bottom-40">AdviseMe is a website for UT students to get course advice from their peers.</p>    
                     <!-- End About -->
 
                     <!-- Update Newsletter -->
@@ -339,7 +340,6 @@
 						<address class="md-margin-bottom-40">
 							2501 Speedway <br />
 							Austin, Texas <br />
-							Phone: 1-800-NOT-REAL <br />
 							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
 						</address>
 						<!-- End Contact Us -->
@@ -365,7 +365,6 @@
                 <div class="col-md-6">                      
                     <p class="copyright-space">
                         2014 &copy; AdviseMe. ALL Rights Reserved. 
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>
             </div>

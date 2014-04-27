@@ -1,4 +1,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page import="webapp.datastoreObjects.*"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.Collections"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.googlecode.objectify.*"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
@@ -196,7 +202,14 @@
     </div><!--/container-->     
     <!--=== End Search Block ===-->
 
-   
+   <%
+	ObjectifyService.register(Course.class);
+	int numCourses = ObjectifyService.ofy().load().type(Course.class).list().size();
+	pageContext.setAttribute("num_courses",numCourses);
+	ObjectifyService.register(User.class);
+	int numUsers = ObjectifyService.ofy().load().type(User.class).list().size();
+	pageContext.setAttribute("num_users",numUsers);
+    %>
 
     <!--=== Parallax Counter ===-->
     <div class="parallax-counter parallaxBg margin-bottom-50">
@@ -204,13 +217,13 @@
             <div class="row">
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">4,560</span>   
+                        <span class="counter">${fn:escapeXml(num_users)}</span>   
                         <h4>Users</h4>
                     </div>    
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">1,178</span> 
+                        <span class="counter">${fn:escapeXml(num_courses)}</span> 
                         <h4>Courses</h4>
                     </div>    
                 </div>
@@ -240,7 +253,7 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- About -->
                     <div class="headline" href="about.html"><h2>About</h2></div>  
-                    <p class="margin-bottom-25 md-margin-bottom-40">Helping students help students in order to help students by helping!</p>    
+                    <p class="margin-bottom-25 md-margin-bottom-40">AdviseMe is a website for UT students to get course advice from their peers.</p>    
                     <!-- End About -->
 
                     <!-- Update Newsletter -->
@@ -278,7 +291,6 @@
 						<address class="md-margin-bottom-40">
 							2501 Speedway <br />
 							Austin, Texas <br />
-							Phone: 1-800-NOT-REAL <br />
 							Email: <a href="mailto:utadviseme@gmail.com" class="">utadviseme@gmail.com</a>
 						</address>
 						<!-- End Contact Us -->
@@ -304,7 +316,6 @@
                 <div class="col-md-6">                      
                     <p class="copyright-space">
                         2014 &copy; AdviseMe. ALL Rights Reserved. 
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>
             </div>

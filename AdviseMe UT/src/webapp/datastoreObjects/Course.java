@@ -142,8 +142,12 @@ public class Course implements Comparable<Course> {
 	
 	public String getProfessorList(Boolean val){		//
 		StringBuilder profs = new StringBuilder();
-		for(String prof : professorList){
-			profs.append(prof + "\n");
+		int size = professorList.size();
+		for(int i=0;i<size;i++){
+			if(i==size-1){
+				profs.append(professorList.get(i));
+			}
+			else profs.append(professorList.get(i) + ", ");
 		}
 		return profs.toString();
 	}
@@ -158,8 +162,12 @@ public class Course implements Comparable<Course> {
 	
 	public String getSemesterTaught(Boolean val){		//
 		StringBuilder sems = new StringBuilder();
-		for(String sem : semestersTaught){
-			sems.append(sem + "\n");
+		int size = semestersTaught.size();
+		for(int i=0;i<size;i++){
+			if(i==size-1){
+				sems.append(semestersTaught.get(i));
+			}
+			else sems.append(semestersTaught.get(i) + ", ");
 		}
 		return sems.toString();
 	}
@@ -178,10 +186,14 @@ public class Course implements Comparable<Course> {
 	
 	public String getPrereq(Boolean val){		//
 		StringBuilder reqs = new StringBuilder();
-		for(String prereq : prereqs){
-			reqs.append(prereq + "\n");
+		int size = prereqs.size();
+		for(int i=0;i<size;i++){
+			if(i==size-1){
+				reqs.append(prereqs.get(i));
+			}
+			else reqs.append(prereqs.get(i) + ", ");
 		}
-		return prereqs.toString();
+		return reqs.toString();
 	}
 	
 	public void setPrereq(ArrayList<String> test){
