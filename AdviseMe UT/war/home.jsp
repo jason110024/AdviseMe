@@ -206,8 +206,19 @@
 	int numCourses = ObjectifyService.ofy().load().type(Course.class).list().size();
 	pageContext.setAttribute("num_courses",numCourses);
 	ObjectifyService.register(User.class);
+	List<User> userList = ObjectifyService.ofy().load().type(User.class).list();
 	int numUsers = ObjectifyService.ofy().load().type(User.class).list().size();
+	
+	int numOnline = 0;
+	
+	for(int k=0;k<userList.size();k++){
+		User current = userList.get(k);
+		if(current.getLoginStatus()==true)
+			numOnline++;		
+	}
+	
 	pageContext.setAttribute("num_users",numUsers);
+	pageContext.setAttribute("num_users_online",numOnline);
     %>
 
     <!--=== Parallax Counter ===-->
@@ -222,16 +233,17 @@
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">${fn:escapeXml(num_courses)}</span> 
-                        <h4>Courses</h4>
+                        <span class="counter">${fn:escapeXml(num_users_online)}</span>
+                        <h4>Online Now</h4>
                     </div>    
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
-                        <span class="counter">29</span>
-                        <h4>Visitors per second</h4>
+                        <span class="counter">${fn:escapeXml(num_courses)}</span> 
+                        <h4>Courses</h4>
                     </div>    
                 </div>
+                
                 <div class="col-sm-3 col-xs-6">
                     <div class="counters">
                         <span class="counter">504</span>
