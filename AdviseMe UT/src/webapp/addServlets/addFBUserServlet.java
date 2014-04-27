@@ -64,6 +64,7 @@ public class addFBUserServlet extends HttpServlet{
 				session.setAttribute("last", FBLast);
 				session.setAttribute("id", FBId);
 				session.setAttribute("isLoggedIn", "true");
+				ofy().save().entity(user).now();
 				resp.sendRedirect("/addusercourses.jsp?id="+FBId);
 			}
 		} catch(Exception e){

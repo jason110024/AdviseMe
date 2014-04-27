@@ -180,11 +180,17 @@
                     <hr>
                      <div class="row">
  	                     <div class="col-md-6">
-                         <button class="btn-u pull-right" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
+                         <button class="btn-u pull-left" onclick="window.location.replace('/createaccount.jsp')">Create an Account!</button>                        
                      </div>
-  		                  <div class="col-md-6">
+  		             <div class="col-md-6">
                          <button class="btn-u pull-right" type="submit">Login</button>                        
                      </div>
+                    </div>
+                    <div class="row">
+                     <div class="col-md-3">
+                     <hr>
+                         <button class="btn-u" onclick="window.location.replace('/requestresetpassword.jsp?error=false')">Forgot Password?</button>                        
+                     </div>                    
                     </div>
                 </form>            
             </div>

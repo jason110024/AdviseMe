@@ -33,6 +33,7 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
     <!-- CSS Parsley Form Confirmation -->
     <link rel="stylesheet" href="stylesheets/parsley.css">
 </head> 
@@ -200,7 +201,7 @@
                     <label>Email <span class="color-red">*</span></label>
                     <div class="row margin-bottom-20">
                         <div class="col-md-7 col-md-offset-0">
-                            <input type="text" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>                
                     </div>
                     
