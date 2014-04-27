@@ -47,7 +47,7 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                    <li><a href="help.html">FAQs</a></li>    
+                       
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -86,7 +86,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="about.jsp">About Us</a></li>
-                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links/FAQs</a></li>
                             </ul>
                         </li>
                         <!-- End About -->

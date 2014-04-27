@@ -74,12 +74,12 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                    <li><a href="usefulLinks.jsp">FAQs</a></li>  
-                    <li class="topbar-devider"></li>   
-					<li><a id="advisename">Welcome, Guest!</a></li>
-					<li class="topbar-devider"></li>   
+                      
+                 
+               <li><a id="advisename">Welcome, Guest!</a></li>
+               <li class="topbar-devider"></li>   
                     <li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
-					<li class="topbar-devider"></li>   
+               <li class="topbar-devider"></li>   
                     <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
@@ -118,23 +118,23 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.jsp">About Us</a></li>
-                                <li><a href="usefulLinks.jsp">Useful Links</a></li>
+                                <li><a href="javascript:void(0);">About Us</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links/FAQs</a></li>
                             </ul>
                         </li>
                         <!-- End About -->
 
                         <!-- Courses -->
                         <li class="dropdown">
-	                        <a class="dropdown-toggle" data-toggle="dropdown">
-	                            Courses
-	                        </a>
-	                        <ul class="dropdown-menu">
-	                        	<li><a href="coursesall.jsp">All Courses</a></li>
-	                            <li><a href="courseslower.jsp">Lower Division</a></li>
-	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
-	                        </ul>
-                    	</li>
+                           <a class="dropdown-toggle" data-toggle="dropdown">
+                               Courses
+                           </a>
+                           <ul class="dropdown-menu">
+                              <li><a href="coursesall.jsp">All Courses</a></li>
+                               <li><a href="courseslower.jsp">Lower Division</a></li>
+                               <li><a href="coursesupper.jsp">Upper Division</a></li>  
+                           </ul>
+                     </li>
                         <!-- End Courses -->
 
                         <!-- Forum -->
@@ -172,7 +172,8 @@
         </div>            
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->
+    <!--=== End Header ===-->   
+
 
   <!-- Comment Form -->
         <div class="post-comment">
