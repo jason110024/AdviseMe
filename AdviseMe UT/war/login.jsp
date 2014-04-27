@@ -384,7 +384,7 @@
 										url : "createsessionservlet?id="+id+"&picurl="+ picurl,
 										cache : false,
 										success: function(response2){
-											window.location.replace('home.jsp');
+											window.location.replace('manageaccount.jsp');
 										}
 									});
 								}
