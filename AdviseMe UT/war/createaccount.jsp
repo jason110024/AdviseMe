@@ -195,6 +195,19 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
+    
+        <%
+    	String error = request.getParameter("error");
+    	if(error.equals("captcha")){
+        	pageContext.setAttribute("error1", "Captcha not entered correctly.");
+    	}else if(error.equals("email")){
+        	pageContext.setAttribute("error1", "Email used for another account.");
+    	}else if(error.equals("user")){
+        	pageContext.setAttribute("error1", "Username exists/taken.");
+    	}else{
+    		pageContext.setAttribute("error1", " ");
+    	}
+     %>
     <div class="container content">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -228,7 +241,7 @@
                     <label>Confirm Password <span class="color-red">*</span></label>
                     <input id="confirmpass" name="confirmpass" type="password" class="form-control margin-bottom-20" data-parsley-equalto="#password" data-parsley-trigger="change" required>
 					<div><textarea name="id" id="id" rows="1" cols="30" style="display:none;"></textarea></div>
-
+					<h2 id="test">${fn:escapeXml(error1)}</h2>
                     <hr>
 
                     <div class="row">

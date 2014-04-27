@@ -48,7 +48,7 @@
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
-                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+                    <li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
 					<li class="topbar-devider"></li>   
                     <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>

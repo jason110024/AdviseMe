@@ -69,7 +69,7 @@
                     <li class="topbar-devider"></li>   
 					<li><a id="advisename">Welcome, Guest!</a></li>
 					<li class="topbar-devider"></li>   
-                    <li><a id="createanewaccount" href="createaccount.jsp">Create Account</a></li>
+                    <li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
 					<li class="topbar-devider"></li>   
                     <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
@@ -386,12 +386,13 @@
         App.initSliders();        
     });
 </script>
-		<script>
+	<script>
 	if ("${fn:escapeXml(guest)}" == "false") {
 		console.log('1');
 		if("${fn:escapeXml(isLoggedIn)}" == "true"){
 			console.log('2');
 			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("advisename").href = "manageaccount.jsp";
 			document.getElementById("adviseloginbutton").href = "logout.jsp";
 			document.getElementById("adviseloginbutton").innerHTML = "Logout";
 		}else{

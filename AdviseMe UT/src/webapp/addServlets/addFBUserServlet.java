@@ -34,7 +34,7 @@ public class addFBUserServlet extends HttpServlet{
 			reCaptcha.setPrivateKey("6LfFIe8SAAAAADGueFM28Toq3H3OJWqB2xTpoj-A");
 			ReCaptchaResponse reCaptchaReponse = reCaptcha.checkAnswer(remoteAddr, challenge, response);
 			if(!reCaptchaReponse.isValid()){
-				throw new Exception("Captcha Entered Incorrectly! Please Try Again.");
+				resp.sendRedirect("createaccount.jsp?error=captcha");
 			}else{
 				User user;
 				if(FBFirst==null||FBFirst.isEmpty()){
@@ -51,6 +51,15 @@ public class addFBUserServlet extends HttpServlet{
 				}
 				if(username==null||username.isEmpty()){
 					throw new Exception("Must enter a username.");
+				}
+				List<User> userList = ObjectifyService.ofy().load().type(User.class).list();
+				for(User users: userList){
+					if(users.getUsername().equals(username)){
+						resp.sendRedirect("createaccount.jsp?error=user");
+					}
+					if(users.getUserEmail().equals(FBEmail)){
+						resp.sendRedirect("createaccount.jsp?error=email");
+					}
 				}
 				if(FBId==null||FBId.isEmpty()){
 					user = new User(FBFirst,FBLast,FBEmail,username,password);

@@ -58,34 +58,26 @@
               	</div>
         	</div>
 		</div>
-      <script>
+	<script>
 	if ("${fn:escapeXml(guest)}" == "false") {
 		console.log('1');
 		if("${fn:escapeXml(isLoggedIn)}" == "true"){
 			console.log('2');
-			document.getElementById("name").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
-			document.getElementById("name").href = "manageaccount.jsp";
-			document.getElementById("pict").href = "manageaccount.jsp";
-			document.getElementById("profilepic").src = "${fn:escapeXml(pic)}";
-			document.getElementById("loginbuttonref").setAttribute("onClick","window.location.href='logout.jsp'");
-			document.getElementById("loginbuttonref").innerHTML = "Logout";
+			document.getElementById("advisename").innerHTML = "Welcome, ${fn:escapeXml(first)} ${fn:escapeXml(last)}";
+			document.getElementById("advisename").href = "manageaccount.jsp";
+			document.getElementById("adviseloginbutton").href = "logout.jsp";
+			document.getElementById("adviseloginbutton").innerHTML = "Logout";
 		}else{
 			console.log('3');
-			document.getElementById("name").innerHTML = "Welcome, Guest";
-			document.getElementById("name").href = "home.jsp";
-			document.getElementById("pict").href = "home.jsp";
-			document.getElementById("profilepic").src = "";
-			document.getElementById("loginbuttonref").setAttribute("onClick","window.location.href='login.jsp'");
-			document.getElementById("loginbuttonref").innerHTML = "Login";
+			document.getElementById("advisename").innerHTML = "Welcome, Guest";
+			document.getElementById("adviseloginbutton").href = "login.jsp?error=false";
+			document.getElementById("adviseloginbutton").innerHTML = "Login";
 		}
 	} else {
 		console.log('4');
-		document.getElementById("name").innerHTML = "Welcome, Guest";
-		document.getElementById("name").href = "home.jsp";
-		document.getElementById("pict").href = "home.jsp";
-		document.getElementById("profilepic").src = "";
-		document.getElementById("loginbuttonref").setAttribute("onClick","window.location.href='login.jsp'");
-		document.getElementById("loginbuttonref").innerHTML = "Login";
+		document.getElementById("advisename").innerHTML = "Welcome, Guest";
+		document.getElementById("adviseloginbutton").href = "login.jsp?error=false";
+		document.getElementById("adviseloginbutton").innerHTML = "Login";
 	}
 	</script>
    </body>
