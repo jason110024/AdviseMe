@@ -211,50 +211,6 @@
                         </ul> 
                         </ul>
                         <hr>
-                    </div>    
-
-                    <div class="col-md-12 col-sm-4">    
-                        <h3>Tutorials</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Basic Concepts</a></li>     
-                            <li><a href="#">‎Building your first web page</a></li>   
-                            <li><a href="#">‎Advanced HTML</a></li>   
-                        </ul>
-                        <hr>
-                    </div>    
-
-                    <div class="col-md-12 col-sm-4">
-                        <h3>Trending topics</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Bootstrap</a></li>     
-                            <li><a href="#">Wrapbootstrap</a></li>     
-                            <li><a href="#">Codrops</a></li>     
-                        </ul>
-                        <hr>
-                    </div>    
-
-                    <div class="col-md-12 col-sm-4">                        
-                        <h3>Search history</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Web design articles</a></li>   
-                            <li><a href="#">Tutorials for web design</a></li>     
-                        </ul>
-                        <a class="see-all" href="#">See all</a>
-                        <hr>
-                    </div>    
-                        
-                    <div class="col-md-12 col-sm-4">
-                        <h3>Related pictures</h3>
-                        <ul class="list-unstyled blog-photos margin-bottom-30">
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/5.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/8.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/1.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/2.jpg" alt="" class="hover-effect"></a></li>
-                            <li><a href="#"><img src="assets/img/sliders/elastislide/7.jpg" alt="" class="hover-effect"></a></li>
-                        </ul>
                     </div>
                 </div>        
             </div><!--/col-md-2-->
