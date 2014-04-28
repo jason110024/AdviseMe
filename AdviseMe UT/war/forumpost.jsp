@@ -211,6 +211,8 @@
 		//retrieve posts
 		ObjectifyService.register(Post.class);
 		List<Post> posts = ObjectifyService.ofy().load().type(Post.class).list(); 
+		ObjectifyService.register(User.class);
+		List<User> userList = ObjectifyService.ofy().load().type(User.class).list();
 		//Collections.sort(posts);
 		String postID = request.getParameter("postID");
 		pageContext.setAttribute("postID",postID);
@@ -219,6 +221,16 @@
 		for(Post post : posts){
 			if(post.getId().toString().equals(postID)){
 		//current = course;
+		
+		String currentUserID = post.getUserId();
+		
+		String currentUserName = "";
+		for(User user : userList){
+			if(user.getUserId().equals(currentUserID))
+				currentUserName = user.getNickname();
+		}
+		
+		pageContext.setAttribute("postUserName", currentUserName);
 		pageContext.setAttribute("postTitle", post.getTitle());
 		pageContext.setAttribute("postContent", post.getContent());
 		pageContext.setAttribute("postUserId", post.getUserId());
@@ -253,7 +265,7 @@
             <div class="blog-post-tags">
                 <ul class="list-unstyled list-inline blog-info">
                     <li><i class="fa fa-calendar"></i> ${fn:escapeXml(postDate)}</li>
-                    <li><i class="fa fa-pencil"></i> ${fn:escapeXml(postUserId)}</li>
+                    <li><i class="fa fa-pencil"></i> ${fn:escapeXml(postUserName)}</li>
 <!--                     <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li> -->
 <!--                     <li><i class="fa fa-tags"></i> Technology, Education, Internet, Media</li> -->
                 </ul>                    

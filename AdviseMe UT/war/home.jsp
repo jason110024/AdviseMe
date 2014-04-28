@@ -213,6 +213,7 @@
 	
 	for(int k=0;k<userList.size();k++){
 		User current = userList.get(k);
+		
 		if(current.getLoginStatus()==true)
 			numOnline++;		
 	}
