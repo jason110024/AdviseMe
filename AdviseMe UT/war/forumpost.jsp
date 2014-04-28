@@ -1,10 +1,8 @@
 <%@ page import="java.util.*"%>
-<%@ page import="webapp.datastoreObjects.Post"%>
+<%@ page import="webapp.datastoreObjects.*"%>
 <%@ page import="com.googlecode.objectify.Objectify"%>
 <%@ page import="com.googlecode.objectify.ObjectifyService"%>
-<%@ page import="com.google.appengine.api.users.User"%>
-<%@ page import="com.google.appengine.api.users.UserService"%>
-<%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
+
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -226,8 +224,8 @@
 		
 		String currentUserName = "";
 		for(User user : userList){
-			if(user.getUserId().equals(currentUserID))
-				currentUserName = user.getNickname();
+			if(user.getfbUserId().equals(currentUserID))
+				currentUserName = user.getFullName();
 		}
 		
 		pageContext.setAttribute("postUserName", currentUserName);
