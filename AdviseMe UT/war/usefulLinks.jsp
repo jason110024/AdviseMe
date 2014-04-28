@@ -163,12 +163,11 @@
         <!-- End Navbar -->
     </div>
     <!--=== End Header ===-->   
-
     <!--=== Breadcrumbs ===-->
-    <div class="breadcrumbs">
-        <div class="container">
+    <div class="breadcrumbs-v3">
+      <div class="container">
             <h1 class="pull-left">Useful Links/FAQs</h1>
-        </div>
+        </div><!--/container-->
     </div><!--/breadcrumbs-->
     <!--=== End Breadcrumbs ===-->
 
