@@ -225,31 +225,31 @@
     <div class="parallax-counter parallaxBg margin-bottom-50">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-4 col-xs-6">
                     <div class="counters">
                         <span class="counter">${fn:escapeXml(num_users)}</span>   
                         <h4>Users</h4>
                     </div>    
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-4 col-xs-6">
                     <div class="counters">
                         <span class="counter">${fn:escapeXml(num_users_online)}</span>
                         <h4>Online Now</h4>
                     </div>    
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-4 col-xs-6">
                     <div class="counters">
                         <span class="counter">${fn:escapeXml(num_courses)}</span> 
                         <h4>Courses</h4>
                     </div>    
                 </div>
                 
-                <div class="col-sm-3 col-xs-6">
-                    <div class="counters">
-                        <span class="counter">504</span>
-                        <h4>Subscribers</h4>
-                    </div>    
-                </div>
+<!--                 <div class="col-sm-3 col-xs-6"> -->
+<!--                     <div class="counters"> -->
+<!--                         <span class="counter">504</span> -->
+<!--                         <h4>Subscribers</h4> -->
+<!--                     </div>     -->
+<!--                 </div> -->
             </div>            
         </div>
     </div>    
