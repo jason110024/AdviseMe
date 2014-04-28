@@ -251,7 +251,7 @@
      <!--=== Breadcrumbs v3 ===-->
     <div class="breadcrumbs-v3">
         <div class="container">
-            <h1 class="pull-left">WHAT DO I PUT HERE</h1>
+            <h1 class="pull-left">${fn:escapeXml(postTitle)}</h1>
         </div>
     </div>
     <!--=== End Breadcrumbs v3 ===-->
@@ -261,7 +261,7 @@
         <!--Blog Post-->        
     	<div class="blog margin-bottom-40">
            
-        	<h2><a href="blog_item_option1.html">${fn:escapeXml(postTitle)}</a></h2>
+<%--         	<h2><a href="blog_item_option1.html">${fn:escapeXml(postTitle)}</a></h2> --%>
             <div class="blog-post-tags">
                 <ul class="list-unstyled list-inline blog-info">
                     <li><i class="fa fa-calendar"></i> ${fn:escapeXml(postDate)}</li>
