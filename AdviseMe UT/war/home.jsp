@@ -209,6 +209,9 @@
 	List<User> userList = ObjectifyService.ofy().load().type(User.class).list();
 	int numUsers = ObjectifyService.ofy().load().type(User.class).list().size();
 	
+	ObjectifyService.register(Post.class);
+	int numPosts = ObjectifyService.ofy().load().type(Post.class).list().size();
+	
 	int numOnline = 0;
 	
 	for(int k=0;k<userList.size();k++){
@@ -220,6 +223,7 @@
 	
 	pageContext.setAttribute("num_users",numUsers);
 	pageContext.setAttribute("num_users_online",numOnline);
+	pageContext.setAttribute("num_posts",numPosts);
     %>
 
     <!--=== Parallax Counter ===-->
@@ -245,12 +249,12 @@
                     </div>    
                 </div>
                 
-<!--                 <div class="col-sm-3 col-xs-6"> -->
-<!--                     <div class="counters"> -->
-<!--                         <span class="counter">504</span> -->
-<!--                         <h4>Subscribers</h4> -->
-<!--                     </div>     -->
-<!--                 </div> -->
+                <div class="col-sm-3 col-xs-6">
+                    <div class="counters">
+                        <span class="counter">${fn:escapeXml(num_posts)}</span>
+                        <h4>Forum Posts</h4>
+                    </div>    
+                </div>
             </div>            
         </div>
     </div>    
