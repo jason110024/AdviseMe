@@ -251,7 +251,7 @@
              <div class="row team">
             <div class="col-sm-4 col-md-offset-2">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/stolz.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="https://i.groupme.com/480x640.jpeg.b2f8d220afa90131dc1c22000a2d16e3.large" alt="" />
                     <h3><a>Alex Stolzberg</a> <small>Developer</small></h3>
                     <p>Alex is a Junior ECE Student at UT and enjoys Ultimate Frisbee, music, and hanging out with friends.</p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
