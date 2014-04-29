@@ -32,4 +32,8 @@ public class addBlogSubscriberServlet extends HttpServlet{
 			throw new IOException(logMsg);
 		}
 	}
+	
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+		doGet(req,resp);
+	}
 }
