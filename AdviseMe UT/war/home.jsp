@@ -184,10 +184,10 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <h1>Search for courses on <span class="color-green">Advise</span>Me ...</h1>
-                <form action="" method="get" class="sky-form page-search-form">
+                <form action="/search" method="get" class="sky-form page-search-form">
 
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search courses ...">
+                    <input name="courseQuery" type="text" class="form-control" placeholder="Search courses ...">
                     <span class="input-group-btn">
                         <button class="btn-u" type="submit"><i class="fa fa-search"></i></button>
                     </span>
