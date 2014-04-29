@@ -225,9 +225,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/3.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/david.jpg" alt="" />
                     <h3><a>David Sandler</a> <small>Developer</small></h3>
-<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+                    <p>David is a Junior ECE Student who enjoys playing and writing music, wathing sports, and surfing the web. Allergies include: peanut butter </p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
 <!-- <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> --> 
 <!-- <!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> --> 
@@ -237,7 +237,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="https://scontent-b-dfw.xx.fbcdn.net/hphotos-frc3/t1.0-9/397797_10200619368619969_1801033503_n.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/awish.jpg" alt="" />
                     <h3><a>Alex Wishlinksi</a> <small>Developer</small></h3>
                     <p>Alex is a Junior ECE Student at UT involved in the Student Engineering Council and Women in ECE. Outside of school, she enjoys exploring Austin and all the different places to eat.</p>
 <!--                     <p>Developer</p> -->
