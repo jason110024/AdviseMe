@@ -5,4 +5,9 @@
 		<description>Generates a list for each course of users that have taken or are taking the course</description>
 		<schedule>every 24 hours</schedule>
 	</cron>
+	<cron>
+	    <url>/userloginreset</url>
+	    <description>Auto logs out people that are inactive for longer than one hour</description>
+	    <schedule>every 3 hours</schedule>
+	</cron>
 </cronentries>
