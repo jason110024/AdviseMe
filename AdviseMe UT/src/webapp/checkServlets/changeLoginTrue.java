@@ -37,6 +37,10 @@ public class changeLoginTrue extends HttpServlet {
 						user.resetLoginDate();
 						session.setAttribute("isLoggedIn", "true");
 						ofy().save().entity(user).now();
+					}else{
+						user.resetLoginDate();
+						System.out.println("User: " + id +" has (re)logged in.");
+						ofy().save().entity(user).now();
 					}
 					flag = true;
 					break;
