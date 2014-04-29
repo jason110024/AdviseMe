@@ -96,6 +96,9 @@
 				cache : false,
 				success : function(response) {
 					if(response=="true"){
+						alert("Your email has been sucessfully added");
+					}else{
+						alert("Something wrong happened.:(")
 					}
 				}
 			}); 	

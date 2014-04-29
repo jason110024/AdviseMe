@@ -1,4 +1,5 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
@@ -306,11 +307,10 @@
                     <!-- Update Newsletter -->
                     <div class="headline"><h2>Update Newsletter</h2></div> 
                     <p>Subscribe to AdviseMe and stay up to date with the latest news!</p>
-                    <form action="/addBlogSubscriberServlet" method="post" class="footer-subscribe">
+                    <form class="footer-subscribe">
                         <div class="input-group">
-                            <input type="text" name="email" id="email" class="form-control" placeholder="Email Address">                            
                             <span class="input-group-btn">
-                                <button type="submit" class="btn-u">Subscriber</button>
+                                <button class="btn-u" onclick="subscribers()">Subscribe to updates from AdviseMe!</button>
                             </span>
                         </div>                  
                     </form>                         
@@ -406,6 +406,23 @@
 		document.getElementById("advisename").innerHTML = "Welcome, Guest";
 		document.getElementById("adviseloginbutton").href = "login.jsp?error=false";
 		document.getElementById("adviseloginbutton").innerHTML = "Login";
+	}
+	</script>
+	<script>
+	function subscribers() {
+		var email = prompt("Please enter your email","Name@Domain.com");
+		$.ajax({
+			type : 'GET',
+			url : "addBlogSubscriberServlet?email=" + email,
+			cache : false,
+			success : function(response) {
+				if(response=="true"){
+					alert("Your email has been sucessfully added");
+				}else{
+					alert("Something wrong happened.:(")
+				}
+			}
+		}); 	
 	}
 	</script>
 <!--[if lt IE 9]>

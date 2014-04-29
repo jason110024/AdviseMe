@@ -1,6 +1,5 @@
 package webapp.datastoreObjects;
 
-import java.text.SimpleDateFormat;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
