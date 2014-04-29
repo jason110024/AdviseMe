@@ -306,11 +306,11 @@
                     <!-- Update Newsletter -->
                     <div class="headline"><h2>Update Newsletter</h2></div> 
                     <p>Subscribe to AdviseMe and stay up to date with the latest news!</p>
-                    <form class="footer-subscribe">
+                    <form action="/addBlogSubscriberServlet" method="post" class="footer-subscribe">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Email Address">                            
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Email Address">                            
                             <span class="input-group-btn">
-                                <button class="btn-u" type="button">Subscribe</button>
+                                <button type="submit" class="btn-u">Subscriber</button>
                             </span>
                         </div>                  
                     </form>                         
