@@ -29,7 +29,7 @@ public class searchForCourse extends HttpServlet{
 			}
 			
 			List<Course> courses = ofy().load().type(Course.class).list();
-			for(Course course: courses){
+			for(Course course: courses){//
 				
 			}
 			if (search.charAt(0) == 'E' || search.charAt(0) == 'e' && search.charAt(2) == ' ' ){
