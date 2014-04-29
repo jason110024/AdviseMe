@@ -165,6 +165,8 @@
 						pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
 						pageContext.setAttribute("course_num_users_workload", course.getNumWorkload());
 						pageContext.setAttribute("course_workload", ((double)Math.round(course.getWork() * 10) / 10));
+						pageContext.setAttribute("course_num_users_useful", course.getNumUseful());
+						pageContext.setAttribute("course_useful", ((double)Math.round(course.getUse() * 10) / 10));
 						ArrayList<String> users = course.getUserTaken();
 						if(users!=null&&users.size()>0){
 							for(int i=0;i<users.size();i++){
@@ -453,10 +455,38 @@
 
  
 </p>
-<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
+<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
                         </div>
                         
-                        
+                                                                    <div class="servive-block servive-block-red">
+                            <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
+                            <h2 class="heading-md">Course Usefulness: </h2>
+                            <p>
+                            
+ <div class="rateit" id="rateit7" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_useful)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
+ <script type="text/javascript">
+    $("#rateit7").bind('rated', 
+    		function(event, value){
+    			var courseName = GetURLParameter('courseName');
+				$.ajax({
+					type: 'GET',
+					url: "updatecourseuseful?useful="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
+					cache: false,
+					success: function(response){
+					}
+				});
+			});
+    $('#rateit7').on('beforerated', function (e, value) {
+        if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
+            e.preventDefault();
+        }
+    });       
+</script>   
+
+ 
+</p>
+<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
+                        </div>   
                       <div class="span3">
 			<div class="col-md-7">
 				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
