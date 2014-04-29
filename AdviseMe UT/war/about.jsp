@@ -213,7 +213,7 @@
         <div class="row team">
             <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/1.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/jason.jpg" alt="" />
                     <h3><a>Jason Anthraper</a> <small>Developer</small></h3>
                      <p>Jason is a Junior ECE Student who is a TUBA! Section Leader in the Longhorn Band and a member of the UT Solar Vehicles Team.</p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
@@ -262,9 +262,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail-style">
-                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/3.jpg" alt="" />
+                    <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/ross.jpg" alt="" />
                     <h3><a>Ross McGarity</a> <small>Developer</small></h3>
-<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+                    <p>Ross is a Junior ECE Student at UT and is involved in Texas 4000 and Tejas. He enjoys combing his hair, staying up late, and speaking in rhyme.</p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
 <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
 <!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
