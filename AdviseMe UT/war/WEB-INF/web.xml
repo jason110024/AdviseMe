@@ -189,6 +189,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <servlet-name>addforumpost</servlet-name>
 	    <url-pattern>/addforumpost</url-pattern>
 	</servlet-mapping>
+		<servlet>
+	    <servlet-name>searchForCourse</servlet-name>
+	    <servlet-class>webapp.checkServlets.searchForCourse</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>searchForCourse</servlet-name>
+	    <url-pattern>/search</url-pattern>
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>ChatBot</servlet-name>
 		<servlet-class>webapp.serviceServlets.chatServlet</servlet-class>
