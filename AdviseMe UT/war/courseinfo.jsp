@@ -429,7 +429,7 @@
                         
                         
                                                 <div class="servive-block servive-block-purple">
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
+                            <i class="icon-custom icon-color-light rounded-x icon-line  icon-docs"></i>
                             <h2 class="heading-md">Course Workload: </h2>
                             <p>
                             
@@ -459,7 +459,7 @@
                         </div>
                         
                                                                     <div class="servive-block servive-block-red">
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
+                            <i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
                             <h2 class="heading-md">Course Usefulness: </h2>
                             <p>
                             
