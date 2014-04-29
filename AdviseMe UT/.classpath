@@ -7,5 +7,9 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/recaptcha4j-0.0.7.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/stolz/Dropbox/Documents/UT Documents/3. Junior Year/Spring 2014/EE 461L/Team JAARD/Ross&apos;s Schedule/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/stolz/Dropbox/Documents/UT Documents/3. Junior Year/Spring 2014/EE 461L/Team JAARD/Ross&apos;s Schedule/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/stolz/Dropbox/Documents/UT Documents/3. Junior Year/Spring 2014/EE 461L/Team JAARD/Ross&apos;s Schedule/objectify-4.0b1.jar"/>
+	<classpathentry kind="lib" path="/Users/stolz/Dropbox/Documents/UT Documents/3. Junior Year/Spring 2014/EE 461L/Team JAARD/Ross&apos;s Schedule/recaptcha4j-0.0.7.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
