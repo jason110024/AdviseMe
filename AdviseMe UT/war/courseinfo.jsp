@@ -2,9 +2,6 @@
 <%@ page import="webapp.datastoreObjects.Course"%>
 <%@ page import="com.googlecode.objectify.Objectify"%>
 <%@ page import="com.googlecode.objectify.ObjectifyService"%>
-<%@ page import="com.google.appengine.api.users.User"%>
-<%@ page import="com.google.appengine.api.users.UserService"%>
-<%@ page import="com.google.appengine.api.users.UserServiceFactory"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -396,97 +393,85 @@
 
 
 
-                        <div class="servive-block servive-block-blue">
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
-                            <h2 class="heading-md">Course Difficulty: </h2>
-                            <p>
-                            
- <div class="rateit" id="rateit5" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_rating)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
- <script type="text/javascript">
-    $("#rateit5").bind('rated', 
-    		function(event, value){
-    			var courseName = GetURLParameter('courseName');
-				$.ajax({
-					type: 'GET',
-					url: "updatecourserating?rating="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
-					cache: false,
-					success: function(response){
-					}
+    <div class="servive-block servive-block-blue">
+		<i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
+        <h2 class="heading-md">Course Difficulty: </h2>
+        <p>
+       		<div class="rateit" id="rateit5" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_rating)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
+ 				<script type="text/javascript">
+    				$("#rateit5").bind('rated', 
+    					function(event, value){
+    					var courseName = GetURLParameter('courseName');
+							$.ajax({
+								type: 'GET',
+								url: "updatecourserating?rating="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
+								cache: false,
+								success: function(response){}
+							});
+						});
+   					$('#rateit5').on('beforerated', function (e, value) {
+        				if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
+            				e.preventDefault();
+        				}
+    				});       
+				</script>   
+		</p>
+		<p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
+  	</div>
+                        
+                        
+                        
+	<div class="servive-block servive-block-purple">
+		<i class="icon-custom icon-color-light rounded-x icon-line  icon-docs"></i>
+		<h2 class="heading-md">Course Workload: </h2>
+		<p>
+			<div class="rateit" id="rateit6" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_workload)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
+ 			<script type="text/javascript">
+    			$("#rateit6").bind('rated', 
+    				function(event, value){
+    				var courseName = GetURLParameter('courseName');
+						$.ajax({
+							type: 'GET',
+							url: "updatecourseworkload?workload="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
+							cache: false,
+							success: function(response){}
+						});
 				});
-			});
-    $('#rateit5').on('beforerated', function (e, value) {
-        if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
-            e.preventDefault();
-        }
-    });       
-</script>   
-
- 
-</p>
-<p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
-                        </div>
+    			$('#rateit6').on('beforerated', function (e, value) {
+        			if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
+            			e.preventDefault();
+        			}
+    			});       
+			</script>   
+		</p>
+		<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
+ 	</div>
                         
-                        
-                        
-                                                <div class="servive-block servive-block-purple">
-                            <i class="icon-custom icon-color-light rounded-x icon-line  icon-docs"></i>
-                            <h2 class="heading-md">Course Workload: </h2>
-                            <p>
-                            
- <div class="rateit" id="rateit6" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_workload)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
- <script type="text/javascript">
-    $("#rateit6").bind('rated', 
-    		function(event, value){
-    			var courseName = GetURLParameter('courseName');
-				$.ajax({
-					type: 'GET',
-					url: "updatecourseworkload?workload="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
-					cache: false,
-					success: function(response){
-					}
+	<div class="servive-block servive-block-red">
+		<i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
+ 		<h2 class="heading-md">Course Usefulness: </h2>
+		<p>
+ 			<div class="rateit" id="rateit7" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_useful)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
+			<script type="text/javascript">
+    			$("#rateit7").bind('rated', 
+    				function(event, value){
+    				var courseName = GetURLParameter('courseName');
+						$.ajax({
+							type: 'GET',
+							url: "updatecourseuseful?useful="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
+							cache: false,
+							success: function(response){}
+						});
 				});
-			});
-    $('#rateit6').on('beforerated', function (e, value) {
-        if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
-            e.preventDefault();
-        }
-    });       
-</script>   
-
- 
-</p>
-<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
-                        </div>
-                        
-                                                                    <div class="servive-block servive-block-red">
-                            <i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
-                            <h2 class="heading-md">Course Usefulness: </h2>
-                            <p>
-                            
- <div class="rateit" id="rateit7" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_useful)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
- <script type="text/javascript">
-    $("#rateit7").bind('rated', 
-    		function(event, value){
-    			var courseName = GetURLParameter('courseName');
-				$.ajax({
-					type: 'GET',
-					url: "updatecourseuseful?useful="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
-					cache: false,
-					success: function(response){
-					}
-				});
-			});
-    $('#rateit7').on('beforerated', function (e, value) {
-        if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
-            e.preventDefault();
-        }
-    });       
-</script>   
-
- 
-</p>
-<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
-                        </div>   
+   				$('#rateit7').on('beforerated', function (e, value) {
+        			if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
+            			e.preventDefault();
+        			}
+    			});       
+			</script>  
+		</p>
+		<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
+	</div>  
                       <div class="span3">
 			<div class="col-md-7">
 				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
