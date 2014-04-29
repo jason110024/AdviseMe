@@ -33,7 +33,7 @@ public class searchForCourse extends HttpServlet{
 				
 			}
 			if (search.charAt(0) == 'E' || search.charAt(0) == 'e' && search.charAt(2) == ' ' ){
-				//this is the case that its in the form (E* *****), assumed to be (EE ###)
+				///this is the case that its in the form (E* *****), assumed to be (EE ###)
 				String search2=search.toUpperCase();
 			resp.sendRedirect("courseinfo.jsp?courseName=" + search2);
 			}
