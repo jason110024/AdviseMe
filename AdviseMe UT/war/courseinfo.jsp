@@ -178,6 +178,9 @@
 						}
 					break;
 					}
+					else{
+						throw new Exception("Course Not Found");
+					}
 				}
 			%>
 		  var i;
