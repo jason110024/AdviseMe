@@ -230,6 +230,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>updateCourseWorkload</servlet-name>
 		<url-pattern>/updatecourseworkload</url-pattern>
 	</servlet-mapping>
+	<servlet>
+	    <servlet-name>updateCourseUseful</servlet-name>
+	    <servlet-class>webapp.checkServlets.updateUsefulRating</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>updateCourseUseful</servlet-name>
+	    <url-pattern>/updatecourseuseful</url-pattern>
+	</servlet-mapping>
 	<filter>
         <filter-name>ObjectifyFilter</filter-name>
         <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>

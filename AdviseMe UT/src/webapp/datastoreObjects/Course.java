@@ -27,6 +27,9 @@ public class Course implements Comparable<Course> {
 	private Integer numWorkload;
 	private HashMap<String,Double> workload;
 	private Double work=0.0;
+	private Integer numUseful;
+	private HashMap<String,Double> useful;
+	private Double use=0.0;
 	
 		
 	@SuppressWarnings("unused")
@@ -34,15 +37,20 @@ public class Course implements Comparable<Course> {
 
 	public Course(String courseName){
 		this.ratings = new HashMap<String,Double>();
+		this.workload = new HashMap<String,Double>();
+		this.useful = new HashMap<String,Double>();
 		this.ratings.put("default", 0.0);
+		this.workload.put("default", 0.0);
+		this.useful.put("default",0.0);
+		this.numRating=0;
+		this.numUseful=0;
+		this.numWorkload=0;
 		this.courseName=courseName;
 		this.professorList = new ArrayList<String>();
 		this.semestersTaught = new ArrayList<String>();
 		this.subscribers = new ArrayList<String>();
 		this.prereqs = new ArrayList<String>();
 		this.userTaken = new ArrayList<String>();
-		this.numRating=0;
-		this.numWorkload=0;
 		String[] parse = courseName.split(" ");
 		if(parse.length>=2){
 			if(parse[0].equalsIgnoreCase("EE")){
@@ -61,8 +69,13 @@ public class Course implements Comparable<Course> {
 	public Course(String courseName, String title){
 		this.ratings = new HashMap<String,Double>();
 		this.workload = new HashMap<String,Double>();
+		this.useful = new HashMap<String,Double>();
 		this.ratings.put("default", 0.0);
 		this.workload.put("default", 0.0);
+		this.useful.put("default",0.0);
+		this.numRating=0;
+		this.numUseful=0;
+		this.numWorkload=0;
 		this.courseName=courseName;
 		this.title=title;
 		this.professorList = new ArrayList<String>();
@@ -70,8 +83,6 @@ public class Course implements Comparable<Course> {
 		this.subscribers = new ArrayList<String>();
 		this.prereqs = new ArrayList<String>();
 		this.userTaken = new ArrayList<String>();
-		this.numRating=0;
-		this.numWorkload=0;
 		String[] parse = courseName.split(" ");
 		if(parse.length>=2){
 			if(parse[0].equalsIgnoreCase("EE")){
@@ -89,9 +100,14 @@ public class Course implements Comparable<Course> {
 	
 	public Course(String courseName, String title, String description,boolean upperDiv){
 		this.ratings = new HashMap<String,Double>();
-		this.workload = new HashMap<String, Double>();
+		this.workload = new HashMap<String,Double>();
+		this.useful = new HashMap<String,Double>();
 		this.ratings.put("default", 0.0);
 		this.workload.put("default", 0.0);
+		this.useful.put("default",0.0);
+		this.numRating=0;
+		this.numUseful=0;
+		this.numWorkload=0;
 		this.courseName=courseName;
 		this.title=title;
 		this.description=description;
@@ -101,8 +117,6 @@ public class Course implements Comparable<Course> {
 		this.prereqs = new ArrayList<String>();
 		this.userTaken = new ArrayList<String>();
 		this.upperDivision = upperDiv;
-		this.numRating=0;
-		this.numWorkload=0;
 		String[] parse = courseName.split(" ");
 		if(parse.length>=2){
 			if(parse[0].equalsIgnoreCase("EE")){
@@ -243,6 +257,10 @@ public class Course implements Comparable<Course> {
 		return this.numWorkload;
 	}
 	
+	public Integer getNumUseful(){
+		return this.numUseful;
+	}
+	
 	public void processRating(Double rating, String fbID){
 		if(this.ratings.containsKey(fbID)&&(this.ratings.get(fbID)!=rating)){
 			int userCount = this.numRating;
@@ -291,12 +309,40 @@ public class Course implements Comparable<Course> {
 		}
 	}
 	
+	public void processUseful(Double useful, String fbID){
+		if(this.useful.containsKey(fbID)&&(this.useful.get(fbID)!=useful)){
+			int userCount = this.numUseful;
+			Double temp = userCount*this.use;
+			this.use=(temp-this.useful.get(fbID)+useful)/(userCount);
+			this.useful.put(fbID, useful);
+			return;
+		}else if(this.useful.containsKey(fbID)&&(this.useful.get(fbID)==useful)){
+			return;
+		}else{
+			this.useful.put(fbID, useful);
+		}
+		if(use==0.0){
+			this.use=useful;
+			this.numUseful=1;
+		}else{
+			int userCount = this.numUseful;
+			Double temp = userCount*this.use;
+			temp+=useful;
+			this.numUseful+=1;
+			this.use=temp/this.numUseful;	
+		}
+	}
+	
 	public Double getAvg() {
 		return this.avg;
 	}
 	
 	public Double getWork(){
 		return this.work;
+	}
+	
+	public Double getUse(){
+		return this.use;
 	}
 	
 	public void resetRating(){
@@ -311,6 +357,12 @@ public class Course implements Comparable<Course> {
 			this.work=0.0;
 			this.numWorkload=0;
 			this.workload.put("default", 0.0);
+		}
+		if(this.useful!=null){
+			this.useful.clear();
+			this.use=0.0;
+			this.numUseful=0;
+			this.useful.put("default", 0.0);
 		}
 	}
 }

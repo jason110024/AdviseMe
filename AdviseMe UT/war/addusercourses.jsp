@@ -192,7 +192,7 @@
 		<!--=== Content Part ===-->
 		<form action="/addusercourses?id=${fn:escapeXml(id)}" method="post">
 			<h3>Courses:</h3>
-			<h4>What courses have you taken/are taking:</h4>
+			<h3>What courses have you taken/are taking:</h3>
 			<div>
 
 			<div>
