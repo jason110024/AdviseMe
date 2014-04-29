@@ -30,6 +30,7 @@ public class createSessionServlet extends HttpServlet{
 					session.setAttribute("last", user.getLastName());
 					session.setAttribute("id", fbid);
 					session.setAttribute("isLoggedIn", user.getLoginStatus().toString());
+					session.setAttribute("isfb", user.isfb().toString());
 					flag = user.getLoginStatus();
 				}
 			}

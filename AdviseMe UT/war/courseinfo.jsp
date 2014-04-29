@@ -50,6 +50,7 @@
 	String first = null;
 	String last = null;
 	String isLoggedIn = null;
+	String isfb = "false";
 	HttpSession mysession = request.getSession(false);
 	if(mysession.getAttribute("id")!=null){
 		id = (String) mysession.getAttribute("userid");
@@ -57,11 +58,13 @@
 		first = (String) mysession.getAttribute("first");
 		last = (String) mysession.getAttribute("last");
 		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+		isfb = (String) mysession.getAttribute("isfb");
 		pageContext.setAttribute("id", id);
 		pageContext.setAttribute("pic",picurl);
 		pageContext.setAttribute("first", first);
 		pageContext.setAttribute("last", last);
 		pageContext.setAttribute("isLoggedIn", isLoggedIn);
+		pageContext.setAttribute("isfb",isfb);
 		if(isLoggedIn.equalsIgnoreCase("true")){
 			pageContext.setAttribute("readonly", "false");
 
@@ -70,6 +73,7 @@
 		}
 		pageContext.setAttribute("guest","false");
 	}else{
+		pageContext.setAttribute("isfb", "false");
 		pageContext.setAttribute("guest", "true");
 		pageContext.setAttribute("readonly", "true");
 
@@ -98,7 +102,7 @@
 					if(response=="true"){
 						alert("Your email has been sucessfully added");
 					}else{
-						alert("Something wrong happened.:(")
+						alert("Something wrong happened.:(");
 					}
 				}
 			}); 	
@@ -107,7 +111,73 @@
 </head> 
 
 <body>
-  
+  <script>
+	window.fbAsyncInit = function(){
+		FB.init({
+			appId      : '125801300852907',
+		    status     : true, // check login status
+		    cookie     : true, // enable cookies to allow the server to access the session
+		    xfbml      : true  // parse XFBML
+		});
+		FB.Event.subscribe('auth.authResponseChange', function(response){
+			if(response.status === 'connected'){
+		    	test();
+		    }else if(response.status === 'not_authorized'){
+		    	FB.login({
+		    		scope: 'basic_info'
+		    	});
+		    }else{
+		    	FB.login({
+		    		scope: 'basic_info'
+		    	});
+		    }
+		});
+	};
+  function test(){
+	  if("${fn:escapeXml(isfb)}"=="true"){
+		  //need to run fb check (/me/friends/xxxx)
+		  var friendslist = new Array();
+		  <% 
+		  		ObjectifyService.register(Course.class);
+				List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
+				String name = request.getParameter("courseName");
+				pageContext.setAttribute("courseName",name);
+				for(Course course : courses){
+					if(course.getCourseName().equals(name)){
+						pageContext.setAttribute("course_title", course.getTitle());
+						pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
+						pageContext.setAttribute("course_description", course.getDescription());
+						pageContext.setAttribute("course_professorList", course.getProfessorList(true));
+						pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught(true));
+						pageContext.setAttribute("course_prereq", course.getPrereq(true));
+						pageContext.setAttribute("course_syllabus_link", course.getSyllabusLink());
+						pageContext.setAttribute("course_eval_link", course.getEvalLink());
+						pageContext.setAttribute("course_num_users_rating", course.getNumRating());
+						pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
+						ArrayList<String> users = course.getUserTaken();
+						if(users!=null&&users.size()>0){
+							for(int i=0;i<users.size();i++){
+								String temp = users.get(i);
+								%>
+								friendslist[<%=i%>] = '<%=temp %>';
+								<%
+							}
+						}
+					break;
+					}
+				}
+			%>
+		  var i;
+		  for(i=0;i<friendslist.length;i++){  
+			  FB.api('/me/friends/'+friendslist[i], function(response) {
+					if (response && !response.error) {
+						console.log(response);
+					}
+				});
+		  }  
+	  }
+  }
+  </script>
 
 <div class="wrapper">
      <!--=== Header ===-->    
@@ -215,45 +285,6 @@
         <!-- End Navbar -->
     </div>
     <!--=== End Header ===-->    
-
-<%
-		//retrieve courses
-		ObjectifyService.register(Course.class);
-		List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
-		Collections.sort(courses);
-		String name = request.getParameter("courseName");
-		pageContext.setAttribute("courseName",name);
-		//Course current;
-		//System.out.println(name);
-		for(Course course : courses){
-			if(course.getCourseName().equals(name)){
-		//current = course;
-		pageContext.setAttribute("course_title", course.getTitle());
-		pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
-		pageContext.setAttribute("course_description", course.getDescription());
-		pageContext.setAttribute("course_professorList", course.getProfessorList(true));
-		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught(true));
-		pageContext.setAttribute("course_prereq", course.getPrereq(true));
-		pageContext.setAttribute("course_syllabus_link", course.getSyllabusLink());
-		pageContext.setAttribute("course_eval_link", course.getEvalLink());
-		pageContext.setAttribute("course_num_users_rating", course.getNumRating());
-		pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
-		break;
-			}
-		}
-	%>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--     === Breadcrumbs === -->
     <div class="breadcrumbs-v3">

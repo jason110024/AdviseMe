@@ -31,6 +31,7 @@ public class User implements Comparable<User>{
 	private boolean loginStatus = false;
 	private ArrayList<String> courseList;
 	private Date loginDate;
+	private boolean isfb = false;
 	
 	@SuppressWarnings("unused")
 	private User(){
@@ -48,6 +49,7 @@ public class User implements Comparable<User>{
 		PasswordAndSalt passwordAndSalt = new PasswordAndSalt(password);
 		this.passwordHash=passwordAndSalt.getPasswordHash();
 		this.passwordSalt=passwordAndSalt.getPasswordSalt();
+		this.isfb=false;
 	}
 
 	
@@ -63,6 +65,7 @@ public class User implements Comparable<User>{
 		PasswordAndSalt passwordAndSalt = new PasswordAndSalt(password);
 		this.passwordHash=passwordAndSalt.getPasswordHash();
 		this.passwordSalt=passwordAndSalt.getPasswordSalt();
+		this.isfb=true;
 	}
 	
 	public boolean changePassword(String password)throws NoSuchAlgorithmException, UnsupportedEncodingException{
@@ -78,6 +81,10 @@ public class User implements Comparable<User>{
 	
 	public ArrayList<String> getUserClassList(){
 		return courseList;
+	}
+	
+	public Boolean isfb(){
+		return this.isfb;
 	}
 	
 	public void addUserClass(String course){

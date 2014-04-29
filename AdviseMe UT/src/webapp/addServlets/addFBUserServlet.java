@@ -83,48 +83,35 @@ public class addFBUserServlet extends HttpServlet{
 				session.setAttribute("id", FBId);
 				session.setAttribute("isLoggedIn", "true");
 				ofy().save().entity(user).now();
-				
 				Properties props = new Properties();
 				Session session1 = Session.getDefaultInstance(props,null);
 				Message msg = new MimeMessage(session1);
 				String htmlBody = "<!doctype html>"
-						+
-
-						"<html xmlns=\"http://www.w3.org/1999/xhtml\">"
+						+ "<html xmlns=\"http://www.w3.org/1999/xhtml\">"
 						+ "<head>"
 						+ "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />"
 						+ "<title>Responsive Email Template</title>"
-						+
-
-						"<style type=\"text/css\">"
+						+ "<style type=\"text/css\">"
 						+ "    .ReadMsgBody {width: 100%; background-color: #ffffff;}"
 						+ "    .ExternalClass {width: 100%; background-color: #ffffff;}"
 						+ "    body     {width: 100%; background-color: #ffffff; margin:0; padding:0; -webkit-font-smoothing: antialiased;font-family: Arial, Helvetica, sans-serif}"
 						+ "   table {border-collapse: collapse;}"
-						+
-
-						"   @media only screen and (max-width: 640px)  {"
+						+ "   @media only screen and (max-width: 640px)  {"
 						+ "                   body[yahoo] .deviceWidth {width:440px!important; padding:0;}"
 						+ "                   body[yahoo] .center {text-align: center!important;}"
 						+ "            }"
-						+
-
-						"   @media only screen and (max-width: 479px) {"
+						+ "   @media only screen and (max-width: 479px) {"
 						+ "                    body[yahoo] .deviceWidth {width:280px!important; padding:0;}"
 						+ "                    body[yahoo] .center {text-align: center!important;}"
 						+ "            }"
 						+ "</style>"
 						+ "</head>"
 						+ "<body leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\" yahoo=\"fix\" style=\"font-family: Arial, Helvetica, sans-serif\">"
-						+
-
-						"<!-- Wrapper -->"
+						+ "<!-- Wrapper -->"
 						+ "<table width=\"100%\"  border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">"
 						+ "    <tr>"
 						+ "        <td width=\"100%\" valign=\"top\">"
-						+
-
-						"           <!--Start Header-->"
+						+ "           <!--Start Header-->"
 						+ "           <table width=\"700\" bgcolor=\"#fff\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\" class=\"deviceWidth\">"
 						+ "                <tr>"
 						+ "                    <td style=\"padding: 6px 0px 0px\">"
@@ -139,24 +126,18 @@ public class addFBUserServlet extends HttpServlet{
 						+ "                                           </td>"
 						+ "                                       </tr>"
 						+ "                                   </table><!--End logo-->"
-						+
-
-						"                               </td>"
+						+ "                               </td>"
 						+ "                           </tr>"
 						+ "                       </table>"
 						+ "                   </td>"
 						+ "                </tr>"
 						+ "            </table> "
 						+ "            <!--End Header-->"
-						+
-
-						"          <!--Start Top Block-->"
+						+ "          <!--Start Top Block-->"
 						+ "          <table width=\"100%\" bgcolor=\"#e67e22\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\" class=\"deviceWidth\">"
 						+ "              <tr>"
 						+ "                 <td>"
-						+
-
-						"                                  <!--Left box-->"
+						+ "                                  <!--Left box-->"
 						+ "                                    <table width=\"49%\"  border=\"0\" cellpadding=\"0\" cellspacing=\"0\"  class=\"deviceWidth\">"
 						+ "                                       <tr>"
 						+ "                                            <td valign=\"middle\">"
@@ -187,9 +168,7 @@ public class addFBUserServlet extends HttpServlet{
 						+ "       </div>"
 						+ "        </a>"
 						+ "                                                        </td>"
-						+
-
-						"                                        <td  class=\"center\" style=\"font-size: 16px; color: #ffffff; font-weight: bold; text-align: left; font-family: Arial, Helvetica, sans-serif; line-height: 20px; vertical-align: middle; padding: 50px 10px 0; \">"
+						+ "                                        <td  class=\"center\" style=\"font-size: 16px; color: #ffffff; font-weight: bold; text-align: left; font-family: Arial, Helvetica, sans-serif; line-height: 20px; vertical-align: middle; padding: 50px 10px 0; \">"
 						+ "                                                      Stay Connected With AdviseMe!"
 						+ "                                          </td>"
 						+ "                                           <td valign=\"top\" style=\"padding: 10px 15px 0px \" class=\"center\">"
@@ -198,9 +177,7 @@ public class addFBUserServlet extends HttpServlet{
 						+ "                                                      <td valign=\"top\" style=\"padding: 10px 15px 0px\" class=\"center\">"
 						+ "                                                           <a href=\"https://twitter.com/AdviseMeUT\"><img width=\"32\" height=\"32\" src=\"img/icons/icon_twitter.png\"></a>"
 						+ "                                                        </td>"
-						+
-
-						"                                    <td valign=\"top\" style=\"padding: 10px 15px 0px\" class=\"center\">"
+						+ "                                    <td valign=\"top\" style=\"padding: 10px 15px 0px\" class=\"center\">"
 						+ "                                         <a href=\"https://www.youtube.com/channel/UCTE-dQdEBZQpOIphPIec_Og\"><img width=\"32\" height=\"32\" src=\"img/icons/icon_youtube.png\"></a>"
 						+ "                                      </td>"
 						+ "                                   </tr>"
@@ -211,32 +188,30 @@ public class addFBUserServlet extends HttpServlet{
 						+ "                        <!-- Right box  -->"
 						+ "                     </td>"
 						+ "                  </tr>"
-						+ "               </table>" +
-
-						"             </td>" + "          </tr>"
+						+ "               </table>" 
+						+ "             </td>" 
+						+ "          </tr>"
 						+ "       </table>"
-						+ "        <!--End Top Block-->" +
-
-						"         <div style=\"height:15px\">&nbsp;</div><!-- divider -->"
-						+
-
-						"      </td>" + "   </tr>" + "</table> "
-						+ "<!-- End Wrapper -->" + "</body>" + "</html>";
+						+ "        <!--End Top Block-->" 
+						+ "         <div style=\"height:15px\">&nbsp;</div><!-- divider -->"
+						+ "      </td>" 
+						+ "   </tr>" 
+						+ "</table> "
+						+ "<!-- End Wrapper -->" 
+						+ "</body>" 
+						+ "</html>";
 				Multipart mp = new MimeMultipart();
 				MimeBodyPart htmlPart = new MimeBodyPart();
 				htmlPart.setContent(htmlBody, "text/html");
 				mp.addBodyPart(htmlPart);
 				msg.setContent(mp);
 				try{
-					msg.setFrom(new InternetAddress("no-reply@advisemeut.appspotmail.com", "Welcome to AdviseMe!"));
+					msg.setFrom(new InternetAddress("no-reply@advisemeut.appspotmail.com", "Welcome to Advise Me!"));
 					msg.addRecipient(Message.RecipientType.TO, new InternetAddress(FBEmail));
 					Transport.send(msg);
-				}catch(Exception e1){
+				}catch(Exception e){
 					System.out.println("Was not able to send change to admin");
 				}
-				
-				
-				
 				resp.sendRedirect("/addusercourses.jsp?id="+FBId);
 			}
 		} catch(Exception e){
