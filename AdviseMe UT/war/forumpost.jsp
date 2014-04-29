@@ -225,7 +225,7 @@
 		String currentUserName = "";
 		for(User user : userList){
 			if(user.getfbUserId().equals(currentUserID))
-				currentUserName = user.getFullName();
+				currentUserName = user.getUsername();
 		}
 		
 		pageContext.setAttribute("postUserName", currentUserName);
