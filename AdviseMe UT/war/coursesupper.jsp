@@ -49,27 +49,27 @@
 <body>
 	<%
 		String id = null;
-		String picurl = null;
-		String first = null;
-		String last = null;
-		String isLoggedIn = null;
-		HttpSession mysession = request.getSession(false);
-		System.out.println("Home page: " + mysession.getAttribute("id"));
-		if(mysession.getAttribute("id")!=null){
-			id = (String) mysession.getAttribute("userid");
-			picurl = (String) mysession.getAttribute("pic");
-			first = (String) mysession.getAttribute("first");
-			last = (String) mysession.getAttribute("last");
-			isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
-			pageContext.setAttribute("id", id);
-			pageContext.setAttribute("pic",picurl);
-			pageContext.setAttribute("first", first);
-			pageContext.setAttribute("last", last);
-			pageContext.setAttribute("isLoggedIn", isLoggedIn);
-			pageContext.setAttribute("guest","false");
-		}else{
-			pageContext.setAttribute("guest", "true");
-		}
+			String picurl = null;
+			String first = null;
+			String last = null;
+			String isLoggedIn = null;
+			HttpSession mysession = request.getSession(false);
+			System.out.println("Home page: " + mysession.getAttribute("id"));
+			if(mysession.getAttribute("id")!=null){
+		id = (String) mysession.getAttribute("userid");
+		picurl = (String) mysession.getAttribute("pic");
+		first = (String) mysession.getAttribute("first");
+		last = (String) mysession.getAttribute("last");
+		isLoggedIn = (String) mysession.getAttribute("isLoggedIn");
+		pageContext.setAttribute("id", id);
+		pageContext.setAttribute("pic",picurl);
+		pageContext.setAttribute("first", first);
+		pageContext.setAttribute("last", last);
+		pageContext.setAttribute("isLoggedIn", isLoggedIn);
+		pageContext.setAttribute("guest","false");
+			}else{
+		pageContext.setAttribute("guest", "true");
+			}
 	%>
 	<div class="wrapper">
 		<!--=== Header ===-->
@@ -79,7 +79,7 @@
 				<div class="container">
 					<!-- Topbar Navigation -->
 					<ul class="loginbar pull-right">
-					
+
 						<li><a id="advisename">Welcome, Guest!</a></li>
 						<li class="topbar-devider"></li>
 						<li><a id="createanewaccount"
@@ -208,24 +208,24 @@
 				<!--/col-md-2-->
 				<%
 					ObjectifyService.register(Course.class);
-				List<Course> schools = ObjectifyService.ofy().load().type(Course.class).list();
-				Collections.sort(schools);
-				int numUpper = 0;
-				Iterator<Course> up = schools.iterator();
-				while (up.hasNext()){
-					Course currentCourse = up.next(); 
-					Boolean upperDiv=currentCourse.getUpperDivision();
-					if( upperDiv == true){
-					numUpper++;
-					}
-				}
-					 pageContext.setAttribute("num_upper",numUpper);
-					 
-					 int numPages = numUpper/10;
-					 if (numUpper%10 !=0)
-						 numPages++;
-					 
-					 pageContext.setAttribute("num_pages",numPages);
+						List<Course> schools = ObjectifyService.ofy().load().type(Course.class).list();
+						Collections.sort(schools);
+						int numUpper = 0;
+						Iterator<Course> up = schools.iterator();
+						while (up.hasNext()){
+							Course currentCourse = up.next(); 
+							Boolean upperDiv=currentCourse.getUpperDivision();
+							if( upperDiv == true){
+							numUpper++;
+							}
+						}
+							 pageContext.setAttribute("num_upper",numUpper);
+							 
+							 int numPages = numUpper/10;
+							 if (numUpper%10 !=0)
+								 numPages++;
+							 
+							 pageContext.setAttribute("num_pages",numPages);
 				%>
 
 				<div class="col-md-10">
@@ -239,14 +239,17 @@
 					%>
 					<%
 						Iterator<Course> upperIterator = schools.iterator();
-					                	while (upperIterator.hasNext()){
-					                		   Course currentCourse = upperIterator.next(); 
-					                		   Boolean upperDiv=currentCourse.getUpperDivision();
-					                		   if( upperDiv == true){
-					                			   pageContext.setAttribute("course_name",currentCourse.getCourseName());
-					                			   pageContext.setAttribute("course_description",currentCourse.getDescription());
-					                			   pageContext.setAttribute("course_title",currentCourse.getTitle());
-					                			   String courseName=currentCourse.getCourseName();
+								                	while (upperIterator.hasNext()){
+								                		   Course currentCourse = upperIterator.next(); 
+								                		   Boolean upperDiv=currentCourse.getUpperDivision();
+								                		   if( upperDiv == true){
+								                			   pageContext.setAttribute("course_name",currentCourse.getCourseName());
+								                			   pageContext.setAttribute("course_description",currentCourse.getDescription());
+								                			   pageContext.setAttribute("course_title",currentCourse.getTitle());
+								                			   pageContext.setAttribute("diff_rating",((double)Math.round(currentCourse.getAvg() * 10) / 10));
+					                                                   pageContext.setAttribute("work_rating",((double)Math.round(currentCourse.getWork() * 10) / 10));
+					                                                   pageContext.setAttribute("use_rating",((double)Math.round(currentCourse.getUse() * 10) / 10));
+								                			   String courseName=currentCourse.getCourseName();
 					%><script>
                    document.getElementById("<%=courseName%>
 																					");
@@ -262,14 +265,20 @@
 								- ${fn:escapeXml(course_title)}</a>
 						</h3>
 						<p>${fn:escapeXml(course_description)}</p>
+						<button class="btn-u btn-u-blue" type="button">Avg.
+							Difficulty: ${fn:escapeXml(diff_rating)}</button>
+						<button class="btn-u btn-u-purple" type="button">Avg.
+							Workload: ${fn:escapeXml(work_rating)}</button>
+						<button class="btn-u btn-u-red" type="button">Avg.
+							Usefulness: ${fn:escapeXml(use_rating)}</button>
 					</div>
 					<hr>
 					<%
 						}
-					                		
-					           
-					                	}
-					                }
+								                		
+								           
+								                	}
+								                }
 					%>
 
 
