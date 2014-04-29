@@ -215,7 +215,7 @@
                 <div class="thumbnail-style">
                     <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/1.jpg" alt="" />
                     <h3><a>Jason Anthraper</a> <small>Developer</small></h3>
-<!--                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p> -->
+                     <p>Jason is a Junior ECE Student who is a TUBA! Section Leader in the Longhorn Band and a member of the UT Solar Vehicles Team.</p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
 <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
 <!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
@@ -227,7 +227,7 @@
                 <div class="thumbnail-style">
                     <img class="img-responsive" style="max-height: 200px;" src="assets/img/team/david.jpg" alt="" />
                     <h3><a>David Sandler</a> <small>Developer</small></h3>
-                    <p>David is a Junior ECE Student who enjoys playing and writing music, wathing sports, and surfing the web. Allergies include: peanut butter </p>
+                    <p>David is a Junior ECE Student who enjoys playing and writing music, watching sports, and surfing the web. Allergies include: peanut butter </p>
 <!--                     <ul class="list-unstyled list-inline team-socail"> -->
 <!-- <!--                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li> --> 
 <!-- <!--                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li> --> 

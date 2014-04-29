@@ -304,8 +304,7 @@
 					while(iterator.hasNext()){
 						String identifier = (String)iterator.next();
 		%><script>
-			    		document.getElementById("<%=identifier%>
-							").checked = true;
+			    		document.getElementById("<%=identifier%>").checked = true;
 						</script>
 		<%
 			}
