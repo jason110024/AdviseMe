@@ -66,6 +66,8 @@ public class emailServlet extends HttpServlet{
 						break;
 					}
 				}
+			}else{
+				
 			}
 		}catch(Exception e){
 			System.out.println("Something even more stupid happened.");

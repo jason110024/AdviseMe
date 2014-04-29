@@ -129,7 +129,7 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li>
-                            <a href="javascript:void(0);" >
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
