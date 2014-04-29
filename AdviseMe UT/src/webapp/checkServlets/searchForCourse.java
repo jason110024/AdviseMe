@@ -21,25 +21,25 @@ public class searchForCourse extends HttpServlet{
 	
 	static{ObjectifyService.register(Course.class);}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
-		String search = req.getParameter("courseQuery");
+		String search = req.getParameter("courseQuery").toUpperCase();
 		
 		try{
 			if(search==null||search.isEmpty()){
 				resp.sendRedirect("coursesall.jsp");
 			}
 			
-			if ((search.charAt(0) == 'E' || search.charAt(0) == 'e') && search.charAt(2) == ' ' ){
+			if (search.charAt(0) == 'E' && search.charAt(2) == ' ' ){
 				///this is the case that its in the form (E* *****), assumed to be (EE ###)
-				String search2=search.toUpperCase();
-			resp.sendRedirect("courseinfo.jsp?courseName=" + search2.toUpperCase());
+			
+			resp.sendRedirect("courseinfo.jsp?courseName=" + search);
 			}
 			else if (search.substring(0,1).matches("[0-9]")){
 				//first thing in query is course number. assumed to be (###)
-				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search.toUpperCase());
+				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search);
 			}
-			else if (search.charAt(0) == 'E' || search.charAt(0) == 'e' && search.substring(0,1).matches("[0-9]") ){
-				//the case that query is in form of(E****), assumed to be (EE###)
-				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search.substring(2).toUpperCase());
+			else if (search.charAt(0) == 'E' && search.substring(2,3).matches("[0-9]") ){
+				//the case that query is in form of(E*#**), assumed to be (EE###)
+				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search.substring(2));
 			}
 			else{
 				List<Course> courses = ofy().load().type(Course.class).list();
