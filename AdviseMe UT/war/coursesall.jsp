@@ -34,7 +34,6 @@
 <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
 <link rel="stylesheet"
 	href="assets/plugins/font-awesome/css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="rateit.css">
 
 <!-- CSS Page Style -->
 <link rel="stylesheet" href="assets/css/pages/page_search_inner.css">
@@ -45,7 +44,6 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="assets/css/custom.css">
-<script type="text/javascript" src="jquery.rateit.js"></script>
 </head>
 
 <body>
@@ -81,7 +79,7 @@
 				<div class="container">
 					<!-- Topbar Navigation -->
 					<ul class="loginbar pull-right">
-
+					
 						<li><a id="advisename">Welcome, Guest!</a></li>
 						<li class="topbar-devider"></li>
 						<li><a id="createanewaccount"
@@ -239,7 +237,6 @@
 								                           pageContext.setAttribute("course_name",currentCourse.getCourseName());
 								                           pageContext.setAttribute("course_description",currentCourse.getDescription());
 								                           pageContext.setAttribute("course_title",currentCourse.getTitle());
-								                           pageContext.setAttribute("course_rating",currentCourse.getAvg());
 								                           String courseName=currentCourse.getCourseName();
 					%><script>
                    document.getElementById("<%=courseName%>");
@@ -255,8 +252,9 @@
 								- ${fn:escapeXml(course_title)}</a>
 						</h3>
 						<p>${fn:escapeXml(course_description)}</p>
-						<div class="rateit" id="rateit5" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_rating)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
-            
+						<button class="btn-u btn-u-blue" type="button">Avg. Difficulty:</button>
+						<button class="btn-u btn-u-purple" type="button">Avg. Workload:</button>
+						<button class="btn-u btn-u-red" type="button">Avg. Usefulness:</button>
 					</div>
 					<hr>
 					<%
