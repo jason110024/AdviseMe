@@ -24,6 +24,9 @@ public class Course implements Comparable<Course> {
 	private Integer numRating; 
 	private HashMap<String,Double> ratings;
 	private Double avg=0.0;
+	private Integer numWorkload;
+	private HashMap<String,Double> workload;
+	private Double work=0.0;
 	
 		
 	@SuppressWarnings("unused")
@@ -39,6 +42,7 @@ public class Course implements Comparable<Course> {
 		this.prereqs = new ArrayList<String>();
 		this.userTaken = new ArrayList<String>();
 		this.numRating=0;
+		this.numWorkload=0;
 		String[] parse = courseName.split(" ");
 		if(parse.length>=2){
 			if(parse[0].equalsIgnoreCase("EE")){
@@ -56,7 +60,9 @@ public class Course implements Comparable<Course> {
 	
 	public Course(String courseName, String title){
 		this.ratings = new HashMap<String,Double>();
+		this.workload = new HashMap<String,Double>();
 		this.ratings.put("default", 0.0);
+		this.workload.put("default", 0.0);
 		this.courseName=courseName;
 		this.title=title;
 		this.professorList = new ArrayList<String>();
@@ -65,6 +71,7 @@ public class Course implements Comparable<Course> {
 		this.prereqs = new ArrayList<String>();
 		this.userTaken = new ArrayList<String>();
 		this.numRating=0;
+		this.numWorkload=0;
 		String[] parse = courseName.split(" ");
 		if(parse.length>=2){
 			if(parse[0].equalsIgnoreCase("EE")){
@@ -82,7 +89,9 @@ public class Course implements Comparable<Course> {
 	
 	public Course(String courseName, String title, String description,boolean upperDiv){
 		this.ratings = new HashMap<String,Double>();
+		this.workload = new HashMap<String, Double>();
 		this.ratings.put("default", 0.0);
+		this.workload.put("default", 0.0);
 		this.courseName=courseName;
 		this.title=title;
 		this.description=description;
@@ -93,6 +102,7 @@ public class Course implements Comparable<Course> {
 		this.userTaken = new ArrayList<String>();
 		this.upperDivision = upperDiv;
 		this.numRating=0;
+		this.numWorkload=0;
 		String[] parse = courseName.split(" ");
 		if(parse.length>=2){
 			if(parse[0].equalsIgnoreCase("EE")){
@@ -229,6 +239,10 @@ public class Course implements Comparable<Course> {
 		return this.numRating;
 	}
 	
+	public Integer getNumWorkload(){
+		return this.numWorkload;
+	}
+	
 	public void processRating(Double rating, String fbID){
 		if(this.ratings.containsKey(fbID)&&(this.ratings.get(fbID)!=rating)){
 			int userCount = this.numRating;
@@ -253,8 +267,36 @@ public class Course implements Comparable<Course> {
 		}
 	}
 	
+	public void processWorkload(Double workload, String fbID){
+		if(this.workload.containsKey(fbID)&&(this.workload.get(fbID)!=workload)){
+			int userCount = this.numWorkload;
+			Double temp = userCount*this.work;
+			this.work=(temp-this.workload.get(fbID)+workload)/(userCount);
+			this.workload.put(fbID, workload);
+			return;
+		}else if(this.workload.containsKey(fbID)&&(this.workload.get(fbID)==workload)){
+			return;
+		}else{
+			this.workload.put(fbID, workload);
+		}
+		if(work==0.0){
+			this.work=workload;
+			this.numWorkload=1;
+		}else{
+			int userCount = this.numWorkload;
+			Double temp = userCount*this.work;
+			temp+=workload;
+			this.numWorkload+=1;
+			this.work=temp/this.numWorkload;	
+		}
+	}
+	
 	public Double getAvg() {
 		return this.avg;
+	}
+	
+	public Double getWork(){
+		return this.work;
 	}
 	
 	public void resetRating(){
@@ -262,8 +304,13 @@ public class Course implements Comparable<Course> {
 			this.ratings.clear();
 			this.avg = 0.0;
 			this.numRating=0;
-			System.out.println(ratings.size());
 			this.ratings.put("default", 0.0);
+		}
+		if(this.workload!=null){
+			this.workload.clear();
+			this.work=0.0;
+			this.numWorkload=0;
+			this.workload.put("default", 0.0);
 		}
 	}
 }

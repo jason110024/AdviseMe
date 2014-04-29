@@ -133,6 +133,15 @@
 		    }
 		});
 	};
+	(function(d){
+		var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		if(d.getElementById(id)){
+			return;
+		}
+		js = d.createElement('script'); js.id = id; js.async = true;
+		js.src = "//connect.facebook.net/en_US/all.js";
+		ref.parentNode.insertBefore(js, ref);
+	}(document));
   function test(){
 	  if("${fn:escapeXml(isfb)}"=="true"){
 		  //need to run fb check (/me/friends/xxxx)
@@ -154,6 +163,8 @@
 						pageContext.setAttribute("course_eval_link", course.getEvalLink());
 						pageContext.setAttribute("course_num_users_rating", course.getNumRating());
 						pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
+						pageContext.setAttribute("course_num_users_workload", course.getNumWorkload());
+						pageContext.setAttribute("course_workload", ((double)Math.round(course.getWork() * 10) / 10));
 						ArrayList<String> users = course.getUserTaken();
 						if(users!=null&&users.size()>0){
 							for(int i=0;i<users.size();i++){
@@ -169,9 +180,10 @@
 			%>
 		  var i;
 		  for(i=0;i<friendslist.length;i++){  
+			  console.log('/me/friends/'+friendslist[i]);
 			  FB.api('/me/friends/'+friendslist[i], function(response) {
 					if (response && !response.error) {
-						console.log(response);
+						console.log(response.id);
 					}
 				});
 		  }  
@@ -410,6 +422,38 @@
  
 </p>
 <p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
+                        </div>
+                        
+                        
+                        
+                                                <div class="servive-block servive-block-purple">
+                            <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
+                            <h2 class="heading-md">Course Workload: </h2>
+                            <p>
+                            
+ <div class="rateit" id="rateit6" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_workload)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
+ <script type="text/javascript">
+    $("#rateit6").bind('rated', 
+    		function(event, value){
+    			var courseName = GetURLParameter('courseName');
+				$.ajax({
+					type: 'GET',
+					url: "updatecourseworkload?workload="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
+					cache: false,
+					success: function(response){
+					}
+				});
+			});
+    $('#rateit6').on('beforerated', function (e, value) {
+        if (!confirm('Are you sure you want to rate this item: ' +  value + ' stars?')) {
+            e.preventDefault();
+        }
+    });       
+</script>   
+
+ 
+</p>
+<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
                         </div>
                         
                         

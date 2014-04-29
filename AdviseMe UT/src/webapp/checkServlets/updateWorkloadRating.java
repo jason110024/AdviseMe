@@ -1,4 +1,4 @@
-/*package webapp.checkServlets;
+package webapp.checkServlets;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
@@ -17,7 +17,7 @@ import com.googlecode.objectify.ObjectifyService;
 public class updateWorkloadRating extends HttpServlet{
 	static{ObjectifyService.register(Course.class);}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException{
-		String temp = req.getParameter("rating2");
+		String temp = req.getParameter("workload");
 		String courseName = req.getParameter("course");
 		String id = req.getParameter("id");
 		try{
@@ -34,13 +34,13 @@ public class updateWorkloadRating extends HttpServlet{
 			List<Course> courses = ofy().load().type(Course.class).list();
 			for(Course course: courses){
 				if(course.getCourseName().equals(courseName)){
-					System.out.println("Old Rating for "+courseName+" was :"+course.getWorkAvg());
-					course.processWorkRating(rating,id); 
-					System.out.println("New Rating for " + courseName+" is :"+ course.getWorkAvg());
+					System.out.println("Old Rating for "+courseName+" was :"+course.getWork());
+					course.processWorkload(rating,id); 
+					System.out.println("New Rating for " + courseName+" is :"+ course.getWork());
 					ofy().save().entity(course).now();
 					resp.setContentType("text/plain");
 					resp.setCharacterEncoding("UTF-8");
-					resp.getWriter().write(course.getWorkAvg().toString());
+					resp.getWriter().write(course.getWork().toString());
 					break;
 				}
 			}
@@ -54,4 +54,3 @@ public class updateWorkloadRating extends HttpServlet{
 		doGet(req,resp);
 	}
 }
-*/
