@@ -25,27 +25,31 @@ public class searchForCourse extends HttpServlet{
 		
 		try{
 			if(search==null||search.isEmpty()){
-				throw new Exception("I mean you gotta type something in...");
+				resp.sendRedirect("coursesall.jsp");
 			}
 			
-			List<Course> courses = ofy().load().type(Course.class).list();
-			for(Course course: courses){//
-				
-			}
-			if (search.charAt(0) == 'E' || search.charAt(0) == 'e' && search.charAt(2) == ' ' ){
+			if ((search.charAt(0) == 'E' || search.charAt(0) == 'e') && search.charAt(2) == ' ' ){
 				///this is the case that its in the form (E* *****), assumed to be (EE ###)
 				String search2=search.toUpperCase();
-			resp.sendRedirect("courseinfo.jsp?courseName=" + search2);
+			resp.sendRedirect("courseinfo.jsp?courseName=" + search2.toUpperCase());
 			}
 			else if (search.substring(0,1).matches("[0-9]")){
 				//first thing in query is course number. assumed to be (###)
-				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search);
+				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search.toUpperCase());
 			}
-//			else if (){
-//				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search);
-//			}
+			else if (search.charAt(0) == 'E' || search.charAt(0) == 'e' && search.substring(0,1).matches("[0-9]") ){
+				//the case that query is in form of(E****), assumed to be (EE###)
+				resp.sendRedirect("courseinfo.jsp?courseName=" + "EE " + search.substring(2).toUpperCase());
+			}
 			else{
-				resp.sendRedirect("courseinfo.jsp?courseName=" + "poop");
+				List<Course> courses = ofy().load().type(Course.class).list();
+				for(Course course: courses){
+					String name = course.getTitle();
+					if(name.toLowerCase().contains(search.toLowerCase())){
+						resp.sendRedirect("courseinfo.jsp?courseName=" + course.getCourseName());
+					}	
+				}
+				resp.sendRedirect("coursesall.jsp");
 			}
 		} catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
