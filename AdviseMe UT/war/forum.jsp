@@ -215,6 +215,7 @@
 						                       pageContext.setAttribute("postUserName",currentUserName);
 						                       pageContext.setAttribute("postDate",currentPost.getDate());
 						                       pageContext.setAttribute("postID",currentPost.getId().toString());
+// 						                       pageContext.setAttribute("postRating",currentPost.getRating());
 						%>
 
 
@@ -234,6 +235,7 @@
 								<a class="btn-u btn-brd rounded btn-u-default btn-u-xs"
 									href="forumpost.jsp?postID=${fn:escapeXml(postID)}"><i
 									class="fa fa-location-arrow"></i> Read More</a>
+<%-- 									<button class="btn-u btn-u-green" type="button">Post Rating: ${fn:escapeXml(postRating)}</button> --%>
 							</p>
 							<hr>
 						</div>
