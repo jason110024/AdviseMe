@@ -237,6 +237,9 @@
 								                           pageContext.setAttribute("course_name",currentCourse.getCourseName());
 								                           pageContext.setAttribute("course_description",currentCourse.getDescription());
 								                           pageContext.setAttribute("course_title",currentCourse.getTitle());
+								                           pageContext.setAttribute("diff_rating",((double)Math.round(currentCourse.getAvg() * 10) / 10));
+								                           pageContext.setAttribute("work_rating",((double)Math.round(currentCourse.getWork() * 10) / 10));
+								                           pageContext.setAttribute("use_rating",((double)Math.round(currentCourse.getUse() * 10) / 10));
 								                           String courseName=currentCourse.getCourseName();
 					%><script>
                    document.getElementById("<%=courseName%>");
@@ -252,6 +255,9 @@
 								- ${fn:escapeXml(course_title)}</a>
 						</h3>
 						<p>${fn:escapeXml(course_description)}</p>
+						<button class="btn-u btn-u-blue" type="button">Avg. Difficulty: ${fn:escapeXml(diff_rating)}</button>
+						<button class="btn-u btn-u-purple" type="button">Avg. Workload: ${fn:escapeXml(work_rating)}</button>
+						<button class="btn-u btn-u-red" type="button">Avg. Usefulness: ${fn:escapeXml(use_rating)}</button>
 					</div>
 					<hr>
 					<%
