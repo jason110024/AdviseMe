@@ -96,107 +96,112 @@
 		window.onload = timetologout;
 		</script>
 <div class="wrapper">
-        <!--=== Header ===-->    
-    <div class="header">
-        <!-- Topbar -->
-        <div class="topbar">
-            <div class="container">
-                <!-- Topbar Navigation -->
-                <ul class="loginbar pull-right">
-                     
-                </ul>
-                <!-- End Topbar Navigation -->
-            </div>
+<!--=== Header ===-->    
+<div class="header">
+   	<!-- Topbar -->
+   	<div class="topbar">
+        <div class="container">
+            <!-- Topbar Navigation -->
+            <ul class="loginbar pull-right">
+               	
+				<li><a id="advisename">Welcome, Guest!</a></li>
+				<li class="topbar-devider"></li>   
+                <li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
+				<li class="topbar-devider"></li>   
+                <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
+            </ul>
+            <!-- End Topbar Navigation -->
         </div>
-        <!-- End Topbar -->
-    
-        <!-- Navbar -->
-        <div class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="fa fa-bars"></span>
-                    </button>
-                    <a class="navbar-brand" href="home.jsp">
-                        <img id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
-                    </a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Home -->
-                        <li>
-                            <a href="home.html" >
-                                Home
-                            </a>
-                        </li>
-                        <!-- End Home -->
-
-                        <!-- About -->                        
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                About Us
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="help.html">Useful Links/FAQs</a></li>
-
-                            </ul>
-                        </li>
-                        <!-- End About -->
-
-                        <!-- Courses -->
-                        <li>
-                            <a href="courses.html">
-                                Courses
-                            </a>
-                        </li>
-                        <!-- End Courses -->
-
-                        <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                Schedules
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">Something</a></li>
-                                <li><a href="javascript:void(0);">Something</a></li>
-                            </ul>
-                        </li>
-                        <!-- End Portfolio -->
-
-
-                        <!-- Contacts -->
-                        <li>
-                            <a href="contact.html">
-                                Contact Us
-                            </a>
-                        </li>                    
-                        <!-- End Contacts -->
-
-                        <!-- Search Block -->
-                        <li>
-                            <i class="search fa fa-search search-btn"></i>
-                            <div class="search-open">
-                                <div class="input-group animated fadeInDown">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn-u" type="button">Go</button>
-                                    </span>
-                                </div>
-                            </div>    
-                        </li>
-                        <!-- End Search Block -->
-                    </ul>
-                </div><!--/navbar-collapse-->
-            </div>    
-        </div>            
-        <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->   
+    <!-- End Topbar -->
+
+    <!-- Navbar -->
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </button>
+                <a class="navbar-brand" href="home.jsp">
+                    <img id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Home -->
+                    <li>
+                        <a href="home.jsp" >
+                            Home
+                        </a>
+                    </li>
+                    <!-- End Home -->
+
+                    <!-- About -->                        
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.jsp">About Us</a></li>
+                            <li><a href="usefulLinks.jsp">Useful Links/FAQs</a></li>
+                        </ul>
+                    </li>
+                    <!-- End About -->
+
+                    <!-- Courses -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);"
+                        	class="dropdown-toggle" data-toggle="dropdown">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu">
+                        	<li><a href="coursesall.jsp">All Courses</a></li>
+                            <li><a href="courseslower.jsp">Lower Division</a></li>
+                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+                        </ul>
+                	</li>
+                    <!-- End Courses -->
+
+                    <!-- Forum -->
+                    <li>
+                        <a href="forum.jsp">
+                            Forum
+                        </a>
+                    </li>
+                    <!-- End Forum -->
+
+                    <!-- Contacts -->
+                    <li>
+                        <a href="contact.jsp">
+                            Contact Us
+                        </a>
+                    </li>                    
+                    <!-- End Contacts -->
+
+<!--                         Search Block -->
+<!--                         <li> -->
+<!--                             <i class="search fa fa-search search-btn"></i> -->
+<!--                             <div class="search-open"> -->
+<!--                                 <div class="input-group animated fadeInDown"> -->
+<!--                                     <input type="text" class="form-control" placeholder="Search"> -->
+<!--                                     <span class="input-group-btn"> -->
+<!--                                         <button class="btn-u" type="button">Go</button> -->
+<!--                                     </span> -->
+<!--                                 </div> -->
+<!--                             </div>     -->
+<!--                         </li> -->
+<!--                         End Search Block -->
+                </ul>
+            </div><!--/navbar-collapse-->
+        </div>    
+    </div>            
+    <!-- End Navbar -->
+</div>
+<!--=== End Header ===-->   
 
     <!--=== Breadcrumbs ===-->
     <div class="breadcrumbs">
