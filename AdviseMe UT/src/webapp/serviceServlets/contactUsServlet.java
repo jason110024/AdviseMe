@@ -111,8 +111,8 @@ public class contactUsServlet extends HttpServlet{
 						+ "						                                     Here is a receipt of your message:"
 						+ "						                        			 <br>"
 						+ "						                        			 Name:  " + name 
-						+ "						                        			 Email: " + email 
-						+ "						                        			 Message: " + message 
+						+ "						                        		<br> Email: " + email 
+						+ "						                        		<br> Message: " + message 
 						+ "						                                </td>"
 						+ "						                            </tr>"
 						+ "						                        </table><!--End Left box-->"
