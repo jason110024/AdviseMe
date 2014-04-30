@@ -69,94 +69,112 @@
 		}
 	%>
 	<div class="wrapper">
-		<!--=== Header ===-->
-		<div class="header">
-			<!-- Topbar -->
-			<div class="topbar">
-				<div class="container">
-					<!-- Topbar Navigation -->
-					<ul class="loginbar pull-right">
+    <!--=== Header ===-->    
+    <div class="header">
+       	<!-- Topbar -->
+       	<div class="topbar">
+            <div class="container">
+                <!-- Topbar Navigation -->
+                <ul class="loginbar pull-right">
+                   	
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
+					<li class="topbar-devider"></li>   
+                    <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
+                </ul>
+                <!-- End Topbar Navigation -->
+            </div>
+        </div>
+        <!-- End Topbar -->
+    
+        <!-- Navbar -->
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href="home.jsp">
+                        <img id="logo-header" src="assets/img/logo1-default.png" alt="Logo">
+                    </a>
+                </div>
 
-						<li><a id="advisename">Welcome, Guest!</a></li>
-						<li class="topbar-devider"></li>
-						<li><a id="createanewaccount"
-							href="createaccount.jsp?error=false">Create Account</a></li>
-						<li class="topbar-devider"></li>
-						<li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
-					</ul>
-					<!-- End Topbar Navigation -->
-				</div>
-			</div>
-			<!-- End Topbar -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Home -->
+                        <li>
+                            <a href="home.jsp" >
+                                Home
+                            </a>
+                        </li>
+                        <!-- End Home -->
 
-			<!-- Navbar -->
-			<div class="navbar navbar-default" role="navigation">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target=".navbar-responsive-collapse">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="fa fa-bars"></span>
-						</button>
-						<a class="navbar-brand" href="home.jsp"> <img id="logo-header"
-							src="assets/img/logo1-default.png" alt="Logo">
-						</a>
-					</div>
+                        <!-- About -->                        
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.jsp">About Us</a></li>
+                                <li><a href="usefulLinks.jsp">Useful Links/FAQs</a></li>
+                            </ul>
+                        </li>
+                        <!-- End About -->
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse navbar-responsive-collapse">
-						<ul class="nav navbar-nav">
-							<!-- Home -->
-							<li><a href="home.jsp"> Home </a></li>
-							<!-- End Home -->
+                        <!-- Courses -->
+                        <li class="dropdown">
+	                        <a href="javascript:void(0);"
+	                        	class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="courseslower.jsp">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
+                        <!-- End Courses -->
 
-							<!-- About -->
-							<li class="dropdown"><a href="javascript:void(0);"
-								class="dropdown-toggle" data-toggle="dropdown"> About Us </a>
-								<ul class="dropdown-menu">
-									<li><a href="about.jsp">About Us</a></li>
-									<li><a href="usefulLinks.jsp">Useful Links/FAQs</a></li>
-								</ul></li>
-							<!-- End About -->
+                        <!-- Forum -->
+                        <li class="active">
+                            <a href="forum.jsp">
+                                Forum
+                            </a>
+                        </li>
+                        <!-- End Forum -->
 
-							<!-- Courses -->
-							<li class="dropdown"><a class="dropdown-toggle"
-								data-toggle="dropdown"> Courses </a>
-								<ul class="dropdown-menu">
-									<li><a href="coursesall.jsp">All Courses</a></li>
-									<li><a href="courseslower.jsp">Lower Division</a></li>
-									<li><a href="coursesupper.jsp">Upper Division</a></li>
-								</ul></li>
-							<!-- End Courses -->
+                        <!-- Contacts -->
+                        <li>
+                            <a href="contact.jsp">
+                                Contact Us
+                            </a>
+                        </li>                    
+                        <!-- End Contacts -->
 
-							<!-- Forum -->
-							<li><a href="javascript:void(0);"> Forum </a></li>
-							<!-- End Forum -->
-
-							<!-- Contacts -->
-							<li><a href="contact.jsp"> Contact Us </a></li>
-							<!-- End Contacts -->
-
-							<!-- Search Block -->
-							<li><i class="search fa fa-search search-btn"></i>
-								<div class="search-open">
-									<div class="input-group animated fadeInDown">
-										<input type="text" class="form-control" placeholder="Search">
-										<span class="input-group-btn">
-											<button class="btn-u" type="button">Go</button>
-										</span>
-									</div>
-								</div></li>
-							<!-- End Search Block -->
-						</ul>
-					</div>
-					<!--/navbar-collapse-->
-				</div>
-			</div>
-			<!-- End Navbar -->
-		</div>
-		<!--=== End Header ===-->
+<!--                         Search Block -->
+<!--                         <li> -->
+<!--                             <i class="search fa fa-search search-btn"></i> -->
+<!--                             <div class="search-open"> -->
+<!--                                 <div class="input-group animated fadeInDown"> -->
+<!--                                     <input type="text" class="form-control" placeholder="Search"> -->
+<!--                                     <span class="input-group-btn"> -->
+<!--                                         <button class="btn-u" type="button">Go</button> -->
+<!--                                     </span> -->
+<!--                                 </div> -->
+<!--                             </div>     -->
+<!--                         </li> -->
+<!--                         End Search Block -->
+                    </ul>
+                </div><!--/navbar-collapse-->
+            </div>    
+        </div>            
+        <!-- End Navbar -->
+    </div>
+    <!--=== End Header ===-->
 
 		<!--=== Breadcrumbs ===-->
 		<div class="breadcrumbs-v3">
@@ -215,7 +233,7 @@
 						                       pageContext.setAttribute("postUserName",currentUserName);
 						                       pageContext.setAttribute("postDate",currentPost.getDate());
 						                       pageContext.setAttribute("postID",currentPost.getId().toString());
-// 						                       pageContext.setAttribute("postRating",currentPost.getRating());
+// pageContext.setAttribute("postRating",currentPost.getRating());
 						%>
 
 
@@ -224,7 +242,7 @@
 
 							<h2>
 								<a
-									onclick="window.location.href='forumpost.jsp?postID=${fn:escapeXml(postID)}'">${fn:escapeXml(postTitle)}</a>
+									href="forumpost.jsp?postID=${fn:escapeXml(postID)}">${fn:escapeXml(postTitle)}</a>
 							</h2>
 
 							<ul class="list-unstyled list-inline blog-info">
