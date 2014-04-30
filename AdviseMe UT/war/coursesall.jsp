@@ -173,17 +173,17 @@
 		<div class="search-block">
 			<div class="container">
 				<div class="col-md-6 col-md-offset-3">
-					<h2>Search for courses</h2>
-					<div class="input-group">
-						<input type="text" class="form-control"
-							placeholder="Search for courses by abbreviation or title">
-						<span class="input-group-btn">
-							<button class="btn-u" type="button">
-								<i class="fa fa-search"></i>
-							</button>
-						</span>
-					</div>
+					<h2>Search for courses</h2>				
+					<form action="/search" method="get" class="sky-form page-search-form">
+						<div class="input-group">
+							<input name="courseQuery" type="text" class="form-control" placeholder="Search for courses by abbreviation or title">
+							<span class="input-group-btn">
+								<button class="btn-u" type="submit"><i class="fa fa-search"></i></button>
+							</span>
+						</div>
+					</form> 
 				</div>
+	
 			</div>
 		</div>
 		<!--/container-->

@@ -179,7 +179,7 @@
 					break;
 					}
 					else{
-						throw new Exception("Course Not Found");
+						//throw new Exception("Course Not Found");
 					}
 				}
 			%>
