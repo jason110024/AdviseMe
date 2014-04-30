@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+    <link type="text/css" rel="stylesheet" href="rateit.css">
     <!--[if lt IE 9]>
         <link rel="stylesheet" href="css/sky-forms-ie8.css">
     <![endif]-->
@@ -41,6 +42,8 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="jquery.rateit.js"></script>
 	
 	<%
 	String id = null;
@@ -196,15 +199,11 @@
 <br><br><br>
 <%
 	HttpSession mysession1 = request.getSession(false);
-	System.out.println("Home paffffffffffffffffge: " + mysession1.getAttribute("id"));
 	id=mysession1.getAttribute("id").toString();
 	ObjectifyService.register(User.class);
 	ArrayList<String> userCourses = ObjectifyService.ofy().load().type(User.class).id(Long.parseLong(id)).get().getUserClassList();
-	System.out.println("Hodsfadsge: " + mysession1.getAttribute("id"));
-
 	ObjectifyService.register(Course.class);
 	List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list();
-	System.out.println("Hodsfaeqrwwwwwwwwwwrewdsge: " + mysession1.getAttribute("id"));
 
 	int numCourses = courses.size();
 	int k=1;
@@ -213,8 +212,6 @@
 	String name = request.getParameter("courseName");
 	for(String usercourse : userCourses){
 		for(Course course : courses){
-			System.out.println("Hodsfads22222222222222222ge: " + mysession1.getAttribute("id"));
-
 			if(course.getCourseName().equals(usercourse)){
 				pageContext.setAttribute("course_title", course.getTitle());
 				pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
@@ -224,18 +221,19 @@
 				pageContext.setAttribute("course_workload", ((double)Math.round(course.getWork() * 10) / 10));
 				pageContext.setAttribute("course_num_users_useful", course.getNumUseful());
 				pageContext.setAttribute("course_useful", ((double)Math.round(course.getUse() * 10) / 10));
-				System.out.println("Hodsfadsg222211111111111111111e: " + mysession1.getAttribute("id"));
-
 				%>
+				<h2>${fn:escapeXml(course_abbreviation)} - ${fn:escapeXml(course_title)}</h2>
+				<br>
+				<div class="col-md-4">
 				<div class="servive-block servive-block-blue">
 		<i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
         <h2 class="heading-md">Course Difficulty: </h2>
         <p>
        		<div class="rateit" id="rateit<%=k%>" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_rating)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
  				<script type="text/javascript">
-    				$("#rateit<%=k%>").bind('rated', 
+    				$('#rateit<%=k%>').bind('rated', 
     					function(event, value){
-    					var courseName = ${fn:escapeXml(course_abbreviation)};
+    					var courseName = "${fn:escapeXml(course_abbreviation)}";
 							$.ajax({
 								type: 'GET',
 								url: "updatecourserating?rating="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
@@ -252,18 +250,18 @@
 		</p>
 		<p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
   	</div>
+       </div>                 
                         
-                        
-                        
+           <div class="col-md-4">             
 	<div class="servive-block servive-block-purple">
 		<i class="icon-custom icon-color-light rounded-x icon-line  icon-docs"></i>
 		<h2 class="heading-md">Course Workload: </h2>
 		<p>
 			<div class="rateit" id="rateit<%=l%>" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_workload)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
  			<script type="text/javascript">
-    			$("#rateit<%=l%>").bind('rated', 
+    			$('#rateit<%=l%>').bind('rated', 
     				function(event, value){
-    				var courseName = GetURLParameter('courseName');
+    				var courseName = "${fn:escapeXml(course_abbreviation)}";
 						$.ajax({
 							type: 'GET',
 							url: "updatecourseworkload?workload="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
@@ -280,16 +278,17 @@
 		</p>
 		<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
  	</div>
-                        
+        </div>
+        <div class="col-md-4">                
 	<div class="servive-block servive-block-red">
 		<i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
  		<h2 class="heading-md">Course Usefulness: </h2>
 		<p>
  			<div class="rateit" id="rateit<%=m%>" data-rateit-resetable="false" data-rateit-value="${fn:escapeXml(course_useful)}" data-rateit-ispreset="true" data-rateit-readonly="${fn:escapeXml(readonly)}" data-rateit-step=".5" data-rateit-min="0" data-rateit-max="10"></div>
 			<script type="text/javascript">
-    			$("#rateit<%=m%>").bind('rated', 
+    			$('#rateit<%=m%>').bind('rated', 
     				function(event, value){
-    				var courseName = GetURLParameter('courseName');
+    				var courseName = "${fn:escapeXml(course_abbreviation)}";
 						$.ajax({
 							type: 'GET',
 							url: "updatecourseuseful?useful="+value+"&course="+courseName+"&id=${fn:escapeXml(id)}",
@@ -306,7 +305,7 @@
 		</p>
 		<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
 	</div>
-				
+		</div>		
 				
 				
 				
@@ -323,6 +322,11 @@
 	}
 
 %>
+<br>
+<br>
+<br>
+<br>
+<br>
     
 
 
