@@ -83,12 +83,48 @@ public class CourseEdits implements Comparable<Course> {
 		return this.professorList;
 	}
 	
+	public String getProfessorList(Boolean val){		
+		StringBuilder profs = new StringBuilder();
+		int size = professorList.size();
+		for(int i=0;i<size;i++){
+			if(i==size-1){
+				profs.append(professorList.get(i));
+			}
+			else profs.append(professorList.get(i) + ", ");
+		}
+		return profs.toString();
+	}
+	
 	public ArrayList<String> getSemesterTaught(){
 		return this.semestersTaught;
 	}
 	
+	public String getSemesterTaught(Boolean val){		
+		StringBuilder sems = new StringBuilder();
+		int size = semestersTaught.size();
+		for(int i=0;i<size;i++){
+			if(i==size-1){
+				sems.append(semestersTaught.get(i));
+			}
+			else sems.append(semestersTaught.get(i) + ", ");
+		}
+		return sems.toString();
+	}
+	
 	public ArrayList<String> getPrereq(){
 		return this.prereqs;
+	}
+	
+	public String getPrereq(Boolean val){		
+		StringBuilder reqs = new StringBuilder();
+		int size = prereqs.size();
+		for(int i=0;i<size;i++){
+			if(i==size-1){
+				reqs.append(prereqs.get(i));
+			}
+			else reqs.append(prereqs.get(i) + ", ");
+		}
+		return reqs.toString();
 	}
 	
 	@Override
