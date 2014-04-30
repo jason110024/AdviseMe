@@ -195,33 +195,37 @@
 
 <br><br><br>
 <%
-	String temp = "${fn:escapeXml(id)}";
-	System.out.println(temp);
+	HttpSession mysession1 = request.getSession(false);
+	System.out.println("Home paffffffffffffffffge: " + mysession1.getAttribute("id"));
+	id=mysession1.getAttribute("id").toString();
 	ObjectifyService.register(User.class);
-	User user = ObjectifyService.ofy().load().type(User.class).id(temp).get();
+	ArrayList<String> userCourses = ObjectifyService.ofy().load().type(User.class).id(Long.parseLong(id)).get().getUserClassList();
+	System.out.println("Hodsfadsge: " + mysession1.getAttribute("id"));
+
 	ObjectifyService.register(Course.class);
 	List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list();
-	List<String> userCourses = user.getUserClassList();
+	System.out.println("Hodsfaeqrwwwwwwwwwwrewdsge: " + mysession1.getAttribute("id"));
+
 	int numCourses = courses.size();
 	int k=1;
 	int l=2;
 	int m=3;
-	System.out.println("Home page: " + mysession.getAttribute("id"));
-
 	String name = request.getParameter("courseName");
 	for(String usercourse : userCourses){
 		for(Course course : courses){
+			System.out.println("Hodsfads22222222222222222ge: " + mysession1.getAttribute("id"));
+
 			if(course.getCourseName().equals(usercourse)){
 				pageContext.setAttribute("course_title", course.getTitle());
 				pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
 				pageContext.setAttribute("course_num_users_rating", course.getNumRating());
 				pageContext.setAttribute("course_rating", ((double)Math.round(course.getAvg() * 10) / 10));
 				pageContext.setAttribute("course_num_users_workload", course.getNumWorkload());
-				System.out.println("Home page: " + mysession.getAttribute("id"));
-
 				pageContext.setAttribute("course_workload", ((double)Math.round(course.getWork() * 10) / 10));
 				pageContext.setAttribute("course_num_users_useful", course.getNumUseful());
 				pageContext.setAttribute("course_useful", ((double)Math.round(course.getUse() * 10) / 10));
+				System.out.println("Hodsfadsg222211111111111111111e: " + mysession1.getAttribute("id"));
+
 				%>
 				<div class="servive-block servive-block-blue">
 		<i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
