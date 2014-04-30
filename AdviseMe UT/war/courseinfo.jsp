@@ -346,21 +346,21 @@
 					
 <div class="row">
 		<div class="span3">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h4>Past Professors:</h4>
 				<br>
 				<p>${fn:escapeXml(course_professorList)}</p>
 			</div>
 		</div>
 		<div class="span3">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h4>Semesters Taught:</h4>
 				<br>
 				<p>${fn:escapeXml(course_semestersTaught)}</p>
 			</div>
 		</div>
 		<div class="span3">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<h4>Pre-Requisites:</h4>
 				<br>
 				<p>${fn:escapeXml(course_prereq)}</p>
@@ -369,43 +369,12 @@
 </div>
 <br>
 <br>
-  <div class="span3">
-			<div class="col-md-4">
-				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
-	<script>
- 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
- 			document.getElementById("editbutton").style.visibility='hidden';			
- 	}
-	
-	
-	</script>
-			</div>
-</div>    
-
-<div class="span3">
-			<div class="col-md-4">
-			<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" onclick="window.location='${fn:escapeXml(course_eval_link)}'">UT Course Evaluations</button>			
-			</div>
-</div>
-<div class="span3">
-			<div class="col-md-4">
-					<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id=syllabi onclick="window.location='${fn:escapeXml(course_syllabus_link)}'">UT Past Syllabi</button>		
-			</div>
-</div>
 
 
+<!-- button start -->
 
-
-				</div><!--/col-md-9-->
-
-            <div class="col-md-3">
-                <!-- About Us -->
-                <div class="margin-bottom-30">
-                    
-
-
-
-                        <div class="servive-block servive-block-blue">
+<div class="col-md-4">
+<div class="servive-block servive-block-blue">
                             <i class="icon-custom icon-color-light rounded-x icon-line icon-wrench"></i>
                             <h2 class="heading-md">Course Difficulty: </h2>
                             <p>
@@ -431,12 +400,12 @@
 </script>   
 
  
-</p>
+
 <p>${fn:escapeXml(course_num_users_rating)} users rate this course: ${fn:escapeXml(course_rating)}</p>
-                        </div>
+</div>
+ </div>                       
                         
-                        
-                        
+ <div class="col-md-4">                       
                                                 <div class="servive-block servive-block-purple">
                             <i class="icon-custom icon-color-light rounded-x icon-line  icon-docs"></i>
                             <h2 class="heading-md">Course Workload: </h2>
@@ -463,10 +432,14 @@
 </script>   
 
  
-</p>
+
 <p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
                         </div>
-                        
+   
+   
+   </div>
+   
+   <div class="col-md-4">                     
                                                                     <div class="servive-block servive-block-red">
                             <i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
                             <h2 class="heading-md">Course Usefulness: </h2>
@@ -493,46 +466,51 @@
 </script>   
 
  
-</p>
-<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
-                        </div>   
-                      
-                </div>            
-            
-                <!-- Posts -->
-<!--                 <div class="posts margin-bottom-30"> -->
-<!--                     <div class="headline"><h2>Recent Blog Entries</h2></div> -->
-<!--                     <dl class="dl-horizontal"> -->
-<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt> -->
-<!--                         <dd> -->
-<!--                             <p><a href="#">Lorem sequat ipsum dolor lorem sunt aliqua put</a></p>  -->
-<!--                         </dd> -->
-<!--                     </dl> -->
-<!--                     <dl class="dl-horizontal"> -->
-<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt> -->
-<!--                         <dd> -->
-<!--                             <p><a href="#">It works on all major web browsers tablets</a></p>  -->
-<!--                         </dd> -->
-<!--                     </dl> -->
-<!--                     <dl class="dl-horizontal"> -->
-<!--                         <dt><a href="#"><img src="assets/img/sliders/elastislide/9.jpg" alt="" /></a></dt> -->
-<!--                         <dd> -->
-<!--                             <p><a href="#">Brunch 3 wolf moon tempor sunt aliqua put.</a></p>  -->
-<!--                         </dd> -->
-<!--                     </dl> -->
-<!--                 </div>/posts -->
 
-<!--                 Contact Us -->
-<!--                 <div class="who margin-bottom-30"> -->
-<!--                     <div class="headline"><h2>Contact Us</h2></div> -->
-<!--                     <p>Vero facilis est etenim a feugiat cupiditate non quos etrerum facilis.</p> -->
-<!--                     <ul class="list-unstyled"> -->
-<!--                         <li><a href="#"><i class="fa fa-home"></i>5B amus ED554, New York, US</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-envelope"></i>infp@example.com</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li> -->
-<!--                         <li><a href="#"><i class="fa fa-globe"></i>http://www.example.com</a></li> -->
-<!--                     </ul> -->
-<!--                 </div> -->
+<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
+                        </div>  
+</div>
+<!-- button end -->
+
+
+
+
+
+
+				</div>
+
+            <div class="col-md-3">
+                <!-- About Us -->
+                <div class="margin-bottom-30">
+                    
+
+<!-- new button start -->
+<br>
+<br>
+<br>
+<button class="btn-u btn-u-dark-blue" type="button" onclick="window.location='${fn:escapeXml(course_eval_link)}'">UT Course Evaluations</button>			
+<br>
+<br>
+<br>
+
+<button class="btn-u btn-u-dark-blue" type="button" id=syllabi onclick="window.location='${fn:escapeXml(course_syllabus_link)}'">UT Past Syllabi</button>		
+<br>
+<br>
+<br>
+<button class="btn-u btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
+<script>
+ 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
+ 			document.getElementById("editbutton").style.visibility='hidden';			
+ 	}
+	
+	
+</script>
+<!-- newbutton end -->
+
+
+ </div>            
+            
+ 
             </div><!--/col-md-3-->
         </div><!--/row-->        
 
