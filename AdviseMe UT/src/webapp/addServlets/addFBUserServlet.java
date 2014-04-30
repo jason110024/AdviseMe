@@ -77,12 +77,15 @@ public class addFBUserServlet extends HttpServlet{
 					user = new User(FBId,FBFirst,FBLast,FBEmail,username,password);
 					user.setLoginStatus(true);
 				}
+
+				ofy().save().entity(user).now();
+				User temp = ofy().load().entity(user).get();
+				FBId=temp.getfbUserId();
 				HttpSession session = req.getSession(true);
 				session.setAttribute("first", FBFirst);
 				session.setAttribute("last", FBLast);
 				session.setAttribute("id", FBId);
 				session.setAttribute("isLoggedIn", "true");
-				ofy().save().entity(user).now();
 				Properties props = new Properties();
 				Session session1 = Session.getDefaultInstance(props,null);
 				Message msg = new MimeMessage(session1);
@@ -211,8 +214,9 @@ public class addFBUserServlet extends HttpServlet{
 					Transport.send(msg);
 				}catch(Exception e){
 					System.out.println("Was not able to send change to admin");
+				}finally{
+					resp.sendRedirect("/addusercourses.jsp?id="+FBId);
 				}
-				resp.sendRedirect("/addusercourses.jsp?id="+FBId);
 			}
 		} catch(Exception e){
 			String logMsg = "Exception in processing request: " + e.getMessage();
