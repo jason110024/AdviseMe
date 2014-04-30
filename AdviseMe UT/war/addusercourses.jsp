@@ -72,19 +72,18 @@
 		}
 	%>
 	<div class="wrapper">
-  <!--=== Header ===-->    
+    <!--=== Header ===-->    
     <div class="header">
-        <!-- Topbar -->
-        <div class="topbar">
+       	<!-- Topbar -->
+       	<div class="topbar">
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-right">
-                      
-                 
-               <li><a id="advisename">Welcome, Guest!</a></li>
-               <li class="topbar-devider"></li>   
+                   	
+					<li><a id="advisename">Welcome, Guest!</a></li>
+					<li class="topbar-devider"></li>   
                     <li><a id="createanewaccount" href="createaccount.jsp?error=false">Create Account</a></li>
-               <li class="topbar-devider"></li>   
+					<li class="topbar-devider"></li>   
                     <li><a id="adviseloginbutton" href="login.jsp?error=false">Login</a></li>
                 </ul>
                 <!-- End Topbar Navigation -->
@@ -123,7 +122,7 @@
                                 About Us
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);">About Us</a></li>
+                                <li><a href="about.jsp">About Us</a></li>
                                 <li><a href="usefulLinks.jsp">Useful Links/FAQs</a></li>
                             </ul>
                         </li>
@@ -131,15 +130,16 @@
 
                         <!-- Courses -->
                         <li class="dropdown">
-                           <a class="dropdown-toggle" data-toggle="dropdown">
-                               Courses
-                           </a>
-                           <ul class="dropdown-menu">
-                              <li><a href="coursesall.jsp">All Courses</a></li>
-                               <li><a href="courseslower.jsp">Lower Division</a></li>
-                               <li><a href="coursesupper.jsp">Upper Division</a></li>  
-                           </ul>
-                     </li>
+	                        <a href="javascript:void(0);"
+	                        	class="dropdown-toggle" data-toggle="dropdown">
+	                            Courses
+	                        </a>
+	                        <ul class="dropdown-menu">
+	                        	<li><a href="coursesall.jsp">All Courses</a></li>
+	                            <li><a href="courseslower.jsp">Lower Division</a></li>
+	                            <li><a href="coursesupper.jsp">Upper Division</a></li>  
+	                        </ul>
+                    	</li>
                         <!-- End Courses -->
 
                         <!-- Forum -->
@@ -158,19 +158,19 @@
                         </li>                    
                         <!-- End Contacts -->
 
-                        <!-- Search Block -->
-                        <li>
-                            <i class="search fa fa-search search-btn"></i>
-                            <div class="search-open">
-                                <div class="input-group animated fadeInDown">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn-u" type="button">Go</button>
-                                    </span>
-                                </div>
-                            </div>    
-                        </li>
-                        <!-- End Search Block -->
+<!--                         Search Block -->
+<!--                         <li> -->
+<!--                             <i class="search fa fa-search search-btn"></i> -->
+<!--                             <div class="search-open"> -->
+<!--                                 <div class="input-group animated fadeInDown"> -->
+<!--                                     <input type="text" class="form-control" placeholder="Search"> -->
+<!--                                     <span class="input-group-btn"> -->
+<!--                                         <button class="btn-u" type="button">Go</button> -->
+<!--                                     </span> -->
+<!--                                 </div> -->
+<!--                             </div>     -->
+<!--                         </li> -->
+<!--                         End Search Block -->
                     </ul>
                 </div><!--/navbar-collapse-->
             </div>    
