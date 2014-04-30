@@ -324,7 +324,7 @@
 
 
 
-    <!--=== Footer ===-->
+   <!--=== Footer ===-->
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -339,9 +339,8 @@
                     <p>Subscribe to AdviseMe and stay up to date with the latest news!</p>
                     <form class="footer-subscribe">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Email Address">                            
                             <span class="input-group-btn">
-                                <button class="btn-u" type="button">Subscribe</button>
+                                <button class="btn-u" onclick="subscribers()">Subscribe</button>
                             </span>
                         </div>                  
                     </form>                         
