@@ -149,13 +149,13 @@
 		  <% 
 		  		ObjectifyService.register(Course.class);
 				String name = request.getParameter("courseName");
-				Course test = ObjectifyService.ofy().load().type(Course.class).id(name).get(); 
-				if(test == null){
+				Course course = ObjectifyService.ofy().load().type(Course.class).id(name).get(); 
+				if(course == null){
 					throw new Exception("Invalid Course");
 				}
 				pageContext.setAttribute("courseName",name);
-				for(Course course : courses){
-					if(course.getCourseName().equals(name)){
+				//for(Course course : courses){
+				//	if(course.getCourseName().equals(name)){
 						pageContext.setAttribute("course_title", course.getTitle());
 						pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
 						pageContext.setAttribute("course_description", course.getDescription());
