@@ -206,6 +206,7 @@ public class addFBUserServlet extends HttpServlet {
 				htmlPart.setContent(htmlBody, "text/html");
 				mp.addBodyPart(htmlPart);
 				msg.setContent(mp);
+				msg.setSubject("Welcome to AdviseMe!");
 				try{
 					msg.setFrom(new InternetAddress("no-reply@advisemeut.appspotmail.com", "Welcome to Advise Me!"));
 					msg.addRecipient(Message.RecipientType.TO, new InternetAddress(FBEmail));
