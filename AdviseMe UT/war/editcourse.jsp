@@ -180,12 +180,13 @@
     </div>
     <!--=== End Header ===-->    
     
-    <!--=== Breadcrumbs ===-->
-    <div class="breadcrumbs">
+    <!--     === Breadcrumbs === -->
+    <div class="breadcrumbs-v3">
         <div class="container">
             <h1 class="pull-left">Edit Course</h1>
         </div>
-    </div><!--/breadcrumbs-->
+     </div>
+<!--     === End Breadcrumbs === -->
     <!--=== End Breadcrumbs ===-->
 
 	<!-- Content -->   
