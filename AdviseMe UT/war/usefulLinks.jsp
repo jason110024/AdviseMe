@@ -289,7 +289,7 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                No! But to subscribe to a certain course, you have to have an account. 
+                                No! But to subscribe, rate courses, etc., you have to have an account. 
                             </div>
                         </div>
                     </div>
@@ -298,13 +298,13 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    2. Why do I want to subscribe to a course?
+                                    2. Can I subscribe to a course?
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>By subscribing to a course, you will get updates when changes happen on a course page.</p>
+                                <p>That's a great question! We have received many requests and that is a feature we're working on for our next release. However, you will receive updates on comments through Disqus.</p>
                             </div>
                         </div>
                     </div>
