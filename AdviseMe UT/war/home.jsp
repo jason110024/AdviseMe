@@ -110,8 +110,8 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
                         <!-- Home -->
-                        <li>
-                            <a href="javascript:void(0);" >
+                        <li class="active">
+                            <a href="home.jsp" >
                                 Home
                             </a>
                         </li>
@@ -131,7 +131,8 @@
 
                         <!-- Courses -->
                         <li class="dropdown">
-	                        <a class="dropdown-toggle" data-toggle="dropdown">
+	                        <a href="javascript:void(0);"
+	                        	class="dropdown-toggle" data-toggle="dropdown">
 	                            Courses
 	                        </a>
 	                        <ul class="dropdown-menu">
