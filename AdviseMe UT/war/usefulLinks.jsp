@@ -289,7 +289,7 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                No! But to subscribe, rate courses, etc., you have to have an account. 
+                                No! But to rate courses,edit courses, etc., you have to have an account. 
                             </div>
                         </div>
                     </div>
@@ -298,7 +298,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    2. Can I subscribe to a course?
+                                    2. Can I subscribe to updates on a course?
                                 </a>
                             </h4>
                         </div>
@@ -356,8 +356,7 @@
                         </div>
                         <div id="collapseFive" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>myEdu used to have professor ratings, but due to legal issues, they had to take that aspect down.
-                                We didn't want to run into the same issues, so we have left out professor ratings.</p>                           
+                                <p>At this time, you can leave comments on courses including information on professors.</p>                           
                             </div>
                         </div>
                     </div>

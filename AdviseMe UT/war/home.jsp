@@ -203,7 +203,7 @@
     <!--=== End Search Block ===-->
 
    <%
-	/*ObjectifyService.register(Course.class);
+	ObjectifyService.register(Course.class);
 	int numCourses = ObjectifyService.ofy().load().type(Course.class).list().size();
 	pageContext.setAttribute("num_courses",numCourses);
 	ObjectifyService.register(User.class);
@@ -225,7 +225,7 @@
 	pageContext.setAttribute("num_users",numUsers);
 	pageContext.setAttribute("num_users_online",numOnline);
 	pageContext.setAttribute("num_posts",numPosts);
-    */%>
+    %>
 
     <!--=== Parallax Counter ===-->
     <div class="parallax-counter parallaxBg margin-bottom-50">

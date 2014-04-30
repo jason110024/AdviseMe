@@ -206,9 +206,9 @@
 		pageContext.setAttribute("course_title", course.getTitle());
 		pageContext.setAttribute("course_abbreviation", course.getCourseName()); 
 		pageContext.setAttribute("course_description", course.getDescription());
-		pageContext.setAttribute("course_professorList", course.getProfessorList());
-		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught());
-		pageContext.setAttribute("course_prereq", course.getPrereq());
+		pageContext.setAttribute("course_professorList", course.getProfessorList(true));
+		pageContext.setAttribute("course_semestersTaught", course.getSemesterTaught(true));
+		pageContext.setAttribute("course_prereq", course.getPrereq(true));
 		pageContext.setAttribute("course_division", course.getUpperDivision());
 		break;
 			}

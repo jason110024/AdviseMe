@@ -61,7 +61,7 @@ public class addUserCourses extends HttpServlet {
 					ofy().save().entity(user).now();
 					
 
-					resp.sendRedirect("/home.jsp");
+					resp.sendRedirect("/rateusercourses.jsp");
 				}
 			}
 			throw new Exception("User account not found in database.");

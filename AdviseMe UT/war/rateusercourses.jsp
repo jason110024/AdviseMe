@@ -269,7 +269,7 @@
     			});       
 			</script>   
 		</p>
-		<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
+		<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
  	</div>
         </div>
         <div class="col-md-4">                
@@ -296,7 +296,7 @@
     			});       
 			</script>  
 		</p>
-		<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
+		<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
 	</div>
 		</div>		
 				
@@ -316,12 +316,34 @@
 
 %>
 <br>
-<br>
-<br>
-<br>
-<br>
-    
 
+      <br><br><br>
+      <a href="home.jsp">   
+      <div class="col-md-4">
+            <div class="service">
+                    <i class="icon-home service-icon"></i>
+               <div class="desc">
+                  <h4>Go Back to Home Page</h4>
+                        <p>Click this button to go back to the home page.</p>
+               </div>
+            </div>   
+         </div>
+         </a>   
+<br>
+<br>
+<br>
+<br>
+<br>
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
    <!--=== Footer ===-->

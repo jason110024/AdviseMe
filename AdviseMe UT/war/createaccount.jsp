@@ -225,7 +225,6 @@
                         <p>Already Signed Up? Click <a href="login.jsp" class="color-green">Sign In</a> to login your account.</p>                    
                     </div>
 					You can use Facebook to Create Your Account:  <div class="fb-login-button" data-scope="email" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
-					<h5>(please refresh the page if you use FB login)</h5>
 					<br>
 					<h2 id="test" color="red">${fn:escapeXml(error1)}</h2>
 					<hr>
