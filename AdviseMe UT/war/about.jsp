@@ -310,7 +310,7 @@
                     <form class="footer-subscribe">
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button class="btn-u" onclick="subscribers()">Subscribe to updates from AdviseMe!</button>
+                                <button class="btn-u" onclick="subscribers()">Subscribe</button>
                             </span>
                         </div>                  
                     </form>                         
