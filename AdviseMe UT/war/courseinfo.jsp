@@ -436,7 +436,7 @@
 
  
 
-<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
+<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
                         </div>
    
    
@@ -470,7 +470,7 @@
 
  
 
-<p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
+<p>${fn:escapeXml(course_num_users_useful)} users rate this course: ${fn:escapeXml(course_useful)}</p>
                         </div>  
 </div>
 <!-- button end -->
