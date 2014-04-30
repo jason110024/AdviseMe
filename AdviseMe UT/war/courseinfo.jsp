@@ -148,8 +148,11 @@
 		  var friendslist = new Array();
 		  <% 
 		  		ObjectifyService.register(Course.class);
-				List<Course> courses = ObjectifyService.ofy().load().type(Course.class).list(); 
 				String name = request.getParameter("courseName");
+				Course test = ObjectifyService.ofy().load().type(Course.class).id(name).get(); 
+				if(test == null){
+					throw new Exception("Invalid Course");
+				}
 				pageContext.setAttribute("courseName",name);
 				for(Course course : courses){
 					if(course.getCourseName().equals(name)){
@@ -176,12 +179,10 @@
 								<%
 							}
 						}
-					break;
-					}
-					else{
-						//throw new Exception("Course Not Found");
-					}
-				}
+					//break;
+					//}
+					
+				//}
 			%>
 		  var i;
 		  for(i=0;i<friendslist.length;i++){  
