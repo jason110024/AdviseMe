@@ -369,12 +369,18 @@
 </div>
 <br>
 <br>
-<div class="span3">
+  <div class="span3">
 			<div class="col-md-4">
-			<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" onclick="subscribe()">Subscribe
-		To This Course</button>
+				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
+	<script>
+ 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
+ 			document.getElementById("editbutton").style.visibility='hidden';			
+ 	}
+	
+	
+	</script>
 			</div>
-</div>
+</div>    
 
 <div class="span3">
 			<div class="col-md-4">
@@ -490,18 +496,7 @@
 </p>
 <p>${fn:escapeXml(course_num_users_workload)} users rate this course: ${fn:escapeXml(course_workload)}</p>
                         </div>   
-                      <div class="span3">
-			<div class="col-md-7">
-				<button class="btn-u btn-brd btn-brd-hover rounded-3x btn-u-dark-blue" type="button" id="editbutton" onclick="window.location='editcourse.jsp?courseName=${fn:escapeXml(course_abbreviation)}'">Edit this Course?</button>
-	<script>
- 	if ("${fn:escapeXml(guest)}" == "true" || "${fn:escapeXml(isLoggedIn)}" == "false") {
- 			document.getElementById("editbutton").style.visibility='hidden';			
- 	}
-	
-	
-	</script>
-			</div>
-</div>      
+                      
                 </div>            
             
                 <!-- Posts -->
