@@ -335,6 +335,23 @@
 		document.getElementById("adviseloginbutton").innerHTML = "Login";
 	}
 	</script>
+		<script>
+	function subscribers() {
+		var email = prompt("Please enter your email","Name@Domain.com");
+		$.ajax({
+			type : 'GET',
+			url : "addBlogSubscriberServlet?email=" + email,
+			cache : false,
+			success : function(response) {
+				if(response=="true"){
+					alert("Your email has been sucessfully added");
+				}else{
+					alert("Something wrong happened.:(");
+				}
+			}
+		}); 	
+	}
+	</script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
 <![endif]-->
